@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Saubhagya Brand Colors */
+    --background: 45 15% 96%;
+    --foreground: 25 35% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 35% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 35% 15%;
+
+    /* Primary Green Theme */
+    --primary: 145 45% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 145 35% 55%;
+
+    /* Warm Secondary Colors */
+    --secondary: 35 85% 65%;
+    --secondary-foreground: 25 35% 15%;
+    --secondary-light: 35 75% 75%;
+
+    /* Earth Tones */
+    --muted: 45 25% 88%;
+    --muted-foreground: 25 25% 45%;
+
+    --accent: 55 45% 85%;
+    --accent-foreground: 25 35% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and Inputs */
+    --border: 45 25% 85%;
+    --input: 45 25% 90%;
+    --ring: 145 45% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(145 45% 45%), hsl(35 85% 65%));
+    --gradient-earth: linear-gradient(180deg, hsl(145 35% 55%), hsl(35 75% 75%));
+    --gradient-warm: linear-gradient(90deg, hsl(35 85% 65%), hsl(45 75% 70%));
+    
+    --shadow-soft: 0 4px 20px hsl(145 45% 35% / 0.1);
+    --shadow-warm: 0 8px 30px hsl(35 85% 65% / 0.15);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Sidebar tokens */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 35% 8%;
+    --foreground: 45 15% 95%;
+
+    --card: 25 35% 12%;
+    --card-foreground: 45 15% 95%;
+
+    --popover: 25 35% 12%;
+    --popover-foreground: 45 15% 95%;
+
+    --primary: 145 35% 55%;
+    --primary-foreground: 25 35% 8%;
+    --primary-light: 145 25% 45%;
+
+    --secondary: 35 75% 55%;
+    --secondary-foreground: 25 35% 8%;
+    --secondary-light: 35 65% 65%;
+
+    --muted: 25 25% 18%;
+    --muted-foreground: 45 15% 65%;
+
+    --accent: 35 55% 25%;
+    --accent-foreground: 45 15% 95%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 45 15% 95%;
+
+    --border: 25 25% 20%;
+    --input: 25 25% 16%;
+    --ring: 145 35% 55%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(145 35% 25%), hsl(35 75% 45%));
+    --gradient-earth: linear-gradient(180deg, hsl(145 25% 35%), hsl(35 65% 55%));
+    --gradient-warm: linear-gradient(90deg, hsl(35 75% 45%), hsl(45 65% 50%));
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
