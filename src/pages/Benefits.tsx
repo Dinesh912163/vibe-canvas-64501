@@ -1,11 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { DollarSign, TrendingUp, Leaf, Users, Calculator, Award, ShieldCheck, Truck, UserCircle2, Sprout } from "lucide-react";
+import { DollarSign, TrendingUp, Leaf, Users, Calculator, Award, ShieldCheck, Truck, Sprout } from "lucide-react";
 import farmerPayment from "@/assets/farmer-payment.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
 import villageLife from "@/assets/village-life.jpg";
-import biogasFacility from "@/assets/biogas-facility.jpg";
-import heroFarming from "@/assets/hero-farming.jpg";
+import benefitsBg from "/attached_assets/stock_images/successful_farmers_h_9618d019.jpg";
 
 export const Benefits = () => {
   const mainBenefits = [
@@ -93,201 +92,163 @@ export const Benefits = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero Section - First Slide with Full Screen Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={heroFarming} 
-            alt="Farming background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-secondary/80"></div>
-        </div>
-        
-        {/* Content */}
-        <div className="container mx-auto px-4 text-center relative z-10 py-20">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-background drop-shadow-lg">
-            Farmer Benefits
-          </h1>
-          <p className="text-2xl md:text-3xl mb-6 font-medium text-background/95 drop-shadow">
-            किसान लाभ
-          </p>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-background/90 leading-relaxed drop-shadow">
-            Discover how Saubhagya transforms agricultural waste into sustainable income 
-            for farming communities across India.
-          </p>
-        </div>
-      </section>
-
-      {/* Main Benefits */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Transform Your Farm Economics
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              अपनी खेती की अर्थव्यवस्था को बदलें
+    <div className="min-h-screen relative">
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${benefitsBg})` }}
+      />
+      <div className="fixed inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/55" />
+      
+      <div className="relative z-10 pt-20">
+        <section className="min-h-screen flex items-center justify-center py-20">
+          <div className="container mx-auto px-6 text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white drop-shadow-2xl">
+              Farmer Benefits
+            </h1>
+            <p className="text-2xl md:text-3xl mb-8 font-medium text-white drop-shadow-lg">
+              किसान लाभ
+            </p>
+            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-white/95 leading-relaxed drop-shadow-md">
+              Discover how Saubhagya transforms agricultural waste into sustainable income 
+              for farming communities across India.
             </p>
           </div>
+        </section>
 
-          {mainBenefits.map((benefit, index) => (
-            <div key={index} className={`mb-20 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} lg:flex items-center gap-16`}>
-              <div className="lg:w-1/2 mb-8 lg:mb-0">
-                <div className="relative rounded-2xl overflow-hidden shadow-warm">
-                  <img 
-                    src={benefit.image} 
-                    alt={`${benefit.title} illustration`}
-                    className="w-full h-80 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6">
-                    <div className={`w-12 h-12 ${benefit.gradient} rounded-lg flex items-center justify-center mb-2`}>
-                      <benefit.icon className="w-6 h-6 text-background" />
+        <section className="py-24 bg-white/95 backdrop-blur-sm">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Main Benefits
+              </h2>
+              <p className="text-xl text-muted-foreground">मुख्य लाभ</p>
+            </div>
+
+            {mainBenefits.map((benefit, index) => (
+              <div key={index} className={`mb-24 last:mb-0 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} lg:flex items-center gap-16`}>
+                <div className="lg:w-1/2 mb-10 lg:mb-0">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <img 
+                      src={benefit.image} 
+                      alt={`${benefit.title} illustration`}
+                      className="w-full h-96 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute bottom-8 left-8">
+                      <div className={`w-16 h-16 ${benefit.gradient} rounded-xl flex items-center justify-center shadow-lg`}>
+                        <benefit.icon className="w-8 h-8 text-background" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="lg:w-1/2">
-                <Card className="p-8 hover:shadow-warm transition-smooth">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className={`w-16 h-16 ${benefit.gradient} rounded-full flex items-center justify-center`}>
-                      <benefit.icon className="w-8 h-8 text-background" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-foreground">
-                        {benefit.title}
-                      </h3>
-                      <p className="text-muted-foreground font-medium">
-                        {benefit.subtitle}
-                      </p>
-                    </div>
+                <div className="lg:w-1/2">
+                  <Card className="p-10 shadow-2xl hover:shadow-3xl transition-all duration-300">
+                    <h3 className="text-3xl font-bold text-foreground mb-3">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-xl text-muted-foreground mb-4 font-medium">
+                      {benefit.subtitle}
+                    </p>
+                    <p className="text-lg text-primary font-semibold mb-6">
+                      {benefit.description}
+                    </p>
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                      {benefit.details}
+                    </p>
+                  </Card>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="py-24 bg-muted/30">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Additional Advantages
+              </h2>
+              <p className="text-xl text-muted-foreground">अतिरिक्त लाभ</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {additionalBenefits.map((benefit, index) => (
+                <Card key={index} className="p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <div className={`w-16 h-16 mb-6 rounded-lg ${
+                    index % 3 === 0 ? 'bg-gradient-hero' : 
+                    index % 3 === 1 ? 'bg-gradient-earth' : 'bg-gradient-warm'
+                  } flex items-center justify-center mx-auto shadow-md`}>
+                    <benefit.icon className="w-8 h-8 text-background" />
                   </div>
-                  
-                  <p className="text-lg text-foreground mb-4 font-medium">
+                  <h4 className="text-xl font-bold text-foreground mb-4">
+                    {benefit.title}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
                     {benefit.description}
                   </p>
-                  
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    {benefit.details}
-                  </p>
-
-                  <Button variant="outline" size="lg">
-                    Calculate Your Income
-                  </Button>
                 </Card>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Additional Benefits Grid - Second Slide with Full Width Background */}
-      <section className="relative py-20 overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={biogasFacility} 
-            alt="Biogas facility background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-muted/95"></div>
-        </div>
-        
-        {/* Content */}
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 drop-shadow-sm">
-              Additional Advantages
-            </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground drop-shadow-sm">
-              अतिरिक्त फायदे
-            </p>
           </div>
+        </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {additionalBenefits.map((benefit, index) => (
-              <Card 
-                key={index} 
-                className="p-8 hover:shadow-2xl transition-all duration-300 group bg-card/95 backdrop-blur-sm border-2 hover:border-primary/50 hover:-translate-y-2 hover:scale-105"
-                data-testid={`card-benefit-${index}`}
-              >
-                <div className={`w-16 h-16 mb-6 rounded-xl ${
-                  index % 3 === 0 ? 'bg-gradient-hero' : 
-                  index % 3 === 1 ? 'bg-gradient-earth' : 'bg-gradient-warm'
-                } flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
-                  <benefit.icon className="w-8 h-8 text-background" strokeWidth={2.5} />
-                </div>
-                <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {benefit.title}
-                </h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  {benefit.description}
-                </p>
-                
-                {/* Decorative corner element */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+        <section className="py-24 bg-white/95 backdrop-blur-sm">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Success Stories
+              </h2>
+              <p className="text-xl text-muted-foreground">सफलता की कहानियां</p>
+            </div>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Success Stories
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              सफलता की कहानियां
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-8 hover:shadow-warm transition-smooth">
-                <div className="mb-6">
-                  <div className="text-2xl font-bold text-primary mb-2">
-                    {testimonial.income}
+            <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+                  <div className="mb-6">
+                    <div className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                      <Users className="w-8 h-8 text-background" />
+                    </div>
+                    <h4 className="text-xl font-bold text-foreground text-center">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-sm text-muted-foreground text-center">
+                      {testimonial.location}
+                    </p>
                   </div>
-                  <p className="text-muted-foreground italic leading-relaxed">
+                  <p className="text-muted-foreground italic mb-6 leading-relaxed">
                     "{testimonial.quote}"
                   </p>
-                </div>
-                <div className="border-t pt-4">
-                  <div className="font-bold text-foreground">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.location}</div>
-                </div>
-              </Card>
-            ))}
+                  <div className="text-center pt-4 border-t border-muted/30">
+                    <p className="text-primary font-bold text-lg">
+                      {testimonial.income}
+                    </p>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-background">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Increase Your Income?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Join thousands of farmers already benefiting from Saubhagya
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-6">
-              Start Earning Today
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-background/10 backdrop-blur-sm border-background/30 text-background hover:bg-background hover:text-foreground">
-              Calculate Income
-            </Button>
+        <section className="py-24 bg-gradient-to-r from-primary/90 to-secondary/90 backdrop-blur-sm">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white drop-shadow-lg">
+              Ready to Transform Your Income?
+            </h2>
+            <p className="text-xl md:text-2xl mb-10 text-white/95 max-w-3xl mx-auto drop-shadow-md">
+              Join thousands of farmers who have already benefited from Saubhagya
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button variant="hero" size="lg" className="text-xl px-12 py-8 shadow-2xl hover:shadow-3xl">
+                Join Now / अभी शामिल हों
+              </Button>
+              <Button variant="outline" size="lg" className="text-xl px-12 py-8 bg-white text-primary hover:bg-white/90 border-2 border-white shadow-2xl">
+                Learn More / और जानें
+              </Button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };

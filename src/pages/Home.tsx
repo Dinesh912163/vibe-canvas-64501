@@ -2,148 +2,149 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Users, Truck, TrendingUp, ArrowRight, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-farming.jpg";
+import heroImage from "/attached_assets/stock_images/green_farm_field_agr_67b4ace7.jpg";
 
 export const Home = () => {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-hero flex items-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
-        
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-6xl font-bold text-background mb-6 leading-tight">
-                From Dung to Dhan
-              </h1>
-              <p className="text-xl md:text-2xl text-background/90 mb-4 font-medium">
-                गौशाला से रोज़ी — किसानों के लिए न्यायपूर्ण भुगतान
-              </p>
-              <p className="text-lg text-background/80 mb-8 max-w-lg mx-auto lg:mx-0">
-                IoT-verified weighments, same-day payouts, local CBG production
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button variant="hero" size="lg" className="text-lg px-8 py-6">
-                  <Users className="w-5 h-5" />
-                  Join as Farmer / फार्मर बनें
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-background/10 backdrop-blur-sm border-background/30 text-background hover:bg-background hover:text-foreground">
-                  <Truck className="w-5 h-5" />
-                  Request Pickup / रिक्वेस्ट पिकअप
-                </Button>
+    <div className="min-h-screen relative">
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      />
+      <div className="fixed inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50" />
+      
+      <div className="relative z-10">
+        <section className="min-h-screen flex items-center overflow-hidden pt-20">
+          <div className="container mx-auto px-6 py-20">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="text-center lg:text-left">
+                <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
+                  From Dung to Dhan
+                </h1>
+                <p className="text-2xl md:text-3xl text-white mb-6 font-medium drop-shadow-lg">
+                  गौशाला से रोज़ी — किसानों के लिए न्यायपूर्ण भुगतान
+                </p>
+                <p className="text-xl text-white/95 mb-10 max-w-lg mx-auto lg:mx-0 drop-shadow-md">
+                  IoT-verified weighments, same-day payouts, local CBG production
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+                  <Button variant="hero" size="lg" className="text-xl px-10 py-8 shadow-2xl hover:shadow-3xl transition-all">
+                    <Users className="w-6 h-6 mr-3" />
+                    Join as Farmer / फार्मर बनें
+                  </Button>
+                  <Button variant="outline" size="lg" className="text-xl px-10 py-8 bg-white text-primary hover:bg-white/90 border-2 border-white shadow-2xl">
+                    <Truck className="w-6 h-6 mr-3" />
+                    Request Pickup / रिक्वेस्ट पिकअप
+                  </Button>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-8">
+                <Card className="p-8 bg-white/95 backdrop-blur-md shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-6">
+                    <div className="w-20 h-20 bg-gradient-earth rounded-xl flex items-center justify-center shadow-lg">
+                      <TrendingUp className="w-10 h-10 text-background" />
+                    </div>
+                    <div>
+                      <div className="text-5xl font-bold text-primary mb-2">+30%</div>
+                      <div className="text-base text-muted-foreground font-semibold">Farmer Income Increase</div>
+                      <div className="text-base text-muted-foreground font-semibold">किसान आय वृद्धि</div>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-8 bg-white/95 backdrop-blur-md shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-6">
+                    <div className="w-20 h-20 bg-gradient-warm rounded-xl flex items-center justify-center shadow-lg">
+                      <div className="text-3xl">⚡</div>
+                    </div>
+                    <div>
+                      <div className="text-5xl font-bold text-secondary mb-2">&gt;90%</div>
+                      <div className="text-base text-muted-foreground font-semibold">CBG Yield Efficiency</div>
+                      <div className="text-base text-muted-foreground font-semibold">CBG उत्पादन दक्षता</div>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-8 bg-white/95 backdrop-blur-md shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-6">
+                    <div className="w-20 h-20 bg-primary rounded-xl flex items-center justify-center shadow-lg">
+                      <div className="text-3xl">🌱</div>
+                    </div>
+                    <div>
+                      <div className="text-5xl font-bold text-primary mb-2">40%</div>
+                      <div className="text-base text-muted-foreground font-semibold">Methane Reduction</div>
+                      <div className="text-base text-muted-foreground font-semibold">मीथेन कमी</div>
+                    </div>
+                  </div>
+                </Card>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="flex flex-col gap-6">
-              <Card className="p-6 bg-background/95 backdrop-blur-sm shadow-warm">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-earth rounded-lg flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-background" />
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-primary">+30%</div>
-                    <div className="text-sm text-muted-foreground">Farmer Income Increase</div>
-                    <div className="text-sm text-muted-foreground">किसान आय वृद्धि</div>
-                  </div>
+        <section className="py-24 bg-white/95 backdrop-blur-sm">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+                Empowering Rural India
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Saubhagya connects farmers with biogas production facilities, creating sustainable income 
+                from agricultural waste while contributing to clean energy solutions.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-10 mb-16">
+              <Card className="p-10 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
+                  <Users className="w-10 h-10 text-background" />
                 </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">For Farmers</h3>
+                <p className="text-muted-foreground mb-8 text-base leading-relaxed">
+                  Turn your cattle dung into daily income with transparent, fair pricing
+                </p>
+                <Link to="/benefits">
+                  <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold">
+                    Learn More <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
               </Card>
 
-              <Card className="p-6 bg-background/95 backdrop-blur-sm shadow-warm">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-warm rounded-lg flex items-center justify-center">
-                    <div className="text-lg font-bold text-foreground">⚡</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-secondary">&gt;90%</div>
-                    <div className="text-sm text-muted-foreground">CBG Yield Efficiency</div>
-                    <div className="text-sm text-muted-foreground">CBG उत्पादन दक्षता</div>
-                  </div>
+              <Card className="p-10 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-20 h-20 bg-gradient-earth rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="text-4xl">🔄</div>
                 </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">How It Works</h3>
+                <p className="text-muted-foreground mb-8 text-base leading-relaxed">
+                  Simple 4-step process from collection to payment
+                </p>
+                <Link to="/how-it-works">
+                  <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold">
+                    See Process <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
               </Card>
 
-              <Card className="p-6 bg-background/95 backdrop-blur-sm shadow-warm">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                    <div className="text-lg font-bold text-background">🌱</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-primary">40%</div>
-                    <div className="text-sm text-muted-foreground">Methane Reduction</div>
-                    <div className="text-sm text-muted-foreground">मीथेन कमी</div>
-                  </div>
+              <Card className="p-10 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-20 h-20 bg-gradient-warm rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
+                  <Phone className="w-10 h-10 text-background" />
                 </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">Get Started</h3>
+                <p className="text-muted-foreground mb-8 text-base leading-relaxed">
+                  Ready to join? Contact us for immediate onboarding
+                </p>
+                <Link to="/contact">
+                  <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold">
+                    Contact Us <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
               </Card>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Quick Overview Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Empowering Rural India
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Saubhagya connects farmers with biogas production facilities, creating sustainable income 
-              from agricultural waste while contributing to clean energy solutions.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="p-8 text-center hover:shadow-warm transition-smooth group">
-              <div className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-background" />
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-4">For Farmers</h3>
-              <p className="text-muted-foreground mb-6">
-                Turn your cattle dung into daily income with transparent, fair pricing
-              </p>
-              <Link to="/benefits">
-                <Button variant="outline" className="group-hover:bg-primary group-hover:text-background">
-                  Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-warm transition-smooth group">
-              <div className="w-16 h-16 bg-gradient-earth rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="text-2xl">🔄</div>
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-4">How It Works</h3>
-              <p className="text-muted-foreground mb-6">
-                Simple 4-step process from collection to payment
-              </p>
-              <Link to="/how-it-works">
-                <Button variant="outline" className="group-hover:bg-primary group-hover:text-background">
-                  See Process <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-warm transition-smooth group">
-              <div className="w-16 h-16 bg-gradient-warm rounded-full flex items-center justify-center mx-auto mb-6">
-                <Phone className="w-8 h-8 text-background" />
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-4">Get Started</h3>
-              <p className="text-muted-foreground mb-6">
-                Ready to join? Contact us for immediate onboarding
-              </p>
-              <Link to="/contact">
-                <Button variant="outline" className="group-hover:bg-primary group-hover:text-background">
-                  Contact Us <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-            </Card>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };
