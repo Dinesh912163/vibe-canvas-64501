@@ -56,6 +56,9 @@ Saubhagya is a web platform connecting farmers with biogas facilities, promoting
     * Transporter
   - Added navigation link for User Types in header
   - Integrated stock images for each user type with gradient backgrounds
+  - Removed "Our Journey" timeline section from About page for cleaner focus
+  - Fixed z-index layering on About page to ensure footer visibility
+  - Verified footer displays correctly on all pages (Home, How It Works, Benefits, User Types, About, Contact)
 
 ## Key Features
 - Farmer registration and onboarding
