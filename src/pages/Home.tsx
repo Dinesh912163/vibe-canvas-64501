@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Users, Truck, TrendingUp, ArrowRight, Phone, UserCog } from "lucide-react";
+import { Users, Truck, ArrowRight, Phone, UserCog } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "/attached_assets/stock_images/green_biogas_farm_re_c5a0b3b2.jpg";
+import heroImage from "/attached_assets/stock_images/green_farm_field_agr_67b4ace7.jpg";
 
 export const Home = () => {
   return (
@@ -16,19 +16,19 @@ export const Home = () => {
       <div className="relative z-10">
         <section className="min-h-screen flex items-center overflow-hidden pt-20">
           <div className="container mx-auto px-6 py-20">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="text-center lg:text-left">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center">
                 <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
                   From Dung to Dhan
                 </h1>
                 <p className="text-2xl md:text-3xl text-white mb-6 font-medium drop-shadow-lg">
                   गौशाला से रोज़ी — किसानों के लिए न्यायपूर्ण भुगतान
                 </p>
-                <p className="text-xl text-white/95 mb-10 max-w-lg mx-auto lg:mx-0 drop-shadow-md">
+                <p className="text-xl text-white/95 mb-10 max-w-3xl mx-auto drop-shadow-md">
                   IoT-verified weighments, same-day payouts, local CBG production
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Button variant="hero" size="lg" className="text-xl px-10 py-8 shadow-2xl hover:shadow-3xl transition-all">
                     <Users className="w-6 h-6 mr-3" />
                     Join as Farmer / फार्मर बनें
@@ -38,47 +38,6 @@ export const Home = () => {
                     Request Pickup / रिक्वेस्ट पिकअप
                   </Button>
                 </div>
-              </div>
-
-              <div className="flex flex-col gap-3">
-                <Card className="p-3 bg-white/95 backdrop-blur-md shadow-lg transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-earth rounded-lg flex items-center justify-center shadow-md">
-                      <TrendingUp className="w-5 h-5 text-background" />
-                    </div>
-                    <div>
-                      <div className="text-xl font-bold text-primary">+30%</div>
-                      <div className="text-xs text-muted-foreground font-semibold">Farmer Income Increase</div>
-                      <div className="text-xs text-muted-foreground font-semibold">किसान आय वृद्धि</div>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-3 bg-white/95 backdrop-blur-md shadow-lg transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center shadow-md">
-                      <div className="text-lg">⚡</div>
-                    </div>
-                    <div>
-                      <div className="text-xl font-bold text-secondary">&gt;90%</div>
-                      <div className="text-xs text-muted-foreground font-semibold">CBG Yield Efficiency</div>
-                      <div className="text-xs text-muted-foreground font-semibold">CBG उत्पादन दक्षता</div>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-3 bg-white/95 backdrop-blur-md shadow-lg transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-md">
-                      <div className="text-lg">🌱</div>
-                    </div>
-                    <div>
-                      <div className="text-xl font-bold text-primary">40%</div>
-                      <div className="text-xs text-muted-foreground font-semibold">Methane Reduction</div>
-                      <div className="text-xs text-muted-foreground font-semibold">मीथेन कमी</div>
-                    </div>
-                  </div>
-                </Card>
               </div>
             </div>
           </div>

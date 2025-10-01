@@ -4,7 +4,7 @@ import { DollarSign, TrendingUp, Leaf, Users, Calculator, Award, ShieldCheck, Tr
 import farmerPayment from "@/assets/farmer-payment.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
 import villageLife from "@/assets/village-life.jpg";
-import benefitsBg from "/attached_assets/stock_images/successful_farmers_h_9618d019.jpg";
+import benefitsBg from "/attached_assets/stock_images/rural_farming_contac_d43e0244.jpg";
 
 export const Benefits = () => {
   const mainBenefits = [
