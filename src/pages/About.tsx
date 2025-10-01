@@ -61,10 +61,10 @@ export const About = () => {
   return (
     <div className="min-h-screen relative">
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
         style={{ backgroundImage: `url(${biogasFacility})` }}
       />
-      <div className="fixed inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 z-0" />
+      <div className="fixed inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 -z-10 pointer-events-none" />
       
       <div className="relative z-10 pt-20">
         <section className="min-h-screen flex items-center justify-center py-20">

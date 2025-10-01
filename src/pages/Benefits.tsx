@@ -94,10 +94,10 @@ export const Benefits = () => {
   return (
     <div className="min-h-screen relative">
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
         style={{ backgroundImage: `url(${benefitsBg})` }}
       />
-      <div className="fixed inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/55" />
+      <div className="fixed inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/55 -z-10 pointer-events-none" />
       
       <div className="relative z-10 pt-20">
         <section className="min-h-screen flex items-center justify-center py-20">

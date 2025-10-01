@@ -3,7 +3,7 @@ import { Leaf, Phone, Mail, MapPin } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground py-16">
+    <footer className="relative z-20 bg-primary text-primary-foreground py-16">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Logo & Description */}

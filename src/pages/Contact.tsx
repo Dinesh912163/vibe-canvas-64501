@@ -109,10 +109,10 @@ export const Contact = () => {
   return (
     <div className="min-h-screen relative">
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
         style={{ backgroundImage: `url(${contactBg})` }}
       />
-      <div className="fixed inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="fixed inset-0 bg-black/40 backdrop-blur-sm -z-10 pointer-events-none" />
       
       <div className="relative z-10 pt-20">
         <section className="py-20 text-background">

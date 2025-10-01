@@ -8,10 +8,10 @@ export const Home = () => {
   return (
     <div className="min-h-screen relative">
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
-      <div className="fixed inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50" />
+      <div className="fixed inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50 -z-10 pointer-events-none" />
       
       <div className="relative z-10">
         <section className="min-h-screen flex items-center overflow-hidden pt-20">
