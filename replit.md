@@ -46,6 +46,16 @@ Saubhagya is a web platform connecting farmers with biogas facilities, promoting
   - Configured workflow for development
   - Set up deployment for production
   - Verified application runs successfully
+  - Adjusted home page statistics cards for better positioning and smaller size
+  - Created comprehensive UserTypes page showcasing 6 user roles:
+    * GauSakhi (Field Executive)
+    * BiogasSangh (Cluster Manager)
+    * ShuddhiDoot (Purification Unit)
+    * UrjaVyapar (Sales & Inventory)
+    * Admin Portal
+    * Transporter
+  - Added navigation link for User Types in header
+  - Integrated stock images for each user type with gradient backgrounds
 
 ## Key Features
 - Farmer registration and onboarding
