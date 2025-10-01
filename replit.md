@@ -38,7 +38,7 @@ Saubhagya is a web platform connecting farmers with biogas facilities, promoting
 ## Deployment Configuration
 - **Target:** autoscale (stateless frontend)
 - **Build Command:** `npm run build`
-- **Run Command:** `npx vite preview --host 0.0.0.0 --port`
+- **Run Command:** `npx vite preview --host 0.0.0.0 --port 5000`
 
 ## Recent Changes
 - **2025-10-01:** Initial project import from GitHub to Replit
