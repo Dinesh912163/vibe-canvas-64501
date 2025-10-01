@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, Users, Headphones, MessageSquare, FileText } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
 import contactBg from "/attached_assets/stock_images/rural_farming_contac_d43e0244.jpg";
 import callImage from "/attached_assets/stock_images/customer_support_cal_f94e6605.jpg";
 import whatsappImage from "/attached_assets/stock_images/whatsapp_messaging_m_a946eeff.jpg";
@@ -50,27 +50,34 @@ export const Contact = () => {
     }
   ];
 
+  const supportImages = [
+    "/attached_assets/stock_images/customer_service_sup_34156313.jpg",
+    "/attached_assets/stock_images/customer_service_sup_9ea1ec25.jpg",
+    "/attached_assets/stock_images/customer_service_sup_3c014bb7.jpg",
+    "/attached_assets/stock_images/customer_service_sup_a26bb77c.jpg"
+  ];
+
   const supportTypes = [
     {
-      icon: Users,
+      image: supportImages[0],
       title: "New Farmer Registration",
       description: "Get started with Saubhagya and begin earning",
       action: "Register Now"
     },
     {
-      icon: Headphones,
+      image: supportImages[1],
       title: "Technical Support",
       description: "Help with app, weighing, or payment issues",
       action: "Get Help"
     },
     {
-      icon: FileText,
+      image: supportImages[2],
       title: "Business Inquiries",
       description: "Partnership and business development",
       action: "Connect"
     },
     {
-      icon: MessageSquare,
+      image: supportImages[3],
       title: "General Questions",
       description: "Any other questions about our services",
       action: "Ask Us"
@@ -279,23 +286,26 @@ export const Contact = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {supportTypes.map((support, index) => (
-                <Card key={index} className="p-8 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm">
-                  <div className={`w-16 h-16 mb-6 rounded-lg ${
-                    index % 4 === 0 ? 'bg-gradient-hero' : 
-                    index % 4 === 1 ? 'bg-gradient-earth' : 
-                    index % 4 === 2 ? 'bg-gradient-warm' : 'bg-primary'
-                  } flex items-center justify-center shadow-md`}>
-                    <support.icon className="w-8 h-8 text-background" />
+                <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm">
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={support.image} 
+                      alt={support.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   </div>
-                  <h4 className="text-xl font-bold text-foreground mb-4">
-                    {support.title}
-                  </h4>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {support.description}
-                  </p>
-                  <Button variant="outline" className="w-full h-12 text-base font-semibold">
-                    {support.action}
-                  </Button>
+                  <div className="p-6">
+                    <h4 className="text-xl font-bold text-foreground mb-4">
+                      {support.title}
+                    </h4>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      {support.description}
+                    </p>
+                    <Button variant="outline" className="w-full h-12 text-base font-semibold">
+                      {support.action}
+                    </Button>
+                  </div>
                 </Card>
               ))}
             </div>

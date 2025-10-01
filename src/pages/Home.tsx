@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Users, Truck, ArrowRight, Phone, UserCog } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "/attached_assets/stock_images/green_farm_field_agr_67b4ace7.jpg";
+import heroImage from "/attached_assets/stock_images/green_biogas_plant_r_49004926.jpg";
+import farmersImg from "/attached_assets/stock_images/indian_farmers_commu_1998f716.jpg";
+import biogasProcessImg from "/attached_assets/stock_images/biogas_renewable_ene_b8d4e662.jpg";
+import platformUsersImg from "/attached_assets/stock_images/diverse_users_platfo_de49c31c.jpg";
+import getStartedImg from "/attached_assets/stock_images/startup_getting_star_b5a6554d.jpg";
 
 export const Home = () => {
   return (
@@ -30,11 +34,9 @@ export const Home = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Button variant="hero" size="lg" className="text-xl px-10 py-8 shadow-2xl hover:shadow-3xl transition-all">
-                    <Users className="w-6 h-6 mr-3" />
                     Join as Farmer / फार्मर बनें
                   </Button>
                   <Button variant="outline" size="lg" className="text-xl px-10 py-8 bg-white text-primary hover:bg-white/90 border-2 border-white shadow-2xl">
-                    <Truck className="w-6 h-6 mr-3" />
                     Request Pickup / रिक्वेस्ट पिकअप
                   </Button>
                 </div>
@@ -97,64 +99,92 @@ export const Home = () => {
             </div>
 
             <div className="grid md:grid-cols-4 gap-8 mb-16">
-              <Card className="p-10 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
-                  <Users className="w-10 h-10 text-background" />
+              <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={farmersImg} 
+                    alt="For Farmers"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">For Farmers</h3>
-                <p className="text-muted-foreground mb-8 text-base leading-relaxed">
-                  Turn your cattle dung into daily income with transparent, fair pricing
-                </p>
-                <Link to="/benefits">
-                  <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold">
-                    Learn More <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
+                <div className="p-8 text-center">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">For Farmers</h3>
+                  <p className="text-muted-foreground mb-8 text-base leading-relaxed">
+                    Turn your cattle dung into daily income with transparent, fair pricing
+                  </p>
+                  <Link to="/benefits">
+                    <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold w-full">
+                      Learn More <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
               </Card>
 
-              <Card className="p-10 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-20 h-20 bg-gradient-earth rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
-                  <div className="text-4xl">🔄</div>
+              <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={biogasProcessImg} 
+                    alt="How It Works"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">How It Works</h3>
-                <p className="text-muted-foreground mb-8 text-base leading-relaxed">
-                  Simple 4-step process from collection to payment
-                </p>
-                <Link to="/how-it-works">
-                  <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold">
-                    See Process <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
+                <div className="p-8 text-center">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">How It Works</h3>
+                  <p className="text-muted-foreground mb-8 text-base leading-relaxed">
+                    Simple 4-step process from collection to payment
+                  </p>
+                  <Link to="/how-it-works">
+                    <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold w-full">
+                      See Process <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
               </Card>
 
-              <Card className="p-10 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-20 h-20 bg-gradient-warm rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
-                  <UserCog className="w-10 h-10 text-background" />
+              <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={platformUsersImg} 
+                    alt="Platform Users"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">Platform Users</h3>
-                <p className="text-muted-foreground mb-8 text-base leading-relaxed">
-                  Specialized tools for field executives, operators, and administrators
-                </p>
-                <Link to="/user-types">
-                  <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold">
-                    Explore Roles <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
+                <div className="p-8 text-center">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Platform Users</h3>
+                  <p className="text-muted-foreground mb-8 text-base leading-relaxed">
+                    Specialized tools for field executives, operators, and administrators
+                  </p>
+                  <Link to="/user-types">
+                    <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold w-full">
+                      Explore Roles <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
               </Card>
 
-              <Card className="p-10 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
-                  <Phone className="w-10 h-10 text-background" />
+              <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={getStartedImg} 
+                    alt="Get Started"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">Get Started</h3>
-                <p className="text-muted-foreground mb-8 text-base leading-relaxed">
-                  Ready to join? Contact us for immediate onboarding
-                </p>
-                <Link to="/contact">
-                  <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold">
-                    Contact Us <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
+                <div className="p-8 text-center">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Get Started</h3>
+                  <p className="text-muted-foreground mb-8 text-base leading-relaxed">
+                    Ready to join? Contact us for immediate onboarding
+                  </p>
+                  <Link to="/contact">
+                    <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold w-full">
+                      Contact Us <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
               </Card>
             </div>
           </div>

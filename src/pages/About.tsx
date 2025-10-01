@@ -5,9 +5,9 @@ import villageLife from "@/assets/village-life.jpg";
 import biogasFacility from "@/assets/biogas-facility.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
 
-import leader1Img from "/attached_assets/stock_images/indian_business_lead_8c53ccc2.jpg";
-import leader2Img from "/attached_assets/stock_images/indian_business_lead_731cd001.jpg";
-import leader3Img from "/attached_assets/stock_images/indian_business_lead_f1960f84.jpg";
+import leader1Img from "/attached_assets/stock_images/professional_indian__9eacd5dd.jpg";
+import leader2Img from "/attached_assets/stock_images/professional_indian__398adf2f.jpg";
+import leader3Img from "/attached_assets/stock_images/professional_indian__7d35ac7d.jpg";
 
 export const About = () => {
   const values = [

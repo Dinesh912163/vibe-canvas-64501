@@ -4,7 +4,7 @@ import { DollarSign, TrendingUp, Leaf } from "lucide-react";
 import farmerPayment from "@/assets/farmer-payment.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
 import villageLife from "@/assets/village-life.jpg";
-import benefitsBg from "/attached_assets/stock_images/rural_farming_contac_d43e0244.jpg";
+import benefitsBg from "/attached_assets/stock_images/happy_indian_farmers_9b1d2c93.jpg";
 
 import transparentPricingImg from "/attached_assets/stock_images/indian_farmer_checki_06c5e61f.jpg";
 import qualityRewardsImg from "/attached_assets/stock_images/indian_farmer_receiv_f7a9629c.jpg";

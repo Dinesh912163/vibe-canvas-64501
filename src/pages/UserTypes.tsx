@@ -15,124 +15,135 @@ import purificationImage from "/attached_assets/stock_images/indian_industrial_w
 import salesImage from "/attached_assets/stock_images/indian_business_prof_67ccf01d.jpg";
 import adminImage from "/attached_assets/stock_images/indian_admin_working_266b0a43.jpg";
 import transportImage from "/attached_assets/stock_images/indian_truck_driver__9dc29f99.jpg";
+import usersBg from "/attached_assets/stock_images/technology_platform__a4f4b0ee.jpg";
 
 export const UserTypes = () => {
   const userTypes = [
     {
-      title: "Field Executive",
+      title: "GauSakhi — Gau-sewa Executive (Field App)",
       subtitle: "मोबाइल फील्ड ऐप",
       icon: Smartphone,
       image: fieldWorkerImage,
       gradient: "bg-gradient-hero",
-      description: "Mobile app for field operations, farmer onboarding, and daily collection management in rural areas",
+      description: "Field operations, farmer onboarding, RFID scanning, weight capture, offline logging",
       features: [
-        "Farmer registration & KYC capture",
-        "RFID / Gau-Aadhaar scanning",
+        "Farmer registration & KYC capture (photo, Aadhaar, bank details)",
+        "RFID / Gau-Aadhaar scanning (camera/Bluetooth)",
         "Voice logging in Indic languages",
-        "IoT scale sync with LoRa connectivity",
-        "Offline caching & sync",
-        "Payment initiation & tracking"
+        "IoT scale sync (LoRa connectivity)",
+        "Task list & pickup schedule",
+        "Offline caching & conflict resolution",
+        "Multi-language support",
+        "Payment initiation / cash-out log"
       ]
     },
     {
-      title: "Cluster Manager",
+      title: "BiogasSangh — Cluster Manager App",
       subtitle: "संचालक पोर्टल",
       icon: MonitorCheck,
       image: biogasOperatorImage,
       gradient: "bg-gradient-earth",
-      description: "Supervise clusters, monitor biogas digesters, and manage operations in real-time",
+      description: "Supervise clusters, view digesters, reconcile inputs, and resolve disputes",
       features: [
-        "Real-time IoT monitoring (CH₄%, volume, temp)",
-        "Alerts for sensor failures & emergencies",
+        "Real-time IoT monitoring (CH₄%, volume, temp, pressure)",
+        "Alerts (low gas%, sensor failures, emergency shutdowns)",
         "Transaction form entry & confirmation",
-        "Payment recording with audit trail",
-        "Dispute resolution tools",
-        "Offline support with sync capability"
+        "Record payment (cash/online) with immutable logging",
+        "Audit trail: farmer proof photo + IoT readings",
+        "Offline support for poor connectivity"
       ]
     },
     {
-      title: "Purification Unit Operator",
+      title: "ShuddhiDoot — Purification Unit App",
       subtitle: "शुद्धीकरण संयंत्र संचालक",
       icon: Droplet,
       image: purificationImage,
       gradient: "bg-gradient-warm",
-      description: "Monitor water scrubbing purification unit and ensure CH₄ percentage targets are met",
+      description: "Monitor water scrubbing purification unit; ensure CH₄% targets and schedule maintenance",
       features: [
-        "Real-time CH₄%, pressure & flow readings",
+        "Real-time CH₄%, pressure, flow, temp readings",
         "1-hour purification cycle logs",
-        "Maintenance scheduler & alerts",
-        "Slurry output volume tracking",
-        "Multi-digester gas flow monitoring",
-        "Purified gas inventory management"
+        "Maintenance scheduler & alerts for filters/valves",
+        "Slurry output volume tracking and byproduct records",
+        "Monitoring gas flow from multiple digesters",
+        "Track inventory of purified gas (ready for sales)"
       ]
     },
     {
-      title: "Sales & Inventory Manager",
+      title: "UrjaVyapar — Corporate Sales & Inventory App",
       subtitle: "कॉर्पोरेट बिक्री प्रबंधक",
       icon: TrendingUp,
       image: salesImage,
       gradient: "bg-primary",
-      description: "Manage CBG inventory, buyer contacts, pricing, and PESO compliance for commercial operations",
+      description: "Manage inventory of CBG, buyer contacts, pricing, invoicing, and PESO compliance",
       features: [
-        "Daily inventory auto-sync from plant",
-        "Buyer e-commerce integration",
-        "Price benchmarking & invoice generation",
-        "Voice invoicing capability",
-        "Automated PESO compliance tagging",
-        "Contract management with digital signing"
+        "Daily inventory auto-sync from purification unit",
+        "Buyer e-commerce (Megha Gas, ONDC, BGCL)",
+        "Price benchmarking & invoice generation (PDF)",
+        "Voice invoicing option",
+        "Automated PESO compliance tagging per batch",
+        "Track payment (UPI/cash/credit)",
+        "Manage buyers & create sales orders",
+        "Store contracts with versioning & Zoho Sign"
       ]
     },
     {
       title: "Admin Portal",
-      subtitle: "प्रशासन पोर्टल",
+      subtitle: "SAUBHAGYA Admin",
       icon: Shield,
       image: adminImage,
       gradient: "bg-gradient-hero",
-      description: "Central oversight for user management, device registry, audit logs, and comprehensive analytics",
+      description: "Central oversight: user management, devices, audit logs, revenue & carbon accounting",
       features: [
-        "User management with RBAC",
-        "Device registry (RFID, IoT, GPS)",
-        "Comprehensive audit logs",
-        "Revenue & carbon credit reports",
-        "KPI dashboards & analytics",
-        "Predictive analytics for expansion"
+        "User management (RBAC): admin, cluster_manager, sales, operator",
+        "Device registry (RFID, IoT scales, CH₄ sensors, GPS)",
+        "Audit logs (transactional, device, and operator logs)",
+        "Reports: revenue, carbon credits, compliance exports",
+        "View KPIs (CBG daily, revenue, cluster-level stats)",
+        "Predictive analytics: expansion needs, revenue projections",
+        "Compliance & audit reports"
       ]
     },
     {
-      title: "Logistics Coordinator",
+      title: "Transporter (Mobile App)",
       subtitle: "परिवहन समन्वयक",
       icon: Truck,
       image: transportImage,
       gradient: "bg-gradient-earth",
       description: "Manage pickup/delivery scheduling with GPS tracking and offline support for rural routes",
       features: [
-        "Auto-assigned pickup schedules",
+        "Pickup/drop-off schedules auto-assigned",
         "GPS-based route tracking",
-        "Delivery confirmation with photos",
-        "Offline mode for rural routes",
-        "Real-time status updates",
-        "Optimized route planning"
+        "Delivery confirmation with photo + timestamp",
+        "Offline mode for rural routes"
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-muted/20 to-background">
-      <div className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Platform Users
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4">
-            प्लेटफॉर्म उपयोगकर्ता
-          </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Empowering every stakeholder in the biogas ecosystem with specialized tools 
-            and real-time monitoring capabilities
-          </p>
-        </div>
+    <div className="min-h-screen relative">
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
+        style={{ backgroundImage: `url(${usersBg})` }}
+      />
+      <div className="fixed inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 -z-10 pointer-events-none" />
+      
+      <div className="relative z-10">
+        <div className="container mx-auto px-4 py-20">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-2xl">
+              Users
+            </h1>
+            <p className="text-xl md:text-2xl text-white/95 mb-4 drop-shadow-lg">
+              उपयोगकर्ता
+            </p>
+            <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+              Empowering every stakeholder in the biogas ecosystem with specialized tools 
+              and real-time monitoring capabilities
+            </p>
+          </div>
 
-        <div className="space-y-24">
+          <div className="space-y-24">
           {userTypes.map((userType, index) => {
             const Icon = userType.icon;
             return (
@@ -189,20 +200,21 @@ export const UserTypes = () => {
               </div>
             );
           })}
-        </div>
+          </div>
 
-        <div className="mt-20 text-center">
-          <Card className="p-10 bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 border-2 border-primary/20">
-            <h3 className="text-3xl font-bold text-foreground mb-4">
-              Ready to Join Our Platform?
-            </h3>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Whether you're a field worker, operator, or administrator, we have the right tools for you
-            </p>
-            <Button size="lg" className="text-lg px-10 py-6">
-              Get Started Today
-            </Button>
-          </Card>
+          <div className="mt-20 text-center">
+            <Card className="p-10 bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 border-2 border-primary/20 bg-white/95 backdrop-blur-sm">
+              <h3 className="text-3xl font-bold text-foreground mb-4">
+                Ready to Join Our Platform?
+              </h3>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Whether you're a field worker, operator, or administrator, we have the right tools for you
+              </p>
+              <Button size="lg" className="text-lg px-10 py-6">
+                Get Started Today
+              </Button>
+            </Card>
+          </div>
         </div>
       </div>
     </div>

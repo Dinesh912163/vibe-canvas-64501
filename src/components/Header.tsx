@@ -1,5 +1,5 @@
-import { Leaf } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import cowLogo from "/attached_assets/stock_images/beautiful_indian_cow_195670f8.jpg";
 
 export const Header = () => {
   const location = useLocation();
@@ -9,12 +9,16 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
-              <Leaf className="w-5 h-5 text-background" />
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-10 h-10 rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow">
+              <img 
+                src={cowLogo} 
+                alt="Saubhagya Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="text-xl font-bold text-foreground">Saubhagya</span>
-          </div>
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
@@ -40,7 +44,7 @@ export const Header = () => {
               to="/user-types" 
               className={`transition-smooth font-medium ${location.pathname === '/user-types' ? 'text-primary border-b-2 border-primary' : 'text-foreground hover:text-primary'}`}
             >
-              User Types
+              Users
             </Link>
             <Link 
               to="/about" 
