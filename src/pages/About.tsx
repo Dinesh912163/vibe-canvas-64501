@@ -33,34 +33,6 @@ export const About = () => {
     }
   ];
 
-  const timeline = [
-    {
-      year: "2020",
-      title: "Foundation",
-      description: "Saubhagya was founded with a vision to transform rural economies through agricultural waste management."
-    },
-    {
-      year: "2021",
-      title: "First Pilot",
-      description: "Launched pilot program in 5 villages across Haryana, establishing our core collection and payment processes."
-    },
-    {
-      year: "2022",
-      title: "Technology Integration",
-      description: "Introduced IoT-enabled weighing systems and GPS tracking for complete transparency."
-    },
-    {
-      year: "2023",
-      title: "Expansion",
-      description: "Extended operations to 50+ villages across 3 states, partnering with major biogas facilities."
-    },
-    {
-      year: "2024",
-      title: "Scale & Impact",
-      description: "Serving 1000+ farmers with ₹2+ crores in total farmer payouts and growing sustainably."
-    }
-  ];
-
   const team = [
     {
       name: "Dr. Rajesh Kumar",
@@ -89,10 +61,10 @@ export const About = () => {
   return (
     <div className="min-h-screen relative">
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{ backgroundImage: `url(${biogasFacility})` }}
       />
-      <div className="fixed inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60" />
+      <div className="fixed inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 z-0" />
       
       <div className="relative z-10 pt-20">
         <section className="min-h-screen flex items-center justify-center py-20">
@@ -200,37 +172,6 @@ export const About = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {value.description}
                   </p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-24 bg-white/95 backdrop-blur-sm">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Our Journey
-              </h2>
-              <p className="text-xl text-muted-foreground">हमारी यात्रा</p>
-            </div>
-
-            <div className="max-w-4xl mx-auto space-y-8">
-              {timeline.map((item, index) => (
-                <Card key={index} className="p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
-                  <div className="flex items-start gap-6">
-                    <div className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center text-2xl font-bold text-background shrink-0 shadow-md">
-                      {item.year}
-                    </div>
-                    <div>
-                      <h4 className="text-2xl font-bold text-foreground mb-3">
-                        {item.title}
-                      </h4>
-                      <p className="text-muted-foreground leading-relaxed text-base">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
                 </Card>
               ))}
             </div>
