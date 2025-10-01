@@ -1,11 +1,14 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Scale, TruckIcon, Factory, Banknote, ShieldCheck, Radar, Wallet } from "lucide-react";
+import { Scale, TruckIcon, Factory, Banknote } from "lucide-react";
 import farmersWorking from "@/assets/farmers-working.jpg";
 import smartTransport from "@/assets/smart-transport.jpg";
 import biogasFacility from "@/assets/biogas-facility.jpg";
 import farmerPayment from "@/assets/farmer-payment.jpg";
 import processBg from "/attached_assets/stock_images/biogas_renewable_ene_4189bfbb.jpg";
+import qualityImg from "/attached_assets/stock_images/quality_assurance_ce_39560141.jpg";
+import trackingImg from "/attached_assets/stock_images/gps_tracking_map_loc_01ea6b3a.jpg";
+import paymentImg from "/attached_assets/stock_images/upi_payment_security_2d5394d1.jpg";
 
 export const HowItWorks = () => {
   const steps = [
@@ -49,17 +52,17 @@ export const HowItWorks = () => {
 
   const benefits = [
     {
-      icon: ShieldCheck,
+      image: qualityImg,
       title: "Guaranteed Quality",
       description: "IoT sensors ensure quality standards are met"
     },
     {
-      icon: Radar,
+      image: trackingImg,
       title: "Real-time Tracking",
       description: "Track your materials from pickup to processing"
     },
     {
-      icon: Wallet,
+      image: paymentImg,
       title: "Secure Payments",
       description: "Bank-grade security for all transactions"
     }
@@ -146,16 +149,23 @@ export const HowItWorks = () => {
 
             <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-16">
               {benefits.map((benefit, index) => (
-                <Card key={index} className="p-10 text-center shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm">
-                  <div className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                    <benefit.icon className="w-10 h-10 text-background" />
+                <Card key={index} className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm">
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={benefit.image} 
+                      alt={benefit.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   </div>
-                  <h4 className="text-xl font-bold text-foreground mb-4">
-                    {benefit.title}
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed text-base">
-                    {benefit.description}
-                  </p>
+                  <div className="p-8 text-center">
+                    <h4 className="text-xl font-bold text-foreground mb-4">
+                      {benefit.title}
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed text-base">
+                      {benefit.description}
+                    </p>
+                  </div>
                 </Card>
               ))}
             </div>

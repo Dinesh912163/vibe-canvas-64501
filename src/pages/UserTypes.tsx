@@ -9,12 +9,12 @@ import {
   Truck,
   CheckCircle2
 } from "lucide-react";
-import fieldWorkerImage from "/attached_assets/stock_images/field_worker_farmer__bacc0519.jpg";
-import biogasOperatorImage from "/attached_assets/stock_images/biogas_plant_operato_b6b8d6d8.jpg";
-import purificationImage from "/attached_assets/stock_images/purification_unit_wa_8c29fed8.jpg";
-import salesImage from "/attached_assets/stock_images/corporate_sales_busi_62a60cae.jpg";
-import adminImage from "/attached_assets/stock_images/admin_dashboard_mana_71236347.jpg";
-import transportImage from "/attached_assets/stock_images/transport_truck_deli_467fdb44.jpg";
+import fieldWorkerImage from "/attached_assets/stock_images/indian_farmer_workin_d575e314.jpg";
+import biogasOperatorImage from "/attached_assets/stock_images/indian_biogas_plant__50076640.jpg";
+import purificationImage from "/attached_assets/stock_images/indian_industrial_wo_eeabce67.jpg";
+import salesImage from "/attached_assets/stock_images/indian_business_prof_67ccf01d.jpg";
+import adminImage from "/attached_assets/stock_images/indian_admin_working_266b0a43.jpg";
+import transportImage from "/attached_assets/stock_images/indian_truck_driver__9dc29f99.jpg";
 
 export const UserTypes = () => {
   const userTypes = [
@@ -136,13 +136,13 @@ export const UserTypes = () => {
           {userTypes.map((userType, index) => {
             const Icon = userType.icon;
             return (
-              <div key={index} className={`${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} lg:flex items-center gap-16`}>
+              <div key={index} className={`${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} lg:flex items-stretch gap-8`}>
                 <div className="lg:w-1/2 mb-10 lg:mb-0">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300 h-full min-h-[600px]">
                     <img 
                       src={userType.image} 
                       alt={`${userType.title} illustration`}
-                      className="w-full h-96 object-cover"
+                      className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute bottom-8 left-8">
@@ -153,33 +153,35 @@ export const UserTypes = () => {
                   </div>
                 </div>
 
-                <div className="lg:w-1/2">
-                  <Card className="p-10 shadow-2xl hover:shadow-3xl transition-all duration-300">
-                    <h3 className="text-3xl font-bold text-foreground mb-3">
-                      {userType.title}
-                    </h3>
-                    <p className="text-xl text-muted-foreground mb-4 font-medium">
-                      {userType.subtitle}
-                    </p>
-                    <p className="text-lg text-primary font-semibold mb-6">
-                      {userType.description}
-                    </p>
-                    
-                    <h4 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                      <CheckCircle2 className="w-6 h-6 text-primary" />
-                      Key Features
-                    </h4>
-                    
-                    <ul className="space-y-3 mb-8">
-                      {userType.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-muted-foreground leading-relaxed">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <div className="lg:w-1/2 flex">
+                  <Card className="p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 flex flex-col justify-between w-full">
+                    <div>
+                      <h3 className="text-3xl font-bold text-foreground mb-3">
+                        {userType.title}
+                      </h3>
+                      <p className="text-xl text-muted-foreground mb-4 font-medium">
+                        {userType.subtitle}
+                      </p>
+                      <p className="text-lg text-primary font-semibold mb-6">
+                        {userType.description}
+                      </p>
+                      
+                      <h4 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                        <CheckCircle2 className="w-6 h-6 text-primary" />
+                        Key Features
+                      </h4>
+                      
+                      <ul className="space-y-3 mb-8">
+                        {userType.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                            <span className="text-muted-foreground leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                    <Button size="lg" className="w-full md:w-auto">
+                    <Button size="lg" className="w-full md:w-auto mt-auto">
                       Learn More
                     </Button>
                   </Card>

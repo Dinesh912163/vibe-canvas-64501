@@ -16,6 +16,7 @@ import carbonCreditsImg from "/attached_assets/stock_images/green_plant_growing_
 import farmer1Img from "/attached_assets/stock_images/indian_male_farmer_p_522e5fbe.jpg";
 import farmer2Img from "/attached_assets/stock_images/indian_male_farmer_p_f0e5af7d.jpg";
 import farmer3Img from "/attached_assets/stock_images/indian_male_farmer_p_e959c913.jpg";
+import rupeeNotesImg from "/attached_assets/stock_images/indian_rupee_currenc_fb38aa0a.jpg";
 
 export const Benefits = () => {
   const mainBenefits = [
@@ -241,8 +242,16 @@ export const Benefits = () => {
                     <p className="text-muted-foreground italic mb-6 leading-relaxed">
                       "{testimonial.quote}"
                     </p>
-                    <div className="text-center pt-4 border-t border-muted/30">
-                      <p className="text-primary font-bold text-lg">
+                    <div className="pt-4 border-t border-muted/30">
+                      <div className="relative h-24 rounded-lg overflow-hidden mb-3">
+                        <img 
+                          src={rupeeNotesImg} 
+                          alt="Indian Rupee Notes"
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"></div>
+                      </div>
+                      <p className="text-primary font-bold text-lg text-center">
                         {testimonial.income}
                       </p>
                     </div>
