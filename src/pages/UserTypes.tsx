@@ -7,8 +7,7 @@ import {
   TrendingUp, 
   Shield, 
   Truck,
-  CheckCircle2,
-  ArrowRight
+  CheckCircle2
 } from "lucide-react";
 import fieldWorkerImage from "/attached_assets/stock_images/field_worker_farmer__bacc0519.jpg";
 import biogasOperatorImage from "/attached_assets/stock_images/biogas_plant_operato_b6b8d6d8.jpg";
@@ -20,12 +19,12 @@ import transportImage from "/attached_assets/stock_images/transport_truck_deli_4
 export const UserTypes = () => {
   const userTypes = [
     {
-      title: "GauSakhi — Field Executive",
-      subtitle: "गौ-सेवा कार्यकारी (मोबाइल ऐप)",
+      title: "Field Executive",
+      subtitle: "मोबाइल फील्ड ऐप",
       icon: Smartphone,
       image: fieldWorkerImage,
-      bgGradient: "from-green-600 to-green-800",
-      description: "Field operations app for farmer onboarding and daily collection management",
+      gradient: "bg-gradient-hero",
+      description: "Mobile app for field operations, farmer onboarding, and daily collection management in rural areas",
       features: [
         "Farmer registration & KYC capture",
         "RFID / Gau-Aadhaar scanning",
@@ -36,12 +35,12 @@ export const UserTypes = () => {
       ]
     },
     {
-      title: "BiogasSangh — Cluster Manager",
-      subtitle: "क्लस्टर प्रबंधक (संचालक पोर्टल)",
+      title: "Cluster Manager",
+      subtitle: "संचालक पोर्टल",
       icon: MonitorCheck,
       image: biogasOperatorImage,
-      bgGradient: "from-blue-600 to-blue-800",
-      description: "Supervise clusters, monitor digesters, and manage operations in real-time",
+      gradient: "bg-gradient-earth",
+      description: "Supervise clusters, monitor biogas digesters, and manage operations in real-time",
       features: [
         "Real-time IoT monitoring (CH₄%, volume, temp)",
         "Alerts for sensor failures & emergencies",
@@ -52,12 +51,12 @@ export const UserTypes = () => {
       ]
     },
     {
-      title: "ShuddhiDoot — Purification Unit",
-      subtitle: "शुद्धीकरण इकाई (संयंत्र संचालक)",
+      title: "Purification Unit Operator",
+      subtitle: "शुद्धीकरण संयंत्र संचालक",
       icon: Droplet,
       image: purificationImage,
-      bgGradient: "from-cyan-600 to-cyan-800",
-      description: "Monitor water scrubbing purification unit and ensure CH₄% targets",
+      gradient: "bg-gradient-warm",
+      description: "Monitor water scrubbing purification unit and ensure CH₄ percentage targets are met",
       features: [
         "Real-time CH₄%, pressure & flow readings",
         "1-hour purification cycle logs",
@@ -68,12 +67,12 @@ export const UserTypes = () => {
       ]
     },
     {
-      title: "UrjaVyapar — Sales & Inventory",
-      subtitle: "कॉर्पोरेट बिक्री (इन्वेंटरी ऐप)",
+      title: "Sales & Inventory Manager",
+      subtitle: "कॉर्पोरेट बिक्री प्रबंधक",
       icon: TrendingUp,
       image: salesImage,
-      bgGradient: "from-orange-600 to-orange-800",
-      description: "Manage CBG inventory, buyer contacts, pricing, and PESO compliance",
+      gradient: "bg-primary",
+      description: "Manage CBG inventory, buyer contacts, pricing, and PESO compliance for commercial operations",
       features: [
         "Daily inventory auto-sync from plant",
         "Buyer e-commerce integration",
@@ -84,12 +83,12 @@ export const UserTypes = () => {
       ]
     },
     {
-      title: "SAUBHAGYA Admin Portal",
-      subtitle: "प्रशासन पोर्टल (केंद्रीय निगरानी)",
+      title: "Admin Portal",
+      subtitle: "प्रशासन पोर्टल",
       icon: Shield,
       image: adminImage,
-      bgGradient: "from-purple-600 to-purple-800",
-      description: "Central oversight for user management, devices, audit logs, and analytics",
+      gradient: "bg-gradient-hero",
+      description: "Central oversight for user management, device registry, audit logs, and comprehensive analytics",
       features: [
         "User management with RBAC",
         "Device registry (RFID, IoT, GPS)",
@@ -100,12 +99,12 @@ export const UserTypes = () => {
       ]
     },
     {
-      title: "Transporter — Logistics App",
-      subtitle: "परिवहन (मोबाइल ऐप)",
+      title: "Logistics Coordinator",
+      subtitle: "परिवहन समन्वयक",
       icon: Truck,
       image: transportImage,
-      bgGradient: "from-amber-600 to-amber-800",
-      description: "Pickup/delivery scheduling with GPS tracking and offline support",
+      gradient: "bg-gradient-earth",
+      description: "Manage pickup/delivery scheduling with GPS tracking and offline support for rural routes",
       features: [
         "Auto-assigned pickup schedules",
         "GPS-based route tracking",
@@ -122,10 +121,10 @@ export const UserTypes = () => {
       <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Our Platform Users
+            Platform Users
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-4">
-            हमारे मंच उपयोगकर्ता
+            प्लेटफॉर्म उपयोगकर्ता
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Empowering every stakeholder in the biogas ecosystem with specialized tools 
@@ -133,46 +132,45 @@ export const UserTypes = () => {
           </p>
         </div>
 
-        <div className="grid gap-12">
+        <div className="space-y-24">
           {userTypes.map((userType, index) => {
             const Icon = userType.icon;
             return (
-              <Card 
-                key={index} 
-                className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]"
-              >
-                <div className="grid md:grid-cols-2 gap-0">
-                  <div 
-                    className={`relative h-80 md:h-auto bg-gradient-to-br ${userType.bgGradient} overflow-hidden`}
-                  >
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center opacity-40"
-                      style={{ backgroundImage: `url(${userType.image})` }}
+              <div key={index} className={`${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} lg:flex items-center gap-16`}>
+                <div className="lg:w-1/2 mb-10 lg:mb-0">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <img 
+                      src={userType.image} 
+                      alt={`${userType.title} illustration`}
+                      className="w-full h-96 object-cover"
                     />
-                    <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 text-white">
-                      <div className="w-24 h-24 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 shadow-2xl">
-                        <Icon className="w-12 h-12" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute bottom-8 left-8">
+                      <div className={`w-16 h-16 ${userType.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
+                        <Icon className="w-8 h-8 text-background" />
                       </div>
-                      <h2 className="text-3xl font-bold mb-2 text-center drop-shadow-lg">
-                        {userType.title}
-                      </h2>
-                      <p className="text-lg font-medium text-center drop-shadow-md">
-                        {userType.subtitle}
-                      </p>
                     </div>
                   </div>
+                </div>
 
-                  <div className="p-8 bg-background">
-                    <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <div className="lg:w-1/2">
+                  <Card className="p-10 shadow-2xl hover:shadow-3xl transition-all duration-300">
+                    <h3 className="text-3xl font-bold text-foreground mb-3">
+                      {userType.title}
+                    </h3>
+                    <p className="text-xl text-muted-foreground mb-4 font-medium">
+                      {userType.subtitle}
+                    </p>
+                    <p className="text-lg text-primary font-semibold mb-6">
                       {userType.description}
                     </p>
                     
-                    <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                    <h4 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
                       <CheckCircle2 className="w-6 h-6 text-primary" />
                       Key Features
-                    </h3>
+                    </h4>
                     
-                    <ul className="space-y-4 mb-8">
+                    <ul className="space-y-3 mb-8">
                       {userType.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
@@ -181,26 +179,23 @@ export const UserTypes = () => {
                       ))}
                     </ul>
 
-                    <Button 
-                      size="lg" 
-                      className="w-full md:w-auto"
-                    >
-                      Learn More <ArrowRight className="w-5 h-5 ml-2" />
+                    <Button size="lg" className="w-full md:w-auto">
+                      Learn More
                     </Button>
-                  </div>
+                  </Card>
                 </div>
-              </Card>
+              </div>
             );
           })}
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-20 text-center">
           <Card className="p-10 bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 border-2 border-primary/20">
             <h3 className="text-3xl font-bold text-foreground mb-4">
               Ready to Join Our Platform?
             </h3>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Whether you're a farmer, operator, or administrator, we have the right tools for you
+              Whether you're a field worker, operator, or administrator, we have the right tools for you
             </p>
             <Button size="lg" className="text-lg px-10 py-6">
               Get Started Today

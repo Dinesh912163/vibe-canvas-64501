@@ -1,9 +1,13 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Target, Award, Globe, Users } from "lucide-react";
+import { Heart, Target, Award, Globe } from "lucide-react";
 import villageLife from "@/assets/village-life.jpg";
 import biogasFacility from "@/assets/biogas-facility.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
+
+import leader1Img from "/attached_assets/stock_images/indian_business_lead_8c53ccc2.jpg";
+import leader2Img from "/attached_assets/stock_images/indian_business_lead_731cd001.jpg";
+import leader3Img from "/attached_assets/stock_images/indian_business_lead_f1960f84.jpg";
 
 export const About = () => {
   const values = [
@@ -37,17 +41,20 @@ export const About = () => {
     {
       name: "Dr. Rajesh Kumar",
       role: "Founder & CEO",
-      bio: "Agricultural scientist with 15+ years experience in rural development and sustainable farming practices."
+      bio: "Agricultural scientist with 15+ years experience in rural development and sustainable farming practices.",
+      image: leader1Img
     },
     {
       name: "Priya Sharma",
       role: "Head of Operations",
-      bio: "Supply chain expert focused on optimizing collection and transportation processes for maximum efficiency."
+      bio: "Supply chain expert focused on optimizing collection and transportation processes for maximum efficiency.",
+      image: leader2Img
     },
     {
       name: "Amit Singh",
       role: "Technology Lead",
-      bio: "IoT and blockchain specialist ensuring transparent and secure operations across all touchpoints."
+      bio: "IoT and blockchain specialist ensuring transparent and secure operations across all touchpoints.",
+      image: leader3Img
     }
   ];
 
@@ -216,19 +223,26 @@ export const About = () => {
 
             <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
               {team.map((member, index) => (
-                <Card key={index} className="p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  <div className="w-24 h-24 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                    <Users className="w-12 h-12 text-background" />
+                <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   </div>
-                  <h4 className="text-xl font-bold text-foreground mb-2">
-                    {member.name}
-                  </h4>
-                  <p className="text-primary font-semibold mb-4">
-                    {member.role}
-                  </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {member.bio}
-                  </p>
+                  <div className="p-8 text-center">
+                    <h4 className="text-xl font-bold text-foreground mb-2">
+                      {member.name}
+                    </h4>
+                    <p className="text-primary font-semibold mb-4">
+                      {member.role}
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {member.bio}
+                    </p>
+                  </div>
                 </Card>
               ))}
             </div>

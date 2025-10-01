@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle, Leaf } from "lucide-react";
+import { Leaf } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export const Header = () => {
@@ -57,17 +56,6 @@ export const Header = () => {
             </Link>
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" className="hidden sm:flex">
-              <Phone className="w-4 h-4" />
-              Call
-            </Button>
-            <Button variant="hero" size="sm">
-              <MessageCircle className="w-4 h-4" />
-              WhatsApp
-            </Button>
-          </div>
         </div>
       </div>
     </header>

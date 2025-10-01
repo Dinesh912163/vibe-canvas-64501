@@ -43,6 +43,47 @@ export const Home = () => {
           </div>
         </section>
 
+        <section className="py-24 bg-gradient-to-b from-muted/50 to-white/95 backdrop-blur-sm">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                  About Saubhagya Project
+                </h2>
+                <p className="text-xl text-muted-foreground mb-4 font-medium">
+                  सौभाग्य परियोजना के बारे में
+                </p>
+              </div>
+
+              <div className="space-y-8 text-lg text-muted-foreground leading-relaxed">
+                <p className="text-xl text-foreground font-medium">
+                  Saubhagya is India's innovative agricultural waste-to-energy platform that bridges the gap between rural farming communities and clean energy production. Our mission is to transform the way farmers monetize their agricultural waste while contributing to India's renewable energy goals.
+                </p>
+                
+                <p>
+                  In rural India, farmers face significant challenges in disposing of cattle dung from their gaushalas (cattle shelters). Traditional methods are labor-intensive and often result in environmental concerns. Meanwhile, India's growing energy needs demand innovative clean energy solutions. Saubhagya addresses both these challenges simultaneously.
+                </p>
+
+                <p>
+                  Through our platform, farmers can sell cattle dung to biogas production facilities, earning <strong className="text-foreground">₹3-5 per kilogram</strong> with same-day payment processing. Our IoT-enabled weighing stations ensure complete transparency, while GPS-tracked transportation provides real-time updates throughout the collection process.
+                </p>
+
+                <p>
+                  The collected agricultural waste is processed in state-of-the-art biogas plants using anaerobic digestion technology, producing <strong className="text-foreground">Compressed Biogas (CBG)</strong> - a clean, renewable fuel equivalent to natural gas. This creates a circular economy where waste becomes wealth, benefiting farmers while reducing greenhouse gas emissions by up to 40%.
+                </p>
+
+                <p>
+                  Our comprehensive digital platform connects all stakeholders - from field executives managing farmer onboarding to cluster managers monitoring biogas production, from purification unit operators ensuring quality standards to logistics coordinators managing efficient collection routes. Every participant benefits from transparent operations and fair compensation.
+                </p>
+
+                <p className="text-xl text-foreground font-medium border-l-4 border-primary pl-6 bg-primary/5 py-4">
+                  With Saubhagya, farmers gain an additional revenue stream of ₹12,000-18,000 per month, communities access cleaner energy, and India moves closer to its renewable energy targets. Together, we're building a sustainable future where prosperity and environmental responsibility go hand in hand.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-24 bg-white/95 backdrop-blur-sm">
           <div className="container mx-auto px-6">
             <div className="text-center mb-20">
