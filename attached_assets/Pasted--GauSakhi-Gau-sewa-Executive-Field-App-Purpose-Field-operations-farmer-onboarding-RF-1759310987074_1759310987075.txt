@@ -1,0 +1,173 @@
+ GauSakhi — Gau-sewa Executive (Field App) 
+
+Purpose: 
+
+ Field operations (farmer onboarding, RFID scanning, weight capture, offline logging). 
+
+ 
+
+Features: 
+
+- Farmer registration & KYC capture (photo, Aadhaar pointer, bank details) 
+
+- RFID / Gau-Aadhaar scanning (camera/Bluetooth) 
+
+- Voice logging (Indic languages) — "Aaj 800 kg gobar liya" 
+
+- IoT scale sync (LoRa → phone/field gateway) 
+
+- Task list & pickup schedule 
+
+- Offline caching & conflict resolution UI 
+
+-Multi language support  
+
+- Payment initiation / cash-out log for field staff 
+
+ 
+
+Acceptance Criteria 
+
+- Field app can register a farmer and record a contribution offline and sync within 5 minutes on network restore. 
+
+- Voice logs transcribed ≥90% accuracy in Hindi in pilot conditions. 
+
+- Contribution entry triggers payout workflow (status recorded). 
+
+ 
+
+7.2 BiogasSangh — Cluster Manager App (Operator Portal) 
+
+Purpose: Supervise clusters, view digesters, reconcile inputs, dispute resolution. 
+
+ 
+
+Features 
+
+Real-time IoT monitoring (CH₄ %, volume, temp, pressure) 
+
+Alerts (low gas %, sensor failures, emergency shutdowns) 
+
+Enter transaction form (select farmer from system, confirm IoT-captured weight) 
+
+Record payment (cash/online) — immutable logging 
+
+Audit trail: farmer proof photo + IoT readings stored together 
+
+Offline support for poor connectivity → local queue → sync later 
+
+   
+
+Acceptance Criteria: 
+
+- Cluster manager can reconcile daily inputs and resolve >90% of disputes via system tools. 
+
+- Scheduler optimizes assignments and reduces idle travel by target % in pilot. 
+
+ 
+
+7.3 ShuddhiDoot — Purification Unit App (Plant Operator) 
+
+Purpose: Monitor water scrubbing purification unit; ensure CH₄% targets and schedule maintenance. 
+
+Features: 
+
+- Real-time CH₄ %, pressure, flow, temp readings 
+
+- 1-hour purification cycle logs 
+
+- Maintenance scheduler & alerts for filters/valves 
+
+- Slurry output volume tracking and byproduct records 
+
+- Monitoring gas flow from multiple digester 
+
+- Track inventory of purified gas(ready for sales) 
+
+ 
+
+Acceptance Criteria 
+
+- Purification cycles are recorded with CH₄% pre/post; alert triggers if post < target_pct. 
+
+ 
+
+7.4 UrjaVyapar — Corporate Sales & Inventory App 
+
+Purpose: Manage inventory of CBG, buyer contacts, pricing, invoicing, and PESO compliance. 
+
+ 
+
+Features 
+
+- Daily inventory auto-sync from purification unit + View CNG inventory 
+
+- Buyer e-commerce (Megha Gas, ONDC, BGCL) + contract management 
+
+- Price benchmarking & invoice generation (PDF) 
+
+- Voice invoicing option: "Megha Gas ko 500 kg becha, ₹37,500" 
+
+- Automated PESO compliance tagging per batch 
+
+- Track payment (UPI/cash/credit) 
+
+- Manage buyers 
+
+- Create sales order (buyer, kg , price) 
+
+- Store contracts/agreements in Firestore with versioning. Connect zoho sign 
+
+ 
+
+Acceptance Criteria: 
+
+- Invoices generated correctly and tied to CBG batch IDs; buyer receives signed PDF and payment instructions. 
+
+ 
+
+ 
+
+7.5 Admin Portal (SAUBHAGYA Admin) 
+
+Purpose:  
+
+Central oversight: user management, devices, audit logs, revenue & carbon accounting. – carbon credit revenue model 
+
+Features: 
+
+- User management (RBAC): admin, cluster_manager, sales, operator 
+
+- Device registry (RFID, IoT scales, CH₄ sensors, GPS) 
+
+- Audit logs (transactional, device, and operator logs) 
+
+- Reports: revenue, carbon credits, compliance exports 
+
+- View KPIs (CBG daily, revenue, cluster-level stats) 
+
+- Predictive analytics: expansion needs, revenue projections 
+
+- Compliance & audit reports 
+
+ 
+
+Acceptance Criteria: 
+
+- Admins can export monthly revenue & compliance reports; device provisioning workflow works end-to-end. 
+
+ 
+
+Transporter (Mobile App – React Native) 
+
+Features 
+
+Pickup/drop-off schedules auto-assigned 
+
+GPS-based route tracking 
+
+Delivery confirmation with photo + timestamp 
+
+Offline mode for rural routes 
+
+ 

@@ -40,42 +40,42 @@ export const Home = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-8">
-                <Card className="p-8 bg-white/95 backdrop-blur-md shadow-2xl transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-6">
-                    <div className="w-20 h-20 bg-gradient-earth rounded-xl flex items-center justify-center shadow-lg">
-                      <TrendingUp className="w-10 h-10 text-background" />
+              <div className="flex flex-col gap-4">
+                <Card className="p-5 bg-white/95 backdrop-blur-md shadow-xl transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 bg-gradient-earth rounded-lg flex items-center justify-center shadow-md">
+                      <TrendingUp className="w-7 h-7 text-background" />
                     </div>
                     <div>
-                      <div className="text-5xl font-bold text-primary mb-2">+30%</div>
-                      <div className="text-base text-muted-foreground font-semibold">Farmer Income Increase</div>
-                      <div className="text-base text-muted-foreground font-semibold">किसान आय वृद्धि</div>
+                      <div className="text-3xl font-bold text-primary mb-1">+30%</div>
+                      <div className="text-sm text-muted-foreground font-semibold">Farmer Income Increase</div>
+                      <div className="text-sm text-muted-foreground font-semibold">किसान आय वृद्धि</div>
                     </div>
                   </div>
                 </Card>
 
-                <Card className="p-8 bg-white/95 backdrop-blur-md shadow-2xl transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-6">
-                    <div className="w-20 h-20 bg-gradient-warm rounded-xl flex items-center justify-center shadow-lg">
-                      <div className="text-3xl">⚡</div>
+                <Card className="p-5 bg-white/95 backdrop-blur-md shadow-xl transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 bg-gradient-warm rounded-lg flex items-center justify-center shadow-md">
+                      <div className="text-2xl">⚡</div>
                     </div>
                     <div>
-                      <div className="text-5xl font-bold text-secondary mb-2">&gt;90%</div>
-                      <div className="text-base text-muted-foreground font-semibold">CBG Yield Efficiency</div>
-                      <div className="text-base text-muted-foreground font-semibold">CBG उत्पादन दक्षता</div>
+                      <div className="text-3xl font-bold text-secondary mb-1">&gt;90%</div>
+                      <div className="text-sm text-muted-foreground font-semibold">CBG Yield Efficiency</div>
+                      <div className="text-sm text-muted-foreground font-semibold">CBG उत्पादन दक्षता</div>
                     </div>
                   </div>
                 </Card>
 
-                <Card className="p-8 bg-white/95 backdrop-blur-md shadow-2xl transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-6">
-                    <div className="w-20 h-20 bg-primary rounded-xl flex items-center justify-center shadow-lg">
-                      <div className="text-3xl">🌱</div>
+                <Card className="p-5 bg-white/95 backdrop-blur-md shadow-xl transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center shadow-md">
+                      <div className="text-2xl">🌱</div>
                     </div>
                     <div>
-                      <div className="text-5xl font-bold text-primary mb-2">40%</div>
-                      <div className="text-base text-muted-foreground font-semibold">Methane Reduction</div>
-                      <div className="text-base text-muted-foreground font-semibold">मीथेन कमी</div>
+                      <div className="text-3xl font-bold text-primary mb-1">40%</div>
+                      <div className="text-sm text-muted-foreground font-semibold">Methane Reduction</div>
+                      <div className="text-sm text-muted-foreground font-semibold">मीथेन कमी</div>
                     </div>
                   </div>
                 </Card>

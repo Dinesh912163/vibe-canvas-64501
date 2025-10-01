@@ -38,6 +38,12 @@ export const Header = () => {
               Benefits
             </Link>
             <Link 
+              to="/user-types" 
+              className={`transition-smooth font-medium ${location.pathname === '/user-types' ? 'text-primary border-b-2 border-primary' : 'text-foreground hover:text-primary'}`}
+            >
+              User Types
+            </Link>
+            <Link 
               to="/about" 
               className={`transition-smooth font-medium ${location.pathname === '/about' ? 'text-primary border-b-2 border-primary' : 'text-foreground hover:text-primary'}`}
             >
