@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Users, Truck, TrendingUp, ArrowRight, Phone } from "lucide-react";
+import { Users, Truck, TrendingUp, ArrowRight, Phone, UserCog } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "/attached_assets/stock_images/green_farm_field_agr_67b4ace7.jpg";
+import heroImage from "/attached_assets/stock_images/green_biogas_farm_re_c5a0b3b2.jpg";
 
 export const Home = () => {
   return (
@@ -40,42 +40,42 @@ export const Home = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-4">
-                <Card className="p-5 bg-white/95 backdrop-blur-md shadow-xl transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-earth rounded-lg flex items-center justify-center shadow-md">
-                      <TrendingUp className="w-7 h-7 text-background" />
+              <div className="flex flex-col gap-3">
+                <Card className="p-3 bg-white/95 backdrop-blur-md shadow-lg transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-gradient-earth rounded-lg flex items-center justify-center shadow-md">
+                      <TrendingUp className="w-5 h-5 text-background" />
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-primary mb-1">+30%</div>
-                      <div className="text-sm text-muted-foreground font-semibold">Farmer Income Increase</div>
-                      <div className="text-sm text-muted-foreground font-semibold">किसान आय वृद्धि</div>
+                      <div className="text-xl font-bold text-primary">+30%</div>
+                      <div className="text-xs text-muted-foreground font-semibold">Farmer Income Increase</div>
+                      <div className="text-xs text-muted-foreground font-semibold">किसान आय वृद्धि</div>
                     </div>
                   </div>
                 </Card>
 
-                <Card className="p-5 bg-white/95 backdrop-blur-md shadow-xl transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-warm rounded-lg flex items-center justify-center shadow-md">
-                      <div className="text-2xl">⚡</div>
+                <Card className="p-3 bg-white/95 backdrop-blur-md shadow-lg transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center shadow-md">
+                      <div className="text-lg">⚡</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-secondary mb-1">&gt;90%</div>
-                      <div className="text-sm text-muted-foreground font-semibold">CBG Yield Efficiency</div>
-                      <div className="text-sm text-muted-foreground font-semibold">CBG उत्पादन दक्षता</div>
+                      <div className="text-xl font-bold text-secondary">&gt;90%</div>
+                      <div className="text-xs text-muted-foreground font-semibold">CBG Yield Efficiency</div>
+                      <div className="text-xs text-muted-foreground font-semibold">CBG उत्पादन दक्षता</div>
                     </div>
                   </div>
                 </Card>
 
-                <Card className="p-5 bg-white/95 backdrop-blur-md shadow-xl transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center shadow-md">
-                      <div className="text-2xl">🌱</div>
+                <Card className="p-3 bg-white/95 backdrop-blur-md shadow-lg transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-md">
+                      <div className="text-lg">🌱</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-primary mb-1">40%</div>
-                      <div className="text-sm text-muted-foreground font-semibold">Methane Reduction</div>
-                      <div className="text-sm text-muted-foreground font-semibold">मीथेन कमी</div>
+                      <div className="text-xl font-bold text-primary">40%</div>
+                      <div className="text-xs text-muted-foreground font-semibold">Methane Reduction</div>
+                      <div className="text-xs text-muted-foreground font-semibold">मीथेन कमी</div>
                     </div>
                   </div>
                 </Card>
@@ -96,7 +96,7 @@ export const Home = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-10 mb-16">
+            <div className="grid md:grid-cols-4 gap-8 mb-16">
               <Card className="p-10 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                 <div className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
                   <Users className="w-10 h-10 text-background" />
@@ -129,6 +129,21 @@ export const Home = () => {
 
               <Card className="p-10 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                 <div className="w-20 h-20 bg-gradient-warm rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
+                  <UserCog className="w-10 h-10 text-background" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">Platform Users</h3>
+                <p className="text-muted-foreground mb-8 text-base leading-relaxed">
+                  Specialized tools for field executives, operators, and administrators
+                </p>
+                <Link to="/user-types">
+                  <Button variant="outline" className="group-hover:bg-primary group-hover:text-background h-12 px-6 text-base font-semibold">
+                    Explore Roles <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
+              </Card>
+
+              <Card className="p-10 text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
                   <Phone className="w-10 h-10 text-background" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">Get Started</h3>
