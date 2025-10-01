@@ -44,12 +44,6 @@ export const Header = () => {
               About
             </Link>
             <Link 
-              to="/success-stories" 
-              className={`transition-smooth font-medium ${location.pathname === '/success-stories' ? 'text-primary border-b-2 border-primary' : 'text-foreground hover:text-primary'}`}
-            >
-              Stories
-            </Link>
-            <Link 
               to="/contact" 
               className={`transition-smooth font-medium ${location.pathname === '/contact' ? 'text-primary border-b-2 border-primary' : 'text-foreground hover:text-primary'}`}
             >

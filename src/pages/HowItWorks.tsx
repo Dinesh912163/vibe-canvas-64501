@@ -1,10 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Scale, Truck, Factory, DollarSign, CheckCircle, Clock, Shield } from "lucide-react";
+import { Scale, TruckIcon, Factory, Banknote, ShieldCheck, Radar, Wallet } from "lucide-react";
 import farmersWorking from "@/assets/farmers-working.jpg";
 import smartTransport from "@/assets/smart-transport.jpg";
 import biogasFacility from "@/assets/biogas-facility.jpg";
 import farmerPayment from "@/assets/farmer-payment.jpg";
+import heroFarming from "@/assets/hero-farming.jpg";
+import villageLife from "@/assets/village-life.jpg";
 
 export const HowItWorks = () => {
   const steps = [
@@ -18,7 +20,7 @@ export const HowItWorks = () => {
       gradient: "bg-gradient-hero"
     },
     {
-      icon: Truck,
+      icon: TruckIcon,
       title: "Safe Transport",
       subtitle: "सुरक्षित परिवहन",
       description: "GPS-tracked pickup from your gaushala",
@@ -36,7 +38,7 @@ export const HowItWorks = () => {
       gradient: "bg-gradient-warm"
     },
     {
-      icon: DollarSign,
+      icon: Banknote,
       title: "Fair Payment",
       subtitle: "न्यायपूर्ण भुगतान",
       description: "Same-day payout to your account",
@@ -48,17 +50,17 @@ export const HowItWorks = () => {
 
   const benefits = [
     {
-      icon: CheckCircle,
+      icon: ShieldCheck,
       title: "Guaranteed Quality",
       description: "IoT sensors ensure quality standards are met"
     },
     {
-      icon: Clock,
+      icon: Radar,
       title: "Real-time Tracking",
       description: "Track your materials from pickup to processing"
     },
     {
-      icon: Shield,
+      icon: Wallet,
       title: "Secure Payments",
       description: "Bank-grade security for all transactions"
     }
@@ -66,16 +68,27 @@ export const HowItWorks = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-hero text-background">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+      {/* Hero Section - Full Screen Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={villageLife} 
+            alt="How Saubhagya works background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-secondary/75 to-primary/85"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 text-center relative z-10 py-20">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-background drop-shadow-lg">
             How Saubhagya Works
           </h1>
-          <p className="text-xl md:text-2xl mb-4 font-medium">
+          <p className="text-2xl md:text-3xl mb-6 font-medium text-background/95 drop-shadow">
             यह कैसे काम करता है
           </p>
-          <p className="text-lg max-w-3xl mx-auto opacity-90">
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-background/90 leading-relaxed drop-shadow">
             Our transparent 4-step process ensures fair compensation for farmers while 
             contributing to clean energy production and environmental sustainability.
           </p>
@@ -142,31 +155,38 @@ export const HowItWorks = () => {
         </div>
       </section>
 
-      {/* Additional Benefits */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      {/* Additional Benefits - Why Choose Our Process? */}
+      <section className="relative py-20 overflow-hidden">
+        {/* Background with Gradient */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-muted/50 via-background to-muted/30"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Why Choose Our Process?
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl md:text-2xl text-muted-foreground">
               हमारी प्रक्रिया क्यों चुनें?
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-warm transition-smooth group">
-                <div className={`w-12 h-12 mx-auto mb-4 rounded-lg ${
+              <Card 
+                key={index} 
+                className="p-8 text-center hover:shadow-2xl transition-all duration-300 group bg-card border-2 hover:border-primary/50 hover:-translate-y-2"
+                data-testid={`card-process-${index}`}
+              >
+                <div className={`w-16 h-16 mx-auto mb-6 rounded-xl ${
                   index === 0 ? 'bg-gradient-hero' : 
                   index === 1 ? 'bg-gradient-earth' : 'bg-gradient-warm'
-                } flex items-center justify-center group-hover:scale-110 transition-smooth`}>
-                  <benefit.icon className="w-6 h-6 text-background" />
+                } flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
+                  <benefit.icon className="w-8 h-8 text-background" strokeWidth={2.5} />
                 </div>
-                <h4 className="text-lg font-bold text-foreground mb-3">
+                <h4 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
                   {benefit.title}
                 </h4>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   {benefit.description}
                 </p>
               </Card>
