@@ -1,9 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { DollarSign, TrendingUp, Leaf, Users, Calculator, Award, Shield, Clock } from "lucide-react";
+import { DollarSign, TrendingUp, Leaf, Users, Calculator, Award, ShieldCheck, Truck, UserCircle2, Sprout } from "lucide-react";
 import farmerPayment from "@/assets/farmer-payment.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
 import villageLife from "@/assets/village-life.jpg";
+import biogasFacility from "@/assets/biogas-facility.jpg";
+import heroFarming from "@/assets/hero-farming.jpg";
 
 export const Benefits = () => {
   const mainBenefits = [
@@ -48,12 +50,12 @@ export const Benefits = () => {
       description: "Bonus payments for high-quality materials"
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: "Guaranteed Payments",
       description: "Secure and timely payments every time"
     },
     {
-      icon: Clock,
+      icon: Truck,
       title: "Flexible Pickup",
       description: "Convenient scheduling that fits your routine"
     },
@@ -63,7 +65,7 @@ export const Benefits = () => {
       description: "Join a network of successful farmers"
     },
     {
-      icon: Leaf,
+      icon: Sprout,
       title: "Carbon Credits",
       description: "Earn additional income from carbon offset programs"
     }
@@ -92,16 +94,27 @@ export const Benefits = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-hero text-background">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+      {/* Hero Section - First Slide with Full Screen Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={heroFarming} 
+            alt="Farming background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-secondary/80"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 text-center relative z-10 py-20">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-background drop-shadow-lg">
             Farmer Benefits
           </h1>
-          <p className="text-xl md:text-2xl mb-4 font-medium">
+          <p className="text-2xl md:text-3xl mb-6 font-medium text-background/95 drop-shadow">
             किसान लाभ
           </p>
-          <p className="text-lg max-w-3xl mx-auto opacity-90">
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-background/90 leading-relaxed drop-shadow">
             Discover how Saubhagya transforms agricultural waste into sustainable income 
             for farming communities across India.
           </p>
@@ -172,33 +185,51 @@ export const Benefits = () => {
         </div>
       </section>
 
-      {/* Additional Benefits Grid */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      {/* Additional Benefits Grid - Second Slide with Full Width Background */}
+      <section className="relative py-20 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={biogasFacility} 
+            alt="Biogas facility background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-muted/95"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 drop-shadow-sm">
               Additional Advantages
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl md:text-2xl text-muted-foreground drop-shadow-sm">
               अतिरिक्त फायदे
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {additionalBenefits.map((benefit, index) => (
-              <Card key={index} className="p-6 hover:shadow-warm transition-smooth group">
-                <div className={`w-12 h-12 mb-4 rounded-lg ${
+              <Card 
+                key={index} 
+                className="p-8 hover:shadow-2xl transition-all duration-300 group bg-card/95 backdrop-blur-sm border-2 hover:border-primary/50 hover:-translate-y-2 hover:scale-105"
+                data-testid={`card-benefit-${index}`}
+              >
+                <div className={`w-16 h-16 mb-6 rounded-xl ${
                   index % 3 === 0 ? 'bg-gradient-hero' : 
                   index % 3 === 1 ? 'bg-gradient-earth' : 'bg-gradient-warm'
-                } flex items-center justify-center group-hover:scale-110 transition-smooth`}>
-                  <benefit.icon className="w-6 h-6 text-background" />
+                } flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
+                  <benefit.icon className="w-8 h-8 text-background" strokeWidth={2.5} />
                 </div>
-                <h4 className="text-lg font-bold text-foreground mb-3">
+                <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                   {benefit.title}
                 </h4>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   {benefit.description}
                 </p>
+                
+                {/* Decorative corner element */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Card>
             ))}
           </div>
