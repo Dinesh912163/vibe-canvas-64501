@@ -9,9 +9,9 @@ import {
   Truck,
   CheckCircle2
 } from "lucide-react";
-import fieldWorkerImage from "/attached_assets/stock_images/indian_farmer_workin_d575e314.jpg";
+import fieldWorkerImage from "/attached_assets/stock_images/indian_farmer_workin_a045f8d1.jpg";
 import biogasOperatorImage from "/attached_assets/stock_images/indian_biogas_plant__50076640.jpg";
-import purificationImage from "/attached_assets/stock_images/indian_industrial_wo_eeabce67.jpg";
+import purificationImage from "/attached_assets/stock_images/indian_industrial_wo_b86bded3.jpg";
 import salesImage from "/attached_assets/stock_images/indian_business_prof_67ccf01d.jpg";
 import adminImage from "/attached_assets/stock_images/indian_admin_working_266b0a43.jpg";
 import transportImage from "/attached_assets/stock_images/indian_truck_driver__9dc29f99.jpg";

@@ -52,7 +52,7 @@ export const Home = () => {
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                   About Saubhagya Project
                 </h2>
-                <p className="text-xl text-muted-foreground mb-4 font-medium">
+                <p className="text-xl text-foreground/90 mb-4 font-medium">
                   सौभाग्य परियोजना के बारे में
                 </p>
               </div>

@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
 import contactBg from "/attached_assets/stock_images/rural_farming_contac_d43e0244.jpg";
-import callImage from "/attached_assets/stock_images/customer_support_cal_f94e6605.jpg";
+import callImage from "/attached_assets/stock_images/indian_woman_custome_1c6ce546.jpg";
 import whatsappImage from "/attached_assets/stock_images/whatsapp_messaging_m_a946eeff.jpg";
 import emailImage from "/attached_assets/stock_images/email_support_laptop_c86e8eb2.jpg";
 import officeImage from "/attached_assets/stock_images/modern_office_buildi_b9ea59ea.jpg";
