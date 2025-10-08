@@ -96,6 +96,19 @@ Saubhagya is a web platform connecting farmers with biogas facilities, promoting
       - Logo now displays as circular cow portrait
       - Updated navigation label from "User Types" to "Users"
     * All changes maintain responsive design, accessibility, and no TypeScript/LSP errors
+  - **October 08, 2025 - Visual Improvements & Image Updates:**
+    * **Home Page - About Section:**
+      - Improved text brightness for better readability
+      - Changed subtitle and all paragraph text from muted to brighter colors (text-foreground/90 and text-foreground/95)
+      - Enhanced visual clarity while maintaining professional design
+    * **Users Page:**
+      - Replaced GauSakhi (Field App) image with appropriate Indian farmer working with smartphone
+      - Replaced ShuddhiDoot (Purification Unit) image with Indian industrial worker at facility
+      - All images now reflect authentic Indian context
+    * **Contact Page:**
+      - Updated "Call Us" image to feature Indian woman customer service representative
+      - Better represents local support team and cultural context
+    * Cleaned up unused old image files for better project organization
   
 - **Previous work (imported from GitHub):**
   - Adjusted home page statistics cards for better positioning and smaller size
