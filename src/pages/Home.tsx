@@ -57,24 +57,24 @@ export const Home = () => {
                 </p>
               </div>
 
-              <div className="space-y-8 text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-8 text-lg text-foreground/90 leading-relaxed">
                 <p className="text-xl text-foreground font-medium">
                   Saubhagya is India's innovative agricultural waste-to-energy platform that bridges the gap between rural farming communities and clean energy production. Our mission is to transform the way farmers monetize their agricultural waste while contributing to India's renewable energy goals.
                 </p>
                 
-                <p>
+                <p className="text-foreground/95">
                   In rural India, farmers face significant challenges in disposing of cattle dung from their gaushalas (cattle shelters). Traditional methods are labor-intensive and often result in environmental concerns. Meanwhile, India's growing energy needs demand innovative clean energy solutions. Saubhagya addresses both these challenges simultaneously.
                 </p>
 
-                <p>
+                <p className="text-foreground/95">
                   Through our platform, farmers can sell cattle dung to biogas production facilities, earning <strong className="text-foreground">₹3-5 per kilogram</strong> with same-day payment processing. Our IoT-enabled weighing stations ensure complete transparency, while GPS-tracked transportation provides real-time updates throughout the collection process.
                 </p>
 
-                <p>
+                <p className="text-foreground/95">
                   The collected agricultural waste is processed in state-of-the-art biogas plants using anaerobic digestion technology, producing <strong className="text-foreground">Compressed Biogas (CBG)</strong> - a clean, renewable fuel equivalent to natural gas. This creates a circular economy where waste becomes wealth, benefiting farmers while reducing greenhouse gas emissions by up to 40%.
                 </p>
 
-                <p>
+                <p className="text-foreground/95">
                   Our comprehensive digital platform connects all stakeholders - from field executives managing farmer onboarding to cluster managers monitoring biogas production, from purification unit operators ensuring quality standards to logistics coordinators managing efficient collection routes. Every participant benefits from transparent operations and fair compensation.
                 </p>
 
