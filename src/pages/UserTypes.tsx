@@ -9,7 +9,7 @@ import {
   Truck,
   CheckCircle2
 } from "lucide-react";
-import fieldWorkerImage from "/attached_assets/stock_images/indian_farmer_workin_a045f8d1.jpg";
+import fieldWorkerImage from "/attached_assets/stock_images/indian_farmer_with_a_7d997457.jpg";
 import biogasOperatorImage from "/attached_assets/stock_images/indian_biogas_plant__50076640.jpg";
 import purificationImage from "/attached_assets/stock_images/indian_industrial_wo_b86bded3.jpg";
 import salesImage from "/attached_assets/stock_images/indian_business_prof_67ccf01d.jpg";

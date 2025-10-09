@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Target, Award, Globe } from "lucide-react";
+import { Users, Eye, ShieldCheck, Sprout } from "lucide-react";
 import villageLife from "@/assets/village-life.jpg";
 import biogasFacility from "@/assets/biogas-facility.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
@@ -12,25 +12,25 @@ import leader3Img from "/attached_assets/stock_images/professional_indian__7d35a
 export const About = () => {
   const values = [
     {
-      icon: Heart,
+      icon: Users,
       title: "Community First",
       subtitle: "समुदाय प्रथम",
       description: "Putting farmers and rural communities at the center of everything we do, ensuring their prosperity and wellbeing."
     },
     {
-      icon: Target,
+      icon: Eye,
       title: "Transparency",
       subtitle: "पारदर्शिता",
       description: "Complete transparency in weighing, pricing, and payment processes with real-time tracking and verification."
     },
     {
-      icon: Award,
+      icon: ShieldCheck,
       title: "Quality Assurance",
       subtitle: "गुणवत्ता आश्वासन",
       description: "Maintaining highest standards in collection and processing with certified quality control measures."
     },
     {
-      icon: Globe,
+      icon: Sprout,
       title: "Sustainability",
       subtitle: "स्थिरता",
       description: "Creating a sustainable future through clean energy solutions that benefit both farmers and environment."
@@ -151,32 +151,32 @@ export const About = () => {
           </div>
         </section>
 
-        <section className="py-24 bg-muted/30">
+        <section className="py-24 bg-white/95 backdrop-blur-sm">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Our Core Values
               </h2>
-              <p className="text-xl text-muted-foreground">हमारे मूल मूल्य</p>
+              <p className="text-xl text-primary font-semibold">हमारे मूल मूल्य</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {values.map((value, index) => (
-                <Card key={index} className="p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  <div className={`w-16 h-16 ${
-                    index === 0 ? 'bg-gradient-hero' : 
-                    index === 1 ? 'bg-gradient-earth' : 
-                    index === 2 ? 'bg-gradient-warm' : 'bg-primary'
-                  } rounded-full flex items-center justify-center mx-auto mb-6 shadow-md`}>
-                    <value.icon className="w-8 h-8 text-background" />
+                <Card key={index} className="p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 border-2 border-primary/20 bg-gradient-to-br from-white to-primary/5">
+                  <div className={`w-20 h-20 ${
+                    index === 0 ? 'bg-gradient-to-br from-blue-500 to-blue-600' : 
+                    index === 1 ? 'bg-gradient-to-br from-green-500 to-green-600' : 
+                    index === 2 ? 'bg-gradient-to-br from-purple-500 to-purple-600' : 'bg-gradient-to-br from-orange-500 to-orange-600'
+                  } rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg`}>
+                    <value.icon className="w-10 h-10 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-foreground mb-2">
+                  <h4 className="text-2xl font-bold text-foreground mb-3">
                     {value.title}
                   </h4>
-                  <p className="text-sm text-muted-foreground mb-4 font-medium">
+                  <p className="text-base text-primary mb-4 font-semibold">
                     {value.subtitle}
                   </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     {value.description}
                   </p>
                 </Card>
