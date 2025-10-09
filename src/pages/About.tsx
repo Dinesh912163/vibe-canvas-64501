@@ -2,12 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Eye, ShieldCheck, Sprout } from "lucide-react";
 import villageLife from "@/assets/village-life.jpg";
-import biogasFacility from "@/assets/biogas-facility.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
-
-import leader1Img from "/attached_assets/stock_images/professional_indian__9eacd5dd.jpg";
-import leader2Img from "/attached_assets/stock_images/professional_indian__398adf2f.jpg";
-import leader3Img from "/attached_assets/stock_images/professional_indian__7d35ac7d.jpg";
 
 export const About = () => {
   const values = [
@@ -37,27 +32,6 @@ export const About = () => {
     }
   ];
 
-  const team = [
-    {
-      name: "Dr. Rajesh Kumar",
-      role: "Founder & CEO",
-      bio: "Agricultural scientist with 15+ years experience in rural development and sustainable farming practices.",
-      image: leader1Img
-    },
-    {
-      name: "Priya Sharma",
-      role: "Head of Operations",
-      bio: "Supply chain expert focused on optimizing collection and transportation processes for maximum efficiency.",
-      image: leader2Img
-    },
-    {
-      name: "Amit Singh",
-      role: "Technology Lead",
-      bio: "IoT and blockchain specialist ensuring transparent and secure operations across all touchpoints.",
-      image: leader3Img
-    }
-  ];
-
   const stats = [
     { number: "1000+", label: "Active Farmers", subtitle: "सक्रिय किसान" },
     { number: "50+", label: "Villages Served", subtitle: "सेवित गांव" },
@@ -67,25 +41,47 @@ export const About = () => {
 
   return (
     <div className="min-h-screen relative">
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
-        style={{ backgroundImage: `url(${biogasFacility})` }}
-      />
-      <div className="fixed inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 -z-10 pointer-events-none" />
-      
       <div className="relative z-10 pt-20">
-        <section className="min-h-screen flex items-center justify-center py-20">
+        <section className="py-20 bg-gradient-to-b from-primary/10 to-white">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white drop-shadow-2xl">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-foreground">
               About Saubhagya
             </h1>
-            <p className="text-2xl md:text-3xl mb-8 font-medium text-white drop-shadow-lg">
+            <p className="text-2xl md:text-3xl mb-8 font-medium text-foreground">
               सौभाग्य के बारे में
             </p>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-white/95 leading-relaxed drop-shadow-md">
+            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-muted-foreground leading-relaxed">
               Transforming rural India through innovative agricultural waste management, 
               creating sustainable income opportunities while contributing to clean energy solutions.
             </p>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border-l-4 border-primary">
+                <h3 className="text-2xl font-bold text-foreground mb-6">About Saubhagya - At a Glance</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Mission:</strong> Empower farmers through sustainable waste-to-energy solutions with fair compensation and transparent operations</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Impact:</strong> 1000+ farmers earning ₹12,000-18,000/month while reducing emissions by 40%</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Technology:</strong> IoT-enabled weighing, GPS tracking, and real-time payment systems for complete transparency</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Promise:</strong> Same-day payments, fair pricing, and contributing to India's renewable energy goals</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -205,43 +201,6 @@ export const About = () => {
                   </div>
                   <div className="text-sm text-muted-foreground font-medium">
                     {stat.subtitle}
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-24 bg-white/95 backdrop-blur-sm">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Leadership Team
-              </h2>
-              <p className="text-xl text-muted-foreground">नेतृत्व टीम</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-              {team.map((member, index) => (
-                <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  </div>
-                  <div className="p-8 text-center">
-                    <h4 className="text-xl font-bold text-foreground mb-2">
-                      {member.name}
-                    </h4>
-                    <p className="text-primary font-semibold mb-4">
-                      {member.role}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {member.bio}
-                    </p>
                   </div>
                 </Card>
               ))}

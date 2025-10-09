@@ -4,7 +4,6 @@ import { DollarSign, TrendingUp, Leaf } from "lucide-react";
 import farmerPayment from "@/assets/farmer-payment.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
 import villageLife from "@/assets/village-life.jpg";
-import benefitsBg from "/attached_assets/stock_images/happy_indian_farmers_9b1d2c93.jpg";
 
 import transparentPricingImg from "/attached_assets/stock_images/indian_farmer_checki_06c5e61f.jpg";
 import qualityRewardsImg from "/attached_assets/stock_images/indian_farmer_receiv_7dc61a20.jpg";
@@ -108,25 +107,47 @@ export const Benefits = () => {
 
   return (
     <div className="min-h-screen relative">
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
-        style={{ backgroundImage: `url(${benefitsBg})` }}
-      />
-      <div className="fixed inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/55 -z-10 pointer-events-none" />
-      
       <div className="relative z-10 pt-20">
-        <section className="min-h-screen flex items-center justify-center py-20">
+        <section className="py-20 bg-gradient-to-b from-primary/10 to-white">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white drop-shadow-2xl">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-foreground">
               Farmer Benefits
             </h1>
-            <p className="text-2xl md:text-3xl mb-8 font-medium text-white drop-shadow-lg">
+            <p className="text-2xl md:text-3xl mb-8 font-medium text-foreground">
               किसान लाभ
             </p>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-white/95 leading-relaxed drop-shadow-md">
+            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-muted-foreground leading-relaxed">
               Discover how Saubhagya transforms agricultural waste into sustainable income 
               for farming communities across India.
             </p>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border-l-4 border-primary">
+                <h3 className="text-2xl font-bold text-foreground mb-6">Key Benefits at a Glance</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Fair Pricing:</strong> ₹3-5 per kg with transparent IoT-verified weighing at every collection</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Quick Payments:</strong> Same-day payouts directly to your bank account or mobile wallet</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Steady Income:</strong> Earn ₹12,000-18,000 extra per month with 20-30 cattle</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Environmental Impact:</strong> Reduce methane emissions by 40% while earning income</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

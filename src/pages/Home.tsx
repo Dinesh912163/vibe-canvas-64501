@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "/attached_assets/stock_images/green_biogas_plant_r_49004926.jpg";
 import farmersImg from "/attached_assets/stock_images/indian_farmers_commu_1998f716.jpg";
 import biogasProcessImg from "/attached_assets/stock_images/biogas_renewable_ene_b8d4e662.jpg";
 import platformUsersImg from "/attached_assets/stock_images/diverse_users_platfo_de49c31c.jpg";
@@ -11,24 +10,18 @@ import getStartedImg from "/attached_assets/stock_images/startup_getting_star_b5
 export const Home = () => {
   return (
     <div className="min-h-screen relative">
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
-      <div className="fixed inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50 -z-10 pointer-events-none" />
-      
       <div className="relative z-10">
-        <section className="min-h-screen flex items-center overflow-hidden pt-20">
+        <section className="min-h-screen flex items-center overflow-hidden pt-20 bg-gradient-to-b from-primary/10 to-white">
           <div className="container mx-auto px-6 py-20">
             <div className="max-w-5xl mx-auto">
               <div className="text-center">
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
+                <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
                   From Dung to Dhan
                 </h1>
-                <p className="text-2xl md:text-3xl text-white mb-6 font-medium drop-shadow-lg">
+                <p className="text-2xl md:text-3xl text-foreground mb-6 font-medium">
                   गौशाला से रोज़ी — किसानों के लिए न्यायपूर्ण भुगतान
                 </p>
-                <p className="text-xl text-white/95 mb-10 max-w-3xl mx-auto drop-shadow-md">
+                <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto">
                   IoT-verified weighments, same-day payouts, local CBG production
                 </p>
                 
@@ -39,6 +32,34 @@ export const Home = () => {
                   <Button variant="outline" size="lg" className="text-xl px-10 py-8 bg-white text-primary hover:bg-white/90 border-2 border-white shadow-2xl">
                     Request Pickup / रिक्वेस्ट पिकअप
                   </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border-l-4 border-primary">
+                <h3 className="text-2xl font-bold text-foreground mb-6">Platform Highlights</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">For Farmers:</strong> Earn ₹3-5/kg from cattle dung with same-day payments and transparent weighing</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Simple Process:</strong> 4-step journey from collection to payment with GPS tracking and IoT verification</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Platform Users:</strong> Specialized tools for field executives, plant operators, and administrators</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Clean Energy:</strong> Convert waste to CBG while reducing emissions and supporting sustainable development</p>
+                  </div>
                 </div>
               </div>
             </div>

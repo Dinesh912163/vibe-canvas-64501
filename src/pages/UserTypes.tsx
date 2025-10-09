@@ -15,7 +15,6 @@ import purificationImage from "/attached_assets/stock_images/indian_industrial_w
 import salesImage from "/attached_assets/stock_images/indian_business_prof_67ccf01d.jpg";
 import adminImage from "/attached_assets/stock_images/indian_admin_working_266b0a43.jpg";
 import transportImage from "/attached_assets/stock_images/indian_truck_driver__9dc29f99.jpg";
-import usersBg from "/attached_assets/stock_images/technology_platform__a4f4b0ee.jpg";
 
 export const UserTypes = () => {
   const userTypes = [
@@ -122,25 +121,43 @@ export const UserTypes = () => {
 
   return (
     <div className="min-h-screen relative">
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
-        style={{ backgroundImage: `url(${usersBg})` }}
-      />
-      <div className="fixed inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 -z-10 pointer-events-none" />
-      
       <div className="relative z-10">
         <div className="container mx-auto px-4 py-20">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-2xl">
+          <div className="text-center mb-16 bg-gradient-to-b from-primary/10 to-white py-16 rounded-lg">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
               Users
             </h1>
-            <p className="text-xl md:text-2xl text-white/95 mb-4 drop-shadow-lg">
+            <p className="text-xl md:text-2xl text-foreground mb-4">
               उपयोगकर्ता
             </p>
-            <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Empowering every stakeholder in the biogas ecosystem with specialized tools 
               and real-time monitoring capabilities
             </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border-l-4 border-primary">
+              <h3 className="text-2xl font-bold text-foreground mb-6">Platform Highlights</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-muted-foreground"><strong className="text-foreground">Field Operations:</strong> Mobile app for farmer onboarding, RFID scanning, and offline support</p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-muted-foreground"><strong className="text-foreground">Plant Management:</strong> Real-time IoT monitoring of biogas production and quality control</p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-muted-foreground"><strong className="text-foreground">Sales & Inventory:</strong> Complete CBG inventory management with buyer e-commerce integration</p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-muted-foreground"><strong className="text-foreground">Admin Control:</strong> Centralized oversight with audit logs, KPIs, and predictive analytics</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-24">

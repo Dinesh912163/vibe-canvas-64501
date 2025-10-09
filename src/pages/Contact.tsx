@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
-import contactBg from "/attached_assets/stock_images/rural_farming_contac_d43e0244.jpg";
 import callImage from "/attached_assets/stock_images/indian_woman_custome_1c6ce546.jpg";
 import whatsappImage from "/attached_assets/stock_images/whatsapp_messaging_m_a946eeff.jpg";
 import emailImage from "/attached_assets/stock_images/email_support_laptop_c86e8eb2.jpg";
@@ -115,25 +114,47 @@ export const Contact = () => {
 
   return (
     <div className="min-h-screen relative">
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
-        style={{ backgroundImage: `url(${contactBg})` }}
-      />
-      <div className="fixed inset-0 bg-black/40 backdrop-blur-sm -z-10 pointer-events-none" />
-      
       <div className="relative z-10 pt-20">
-        <section className="py-20 text-background">
+        <section className="py-20 bg-gradient-to-b from-primary/10 to-white">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
               Contact Us
             </h1>
-            <p className="text-2xl md:text-3xl mb-6 font-medium text-white drop-shadow-md">
+            <p className="text-2xl md:text-3xl mb-6 font-medium text-foreground">
               संपर्क करें
             </p>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto text-white/95 drop-shadow-md">
+            <p className="text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
               Ready to start earning from your cattle dung? Have questions about our process? 
               Our dedicated support team is here to help you every step of the way.
             </p>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border-l-4 border-primary">
+                <h3 className="text-2xl font-bold text-foreground mb-6">Quick Contact Guide</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Phone Support:</strong> Call +91 98765 43210 for immediate assistance and farmer support</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">WhatsApp:</strong> Quick updates and support via +91 98765 43211</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Email:</strong> Detailed queries at support@saubhagya.com with 24-hour response time</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Office Hours:</strong> Mon-Fri 9AM-6PM, Sat 9AM-2PM, Sunday emergency support only</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

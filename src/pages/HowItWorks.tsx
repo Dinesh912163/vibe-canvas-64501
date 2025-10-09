@@ -5,7 +5,6 @@ import farmersWorking from "@/assets/farmers-working.jpg";
 import smartTransport from "@/assets/smart-transport.jpg";
 import biogasFacility from "@/assets/biogas-facility.jpg";
 import farmerPayment from "@/assets/farmer-payment.jpg";
-import processBg from "/attached_assets/stock_images/biogas_renewable_ene_4189bfbb.jpg";
 import qualityImg from "/attached_assets/stock_images/quality_assurance_ce_39560141.jpg";
 import trackingImg from "/attached_assets/stock_images/gps_tracking_map_loc_01ea6b3a.jpg";
 import paymentImg from "/attached_assets/stock_images/indian_rupee_currenc_b782bf69.jpg";
@@ -70,25 +69,47 @@ export const HowItWorks = () => {
 
   return (
     <div className="min-h-screen relative">
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
-        style={{ backgroundImage: `url(${processBg})` }}
-      />
-      <div className="fixed inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 -z-10 pointer-events-none" />
-      
       <div className="relative z-10 pt-20">
-        <section className="min-h-screen flex items-center justify-center py-20">
+        <section className="py-20 bg-gradient-to-b from-primary/10 to-white">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white drop-shadow-2xl">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-foreground">
               How Saubhagya Works
             </h1>
-            <p className="text-2xl md:text-3xl mb-8 font-medium text-white drop-shadow-lg">
+            <p className="text-2xl md:text-3xl mb-8 font-medium text-foreground">
               यह कैसे काम करता है
             </p>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-white/95 leading-relaxed drop-shadow-md">
+            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-muted-foreground leading-relaxed">
               Our transparent 4-step process ensures fair compensation for farmers while 
               contributing to clean energy production and environmental sustainability.
             </p>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border-l-4 border-primary">
+                <h3 className="text-2xl font-bold text-foreground mb-6">Process Overview</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Step 1:</strong> IoT-verified smart weighing with digital recording and instant confirmation</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Step 2:</strong> GPS-tracked safe transport from your gaushala with real-time updates</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Step 3:</strong> Advanced biogas processing to produce clean Compressed Biogas (CBG)</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Step 4:</strong> Fair payment within 24 hours to your bank account or mobile wallet</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
