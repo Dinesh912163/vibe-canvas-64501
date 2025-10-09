@@ -1,15 +1,15 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, TrendingUp, Users, MapPin, Calendar } from "lucide-react";
-import farmerPayment from "@/assets/farmer-payment.jpg";
-import farmersWorking from "@/assets/farmers-working.jpg";
-import villageLife from "@/assets/village-life.jpg";
+import farmer1Image from "/attached_assets/stock_images/happy_indian_farmers_2618198a.jpg";
+import farmer2Image from "/attached_assets/stock_images/happy_indian_farmers_41d19399.jpg";
+import farmer3Image from "/attached_assets/stock_images/happy_indian_farmers_20eac185.jpg";
 
 export const SuccessStories = () => {
   const featuredStory = {
     name: "Raman Singh",
     location: "Karnal, Haryana",
-    image: farmerPayment,
+    image: farmer1Image,
     income: "₹18,000/month",
     cattle: "25 cattle",
     duration: "2 years with Saubhagya",
@@ -21,7 +21,7 @@ export const SuccessStories = () => {
     {
       name: "Kamala Devi",
       location: "Amritsar, Punjab",
-      image: villageLife,
+      image: farmer2Image,
       income: "₹12,000/month",
       cattle: "18 cattle",
       rating: 5,
@@ -31,7 +31,7 @@ export const SuccessStories = () => {
     {
       name: "Suresh Kumar",
       location: "Mathura, UP",
-      image: farmersWorking,
+      image: farmer3Image,
       income: "₹15,000/month",
       cattle: "22 cattle",
       rating: 5,
@@ -41,7 +41,7 @@ export const SuccessStories = () => {
     {
       name: "Lakshmi Bai",
       location: "Rohtak, Haryana",
-      image: farmerPayment,
+      image: farmer1Image,
       income: "₹10,000/month",
       cattle: "15 cattle",
       rating: 5,
@@ -51,7 +51,7 @@ export const SuccessStories = () => {
     {
       name: "Balram Singh",
       location: "Ludhiana, Punjab",
-      image: farmersWorking,
+      image: farmer2Image,
       income: "₹20,000/month",
       cattle: "30 cattle",
       rating: 5,
@@ -61,7 +61,7 @@ export const SuccessStories = () => {
     {
       name: "Geeta Sharma",
       location: "Meerut, UP",
-      image: villageLife,
+      image: farmer3Image,
       income: "₹8,000/month",
       cattle: "12 cattle",
       rating: 5,
@@ -71,7 +71,7 @@ export const SuccessStories = () => {
     {
       name: "Vijay Pal",
       location: "Sonipat, Haryana",
-      image: farmerPayment,
+      image: farmer1Image,
       income: "₹16,000/month",
       cattle: "24 cattle",
       rating: 5,
