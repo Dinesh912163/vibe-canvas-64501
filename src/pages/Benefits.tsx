@@ -7,8 +7,8 @@ import villageLife from "@/assets/village-life.jpg";
 import benefitsBg from "/attached_assets/stock_images/happy_indian_farmers_9b1d2c93.jpg";
 
 import transparentPricingImg from "/attached_assets/stock_images/indian_farmer_checki_06c5e61f.jpg";
-import qualityRewardsImg from "/attached_assets/stock_images/indian_farmer_receiv_f7a9629c.jpg";
-import securePaymentImg from "/attached_assets/stock_images/secure_payment_banki_75557398.jpg";
+import qualityRewardsImg from "/attached_assets/stock_images/indian_farmer_receiv_7dc61a20.jpg";
+import securePaymentImg from "/attached_assets/stock_images/indian_rupee_currenc_e8af3f33.jpg";
 import flexiblePickupImg from "/attached_assets/stock_images/pickup_truck_farm_ag_7e87fea4.jpg";
 import communitySupportImg from "/attached_assets/stock_images/indian_farmers_commu_11a24f85.jpg";
 import carbonCreditsImg from "/attached_assets/stock_images/green_plant_growing__1f82a449.jpg";
@@ -178,31 +178,31 @@ export const Benefits = () => {
           </div>
         </section>
 
-        <section className="py-24 bg-muted/30">
+        <section className="py-24 bg-white/95 backdrop-blur-sm">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Additional Advantages
               </h2>
-              <p className="text-xl text-muted-foreground">अतिरिक्त लाभ</p>
+              <p className="text-xl text-primary font-semibold">अतिरिक्त लाभ</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {additionalBenefits.map((benefit, index) => (
-                <Card key={index} className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  <div className="relative h-48 overflow-hidden">
+                <Card key={index} className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 border-2 border-primary/20">
+                  <div className="relative h-56 overflow-hidden">
                     <img 
                       src={benefit.image} 
                       alt={benefit.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   </div>
-                  <div className="p-6">
-                    <h4 className="text-xl font-bold text-foreground mb-3">
+                  <div className="p-8 bg-gradient-to-br from-white to-primary/5">
+                    <h4 className="text-2xl font-bold text-foreground mb-4">
                       {benefit.title}
                     </h4>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed font-medium">
                       {benefit.description}
                     </p>
                   </div>
