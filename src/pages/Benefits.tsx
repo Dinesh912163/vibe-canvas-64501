@@ -1,21 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { DollarSign, TrendingUp, Leaf } from "lucide-react";
+import { DollarSign, TrendingUp, Leaf, Receipt, Award, BadgeCheck, CalendarCheck, Users as UsersIcon, Sprout, CircleUser, Star } from "lucide-react";
 import farmerPayment from "@/assets/farmer-payment.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
 import villageLife from "@/assets/village-life.jpg";
-
-import transparentPricingImg from "/attached_assets/stock_images/indian_farmer_checki_06c5e61f.jpg";
-import qualityRewardsImg from "/attached_assets/stock_images/indian_farmer_receiv_7dc61a20.jpg";
-import securePaymentImg from "/attached_assets/stock_images/indian_rupee_currenc_e8af3f33.jpg";
-import flexiblePickupImg from "/attached_assets/stock_images/pickup_truck_farm_ag_7e87fea4.jpg";
-import communitySupportImg from "/attached_assets/stock_images/indian_farmers_commu_11a24f85.jpg";
-import carbonCreditsImg from "/attached_assets/stock_images/green_plant_growing__1f82a449.jpg";
-
-import farmer1Img from "/attached_assets/stock_images/happy_indian_male_fa_c753e903.jpg";
-import farmer2Img from "/attached_assets/stock_images/indian_farmer_portra_34900a8b.jpg";
-import farmer3Img from "/attached_assets/stock_images/indian_farmer_portra_4f68e995.jpg";
-import rupeeNotesImg from "/attached_assets/stock_images/indian_rupee_currenc_fb38aa0a.jpg";
 
 export const Benefits = () => {
   const mainBenefits = [
@@ -50,34 +38,40 @@ export const Benefits = () => {
 
   const additionalBenefits = [
     {
-      image: transparentPricingImg,
+      icon: Receipt,
       title: "Transparent Pricing",
-      description: "Real-time market rates with no hidden charges"
+      description: "Real-time market rates with no hidden charges",
+      gradient: "bg-gradient-hero"
     },
     {
-      image: qualityRewardsImg,
+      icon: Award,
       title: "Quality Rewards",
-      description: "Bonus payments for high-quality materials"
+      description: "Bonus payments for high-quality materials",
+      gradient: "bg-gradient-earth"
     },
     {
-      image: securePaymentImg,
+      icon: BadgeCheck,
       title: "Guaranteed Payments",
-      description: "Secure and timely payments every time"
+      description: "Secure and timely payments every time",
+      gradient: "bg-gradient-warm"
     },
     {
-      image: flexiblePickupImg,
+      icon: CalendarCheck,
       title: "Flexible Pickup",
-      description: "Convenient scheduling that fits your routine"
+      description: "Convenient scheduling that fits your routine",
+      gradient: "bg-primary"
     },
     {
-      image: communitySupportImg,
+      icon: UsersIcon,
       title: "Community Support",
-      description: "Join a network of successful farmers"
+      description: "Join a network of successful farmers",
+      gradient: "bg-gradient-hero"
     },
     {
-      image: carbonCreditsImg,
+      icon: Sprout,
       title: "Carbon Credits",
-      description: "Earn additional income from carbon offset programs"
+      description: "Earn additional income from carbon offset programs",
+      gradient: "bg-gradient-earth"
     }
   ];
 
@@ -87,21 +81,21 @@ export const Benefits = () => {
       location: "Haryana",
       quote: "I earn ₹500-800 daily from my 20 cattle. This has completely changed my family's financial situation.",
       income: "₹15,000/month extra",
-      image: farmer1Img
+      icon: CircleUser
     },
     {
       name: "Kamala Devi",
       location: "Punjab",
       quote: "The process is so simple and payments are always on time. My daughters can continue their education now.",
       income: "₹12,000/month extra",
-      image: farmer2Img
+      icon: CircleUser
     },
     {
       name: "Suresh Kumar",
       location: "Uttar Pradesh",
       quote: "Best decision I made was joining Saubhagya. Clean process, fair rates, and reliable income.",
       income: "₹18,000/month extra",
-      image: farmer3Img
+      icon: CircleUser
     }
   ];
 
@@ -211,13 +205,10 @@ export const Benefits = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {additionalBenefits.map((benefit, index) => (
                 <Card key={index} className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 border-2 border-primary/20">
-                  <div className="relative h-56 overflow-hidden">
-                    <img 
-                      src={benefit.image} 
-                      alt={benefit.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  <div className="relative h-56 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                    <div className={`w-20 h-20 ${benefit.gradient} rounded-2xl flex items-center justify-center shadow-xl`}>
+                      <benefit.icon className="w-10 h-10 text-background" />
+                    </div>
                   </div>
                   <div className="p-8 bg-gradient-to-br from-white to-primary/5">
                     <h4 className="text-2xl font-bold text-foreground mb-4">
@@ -245,13 +236,10 @@ export const Benefits = () => {
             <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
               {testimonials.map((testimonial, index) => (
                 <Card key={index} className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
-                  <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                  <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                    <div className="w-32 h-32 bg-gradient-hero rounded-full flex items-center justify-center shadow-xl">
+                      <testimonial.icon className="w-16 h-16 text-background" />
+                    </div>
                   </div>
                   <div className="p-8">
                     <h4 className="text-xl font-bold text-foreground text-center mb-1">
@@ -264,13 +252,10 @@ export const Benefits = () => {
                       "{testimonial.quote}"
                     </p>
                     <div className="pt-4 border-t border-muted/30">
-                      <div className="relative h-24 rounded-lg overflow-hidden mb-3">
-                        <img 
-                          src={rupeeNotesImg} 
-                          alt="Indian Rupee Notes"
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"></div>
+                      <div className="relative h-24 rounded-lg overflow-hidden mb-3 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <div className="w-16 h-16 bg-gradient-warm rounded-full flex items-center justify-center">
+                          <DollarSign className="w-8 h-8 text-background" />
+                        </div>
                       </div>
                       <p className="text-primary font-bold text-lg text-center">
                         {testimonial.income}

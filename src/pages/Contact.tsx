@@ -3,17 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
-import callImage from "/attached_assets/stock_images/indian_woman_custome_1c6ce546.jpg";
-import whatsappImage from "/attached_assets/stock_images/whatsapp_messaging_m_a946eeff.jpg";
-import emailImage from "/attached_assets/stock_images/email_support_laptop_c86e8eb2.jpg";
-import officeImage from "/attached_assets/stock_images/modern_office_buildi_b9ea59ea.jpg";
+import { Phone, Mail, MapPin, Clock, MessageSquare, UserPlus, Headphones, Briefcase, HelpCircle } from "lucide-react";
 
 export const Contact = () => {
   const contactMethods = [
     {
       icon: Phone,
-      image: callImage,
       title: "Call Us",
       subtitle: "हमें कॉल करें",
       details: "+91 98765 43210",
@@ -22,7 +17,6 @@ export const Contact = () => {
     },
     {
       icon: MessageSquare,
-      image: whatsappImage,
       title: "WhatsApp",
       subtitle: "व्हाट्सऐप",
       details: "+91 98765 43211",
@@ -31,7 +25,6 @@ export const Contact = () => {
     },
     {
       icon: Mail,
-      image: emailImage,
       title: "Email Support",
       subtitle: "ईमेल सहायता",
       details: "support@saubhagya.com",
@@ -40,7 +33,6 @@ export const Contact = () => {
     },
     {
       icon: MapPin,
-      image: officeImage,
       title: "Visit Office",
       subtitle: "कार्यालय आएं",
       details: "Sector 14, Gurgaon",
@@ -49,37 +41,34 @@ export const Contact = () => {
     }
   ];
 
-  const supportImages = [
-    "/attached_assets/stock_images/customer_service_sup_34156313.jpg",
-    "/attached_assets/stock_images/customer_service_sup_9ea1ec25.jpg",
-    "/attached_assets/stock_images/customer_service_sup_3c014bb7.jpg",
-    "/attached_assets/stock_images/customer_service_sup_a26bb77c.jpg"
-  ];
-
   const supportTypes = [
     {
-      image: supportImages[0],
+      icon: UserPlus,
       title: "New Farmer Registration",
       description: "Get started with Saubhagya and begin earning",
-      action: "Register Now"
+      action: "Register Now",
+      gradient: "bg-gradient-hero"
     },
     {
-      image: supportImages[1],
+      icon: Headphones,
       title: "Technical Support",
       description: "Help with app, weighing, or payment issues",
-      action: "Get Help"
+      action: "Get Help",
+      gradient: "bg-gradient-earth"
     },
     {
-      image: supportImages[2],
+      icon: Briefcase,
       title: "Business Inquiries",
       description: "Partnership and business development",
-      action: "Connect"
+      action: "Connect",
+      gradient: "bg-gradient-warm"
     },
     {
-      image: supportImages[3],
+      icon: HelpCircle,
       title: "General Questions",
       description: "Any other questions about our services",
-      action: "Ask Us"
+      action: "Ask Us",
+      gradient: "bg-primary"
     }
   ];
 
@@ -172,15 +161,9 @@ export const Contact = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
               {contactMethods.map((method, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm">
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={method.image} 
-                      alt={method.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <div className={`absolute bottom-4 left-4 w-14 h-14 ${method.gradient} rounded-full flex items-center justify-center shadow-lg`}>
-                      <method.icon className="w-7 h-7 text-background" />
+                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                    <div className={`w-20 h-20 ${method.gradient} rounded-2xl flex items-center justify-center shadow-xl`}>
+                      <method.icon className="w-10 h-10 text-background" />
                     </div>
                   </div>
                   <div className="p-6 text-center">
@@ -277,16 +260,13 @@ export const Contact = () => {
                   </div>
                 </Card>
 
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <img 
-                    src={officeImage} 
-                    alt="Saubhagya office and rural operations"
-                    className="w-full h-72 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                  <div className="absolute bottom-8 left-8 text-background">
-                    <h4 className="text-2xl font-bold mb-3 drop-shadow-lg">Visit Our Office</h4>
-                    <p className="text-lg opacity-95 drop-shadow-md">Sector 14, Gurgaon, Haryana</p>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/10 to-secondary/10 p-8">
+                  <div className="flex flex-col items-center justify-center h-72">
+                    <div className="w-24 h-24 bg-gradient-hero rounded-2xl flex items-center justify-center shadow-xl mb-6">
+                      <MapPin className="w-12 h-12 text-background" />
+                    </div>
+                    <h4 className="text-2xl font-bold mb-3 text-foreground text-center">Visit Our Office</h4>
+                    <p className="text-lg text-muted-foreground text-center">Sector 14, Gurgaon, Haryana</p>
                   </div>
                 </div>
               </div>
@@ -308,13 +288,10 @@ export const Contact = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {supportTypes.map((support, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm">
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={support.image} 
-                      alt={support.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                    <div className={`w-20 h-20 ${support.gradient} rounded-2xl flex items-center justify-center shadow-xl`}>
+                      <support.icon className="w-10 h-10 text-background" />
+                    </div>
                   </div>
                   <div className="p-6">
                     <h4 className="text-xl font-bold text-foreground mb-4">

@@ -1,15 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Star, TrendingUp, Users, MapPin, Calendar } from "lucide-react";
-import farmer1Image from "/attached_assets/stock_images/happy_indian_farmers_2618198a.jpg";
-import farmer2Image from "/attached_assets/stock_images/happy_indian_farmers_41d19399.jpg";
-import farmer3Image from "/attached_assets/stock_images/happy_indian_farmers_20eac185.jpg";
+import { Star, TrendingUp, Users, MapPin, Calendar, CircleUser } from "lucide-react";
 
 export const SuccessStories = () => {
   const featuredStory = {
     name: "Raman Singh",
     location: "Karnal, Haryana",
-    image: farmer1Image,
+    icon: CircleUser,
     income: "₹18,000/month",
     cattle: "25 cattle",
     duration: "2 years with Saubhagya",
@@ -21,7 +18,7 @@ export const SuccessStories = () => {
     {
       name: "Kamala Devi",
       location: "Amritsar, Punjab",
-      image: farmer2Image,
+      icon: CircleUser,
       income: "₹12,000/month",
       cattle: "18 cattle",
       rating: 5,
@@ -31,7 +28,7 @@ export const SuccessStories = () => {
     {
       name: "Suresh Kumar",
       location: "Mathura, UP",
-      image: farmer3Image,
+      icon: CircleUser,
       income: "₹15,000/month",
       cattle: "22 cattle",
       rating: 5,
@@ -41,7 +38,7 @@ export const SuccessStories = () => {
     {
       name: "Lakshmi Bai",
       location: "Rohtak, Haryana",
-      image: farmer1Image,
+      icon: CircleUser,
       income: "₹10,000/month",
       cattle: "15 cattle",
       rating: 5,
@@ -51,7 +48,7 @@ export const SuccessStories = () => {
     {
       name: "Balram Singh",
       location: "Ludhiana, Punjab",
-      image: farmer2Image,
+      icon: CircleUser,
       income: "₹20,000/month",
       cattle: "30 cattle",
       rating: 5,
@@ -61,7 +58,7 @@ export const SuccessStories = () => {
     {
       name: "Geeta Sharma",
       location: "Meerut, UP",
-      image: farmer3Image,
+      icon: CircleUser,
       income: "₹8,000/month",
       cattle: "12 cattle",
       rating: 5,
@@ -71,7 +68,7 @@ export const SuccessStories = () => {
     {
       name: "Vijay Pal",
       location: "Sonipat, Haryana",
-      image: farmer1Image,
+      icon: CircleUser,
       income: "₹16,000/month",
       cattle: "24 cattle",
       rating: 5,
@@ -168,12 +165,10 @@ export const SuccessStories = () => {
           <div className="max-w-6xl mx-auto">
             <Card className="overflow-hidden shadow-warm">
               <div className="lg:flex">
-                <div className="lg:w-1/2">
-                  <img 
-                    src={featuredStory.image} 
-                    alt={`${featuredStory.name} success story`}
-                    className="w-full h-80 lg:h-full object-cover"
-                  />
+                <div className="lg:w-1/2 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center p-12">
+                  <div className="w-48 h-48 bg-gradient-hero rounded-full flex items-center justify-center shadow-2xl">
+                    <featuredStory.icon className="w-24 h-24 text-background" />
+                  </div>
                 </div>
                 <div className="lg:w-1/2 p-8 lg:p-12">
                   <div className="flex items-center gap-4 mb-6">
@@ -244,12 +239,10 @@ export const SuccessStories = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {stories.map((story, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-warm transition-smooth group">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={story.image} 
-                    alt={`${story.name} success story`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
-                  />
+                <div className="aspect-video overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                  <div className="w-24 h-24 bg-gradient-hero rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-smooth">
+                    <story.icon className="w-12 h-12 text-background" />
+                  </div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">

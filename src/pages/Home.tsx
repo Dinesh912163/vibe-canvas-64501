@@ -1,11 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Wheat, Cog, Users, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
-import farmersImg from "/attached_assets/stock_images/indian_farmers_commu_1998f716.jpg";
-import biogasProcessImg from "/attached_assets/stock_images/biogas_renewable_ene_b8d4e662.jpg";
-import platformUsersImg from "/attached_assets/stock_images/diverse_users_platfo_de49c31c.jpg";
-import getStartedImg from "/attached_assets/stock_images/startup_getting_star_b5a6554d.jpg";
 
 export const Home = () => {
   return (
@@ -121,13 +117,10 @@ export const Home = () => {
 
             <div className="grid md:grid-cols-4 gap-8 mb-16">
               <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={farmersImg} 
-                    alt="For Farmers"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                  <div className="w-24 h-24 bg-gradient-hero rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                    <Wheat className="w-12 h-12 text-background" />
+                  </div>
                 </div>
                 <div className="p-8 text-center">
                   <h3 className="text-2xl font-bold text-foreground mb-4">For Farmers</h3>
@@ -143,13 +136,10 @@ export const Home = () => {
               </Card>
 
               <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={biogasProcessImg} 
-                    alt="How It Works"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-secondary/10 to-secondary/5 flex items-center justify-center">
+                  <div className="w-24 h-24 bg-gradient-earth rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                    <Cog className="w-12 h-12 text-background" />
+                  </div>
                 </div>
                 <div className="p-8 text-center">
                   <h3 className="text-2xl font-bold text-foreground mb-4">How It Works</h3>
@@ -165,13 +155,10 @@ export const Home = () => {
               </Card>
 
               <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={platformUsersImg} 
-                    alt="Platform Users"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                  <div className="w-24 h-24 bg-gradient-warm rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                    <Users className="w-12 h-12 text-background" />
+                  </div>
                 </div>
                 <div className="p-8 text-center">
                   <h3 className="text-2xl font-bold text-foreground mb-4">Platform Users</h3>
@@ -187,13 +174,10 @@ export const Home = () => {
               </Card>
 
               <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={getStartedImg} 
-                    alt="Get Started"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-secondary/10 to-secondary/5 flex items-center justify-center">
+                  <div className="w-24 h-24 bg-primary rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                    <Rocket className="w-12 h-12 text-background" />
+                  </div>
                 </div>
                 <div className="p-8 text-center">
                   <h3 className="text-2xl font-bold text-foreground mb-4">Get Started</h3>

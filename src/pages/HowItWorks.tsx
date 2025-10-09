@@ -1,13 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Scale, TruckIcon, Factory, Banknote } from "lucide-react";
+import { Scale, TruckIcon, Factory, Banknote, ShieldCheck, Navigation, Lock } from "lucide-react";
 import farmersWorking from "@/assets/farmers-working.jpg";
 import smartTransport from "@/assets/smart-transport.jpg";
 import biogasFacility from "@/assets/biogas-facility.jpg";
 import farmerPayment from "@/assets/farmer-payment.jpg";
-import qualityImg from "/attached_assets/stock_images/quality_assurance_ce_39560141.jpg";
-import trackingImg from "/attached_assets/stock_images/gps_tracking_map_loc_01ea6b3a.jpg";
-import paymentImg from "/attached_assets/stock_images/indian_rupee_currenc_b782bf69.jpg";
 
 export const HowItWorks = () => {
   const steps = [
@@ -51,19 +48,22 @@ export const HowItWorks = () => {
 
   const benefits = [
     {
-      image: qualityImg,
+      icon: ShieldCheck,
       title: "Guaranteed Quality",
-      description: "IoT sensors ensure quality standards are met"
+      description: "IoT sensors ensure quality standards are met",
+      gradient: "bg-gradient-hero"
     },
     {
-      image: trackingImg,
+      icon: Navigation,
       title: "Real-time Tracking",
-      description: "Track your materials from pickup to processing"
+      description: "Track your materials from pickup to processing",
+      gradient: "bg-gradient-earth"
     },
     {
-      image: paymentImg,
+      icon: Lock,
       title: "Secure Payments",
-      description: "Bank-grade security for all transactions"
+      description: "Bank-grade security for all transactions",
+      gradient: "bg-gradient-warm"
     }
   ];
 
@@ -171,13 +171,10 @@ export const HowItWorks = () => {
             <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-16">
               {benefits.map((benefit, index) => (
                 <Card key={index} className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm">
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={benefit.image} 
-                      alt={benefit.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                    <div className={`w-20 h-20 ${benefit.gradient} rounded-2xl flex items-center justify-center shadow-xl`}>
+                      <benefit.icon className="w-10 h-10 text-background" />
+                    </div>
                   </div>
                   <div className="p-8 text-center">
                     <h4 className="text-xl font-bold text-foreground mb-4">
