@@ -137,13 +137,13 @@ export const Contact = () => {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-20 bg-white/95 backdrop-blur-sm">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Get In Touch
               </h2>
-              <p className="text-xl md:text-2xl text-white/90 drop-shadow-md">
+              <p className="text-xl md:text-2xl text-muted-foreground">
                 संपर्क में रहें
               </p>
             </div>
@@ -182,7 +182,7 @@ export const Contact = () => {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-20 bg-white/95 backdrop-blur-sm">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
               <Card className="p-8 bg-white/95 backdrop-blur-sm shadow-2xl">
@@ -273,13 +273,13 @@ export const Contact = () => {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-20 bg-white/95 backdrop-blur-sm">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 How Can We Help?
               </h2>
-              <p className="text-xl md:text-2xl text-white/90 drop-shadow-md">
+              <p className="text-xl md:text-2xl text-muted-foreground">
                 हम कैसे मदद कर सकते हैं?
               </p>
             </div>
@@ -312,13 +312,13 @@ export const Contact = () => {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-20 bg-white/95 backdrop-blur-sm">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-xl md:text-2xl text-white/90 drop-shadow-md">
+              <p className="text-xl md:text-2xl text-muted-foreground">
                 अक्सर पूछे जाने वाले प्रश्न
               </p>
             </div>
