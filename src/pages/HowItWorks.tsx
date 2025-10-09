@@ -8,7 +8,7 @@ import farmerPayment from "@/assets/farmer-payment.jpg";
 import processBg from "/attached_assets/stock_images/biogas_renewable_ene_4189bfbb.jpg";
 import qualityImg from "/attached_assets/stock_images/quality_assurance_ce_39560141.jpg";
 import trackingImg from "/attached_assets/stock_images/gps_tracking_map_loc_01ea6b3a.jpg";
-import paymentImg from "/attached_assets/stock_images/upi_payment_security_2d5394d1.jpg";
+import paymentImg from "/attached_assets/stock_images/indian_rupee_currenc_b782bf69.jpg";
 
 export const HowItWorks = () => {
   const steps = [
