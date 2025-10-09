@@ -14,8 +14,8 @@ import communitySupportImg from "/attached_assets/stock_images/indian_farmers_co
 import carbonCreditsImg from "/attached_assets/stock_images/green_plant_growing__1f82a449.jpg";
 
 import farmer1Img from "/attached_assets/stock_images/happy_indian_male_fa_c753e903.jpg";
-import farmer2Img from "/attached_assets/stock_images/indian_male_farmer_s_dda28052.jpg";
-import farmer3Img from "/attached_assets/stock_images/indian_male_farmer_s_1bfde09f.jpg";
+import farmer2Img from "/attached_assets/stock_images/indian_farmer_portra_34900a8b.jpg";
+import farmer3Img from "/attached_assets/stock_images/indian_farmer_portra_4f68e995.jpg";
 import rupeeNotesImg from "/attached_assets/stock_images/indian_rupee_currenc_fb38aa0a.jpg";
 
 export const Benefits = () => {
