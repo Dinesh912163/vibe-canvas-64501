@@ -121,9 +121,9 @@ export const UserTypes = () => {
 
   return (
     <div className="min-h-screen relative">
-      <div className="relative z-10">
-        <div className="container mx-auto px-4 py-20">
-          <div className="text-center mb-16 bg-gradient-to-b from-primary/10 to-white py-16 rounded-lg">
+      <div className="relative z-10 pt-20">
+        <section className="py-20 bg-gradient-to-b from-primary/10 to-white">
+          <div className="container mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
               Users
             </h1>
@@ -135,6 +135,9 @@ export const UserTypes = () => {
               and real-time monitoring capabilities
             </p>
           </div>
+        </section>
+
+        <div className="container mx-auto px-4 py-0">
 
           <div className="max-w-4xl mx-auto mb-16">
             <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border-l-4 border-primary">

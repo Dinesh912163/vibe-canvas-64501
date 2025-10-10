@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { DollarSign, TrendingUp, Leaf, Receipt, Award, BadgeCheck, CalendarCheck, Users as UsersIcon, Sprout, CircleUser, Star } from "lucide-react";
+import { DollarSign, TrendingUp, Leaf, Receipt, Award, BadgeCheck, CalendarCheck, Users as UsersIcon, Sprout } from "lucide-react";
 import farmerPayment from "@/assets/farmer-payment.jpg";
 import farmersWorking from "@/assets/farmers-working.jpg";
 import villageLife from "@/assets/village-life.jpg";
@@ -72,30 +72,6 @@ export const Benefits = () => {
       title: "Carbon Credits",
       description: "Earn additional income from carbon offset programs",
       gradient: "bg-gradient-earth"
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Raman Singh",
-      location: "Haryana",
-      quote: "I earn ₹500-800 daily from my 20 cattle. This has completely changed my family's financial situation.",
-      income: "₹15,000/month extra",
-      icon: CircleUser
-    },
-    {
-      name: "Kamala Devi",
-      location: "Punjab",
-      quote: "The process is so simple and payments are always on time. My daughters can continue their education now.",
-      income: "₹12,000/month extra",
-      icon: CircleUser
-    },
-    {
-      name: "Suresh Kumar",
-      location: "Uttar Pradesh",
-      quote: "Best decision I made was joining Saubhagya. Clean process, fair rates, and reliable income.",
-      income: "₹18,000/month extra",
-      icon: CircleUser
     }
   ];
 
@@ -217,50 +193,6 @@ export const Benefits = () => {
                     <p className="text-base text-muted-foreground leading-relaxed font-medium">
                       {benefit.description}
                     </p>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-24 bg-white/95 backdrop-blur-sm">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Success Stories
-              </h2>
-              <p className="text-xl text-muted-foreground">सफलता की कहानियां</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-              {testimonials.map((testimonial, index) => (
-                <Card key={index} className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
-                  <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                    <div className="w-32 h-32 bg-gradient-hero rounded-full flex items-center justify-center shadow-xl">
-                      <testimonial.icon className="w-16 h-16 text-background" />
-                    </div>
-                  </div>
-                  <div className="p-8">
-                    <h4 className="text-xl font-bold text-foreground text-center mb-1">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-sm text-muted-foreground text-center mb-6">
-                      {testimonial.location}
-                    </p>
-                    <p className="text-muted-foreground italic mb-6 leading-relaxed">
-                      "{testimonial.quote}"
-                    </p>
-                    <div className="pt-4 border-t border-muted/30">
-                      <div className="relative h-24 rounded-lg overflow-hidden mb-3 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-gradient-warm rounded-full flex items-center justify-center">
-                          <DollarSign className="w-8 h-8 text-background" />
-                        </div>
-                      </div>
-                      <p className="text-primary font-bold text-lg text-center">
-                        {testimonial.income}
-                      </p>
-                    </div>
                   </div>
                 </Card>
               ))}
