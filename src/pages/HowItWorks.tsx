@@ -69,8 +69,8 @@ export const HowItWorks = () => {
 
   return (
     <div className="min-h-screen relative">
-      <div className="relative z-10 pt-20">
-        <section className="py-20 bg-gradient-to-b from-primary/10 to-white">
+      <div className="relative z-10">
+        <section className="pt-20 pb-20 bg-gradient-to-b from-primary/10 to-white">
           <div className="container mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 text-foreground">
               How Saubhagya Works
