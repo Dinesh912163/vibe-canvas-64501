@@ -51,8 +51,9 @@ export const About = () => {
               सौभाग्य के बारे में
             </p>
             <p className="text-xl md:text-2xl max-w-4xl mx-auto text-muted-foreground leading-relaxed">
-              Transforming rural India through innovative agricultural waste management, 
-              creating sustainable income opportunities while contributing to clean energy solutions.
+              Transforming rural India through innovative technology-driven agricultural waste management,
+              empowering farming communities with sustainable income while advancing India's clean energy
+              transition and environmental conservation goals.
             </p>
           </div>
         </section>
@@ -65,19 +66,19 @@ export const About = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Mission:</strong> Empower farmers through sustainable waste-to-energy solutions with fair compensation and transparent operations</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Mission:</strong> Empower rural farming communities through sustainable waste-to-energy solutions, providing fair compensation, transparent operations, and dignified livelihoods while advancing environmental conservation and India's renewable energy objectives.</p>
                   </div>
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Impact:</strong> 1000+ farmers earning ₹12,000-18,000/month while reducing emissions by 40%</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Impact:</strong> 1000+ farmers across 50+ villages earning ₹12,000-18,000 additional monthly income. ₹2 Crore+ disbursed to farmers. 40% reduction in greenhouse gas emissions. 10,000+ tons of agricultural waste converted to clean energy annually.</p>
                   </div>
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Technology:</strong> IoT-enabled weighing, GPS tracking, and real-time payment systems for complete transparency</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Technology:</strong> Comprehensive IoT ecosystem with certified load cell weighing scales, GPS-enabled transportation tracking, real-time biogas production monitoring, mobile apps with offline capabilities, and automated payment systems ensuring complete operational transparency.</p>
                   </div>
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Promise:</strong> Same-day payments, fair pricing, and contributing to India's renewable energy goals</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Promise:</strong> Guaranteed same-day payments within 24 hours, transparent market-linked pricing with quality bonuses, professional support throughout the journey, and active contribution to India's target of 5,000 CBG plants and 15 MMT production capacity by 2030.</p>
                   </div>
                 </div>
               </div>
@@ -87,59 +88,92 @@ export const About = () => {
 
         <section className="py-24 bg-white/95 backdrop-blur-sm">
           <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto mb-24">
+            <div className="grid lg:grid-cols-2 gap-16 items-stretch max-w-6xl mx-auto mb-24">
               <div className="relative">
-                <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src={villageLife} 
+                <div className="rounded-3xl overflow-hidden shadow-2xl h-full">
+                  <img
+                    src={villageLife}
                     alt="Rural community life"
-                    className="w-full h-96 object-cover"
+                    className="w-full h-full object-cover min-h-[500px]"
                   />
                 </div>
               </div>
-              <div>
-                <h2 className="text-4xl font-bold text-foreground mb-6">
-                  Our Mission
-                </h2>
-                <p className="text-xl text-muted-foreground mb-4 font-medium">
-                  हमारा मिशन
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  To empower rural farming communities by creating sustainable income opportunities 
-                  through innovative agricultural waste management, while contributing to India's 
-                  clean energy goals and environmental sustainability.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  We believe every farmer deserves fair compensation for their contributions to both 
-                  agriculture and renewable energy production.
-                </p>
+              <div className="flex">
+                <Card className="p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-primary/20 bg-gradient-to-br from-white to-primary/5 w-full">
+                  <div className="border-l-4 border-primary pl-6 mb-6">
+                    <h2 className="text-4xl font-bold text-foreground mb-3">
+                      Our Mission
+                    </h2>
+                    <p className="text-xl text-primary font-semibold">
+                      हमारा मिशन
+                    </p>
+                  </div>
+                  <div className="space-y-6">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      To empower rural farming communities across India by creating sustainable, dignified income
+                      opportunities through innovative technology-driven agricultural waste management. We aim to provide
+                      farmers with fair compensation, transparent operations, and year-round income stability while
+                      simultaneously contributing to India's ambitious renewable energy goals and environmental sustainability targets.
+                    </p>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      We believe every farmer deserves fair compensation for their contributions to both agriculture
+                      and renewable energy production. By transforming agricultural waste from a disposal problem into a
+                      valuable income source, we're creating a win-win-win scenario: farmers earn more, communities access
+                      clean energy, and the environment benefits from reduced emissions.
+                    </p>
+                    <div className="bg-primary/10 rounded-xl p-6 border-l-4 border-primary">
+                      <p className="text-base text-foreground leading-relaxed font-medium">
+                        Our approach combines cutting-edge IoT technology, transparent processes, and deep respect for
+                        farming communities to build a sustainable ecosystem that serves as a model for rural economic
+                        development across India.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto lg:flex-row-reverse">
-              <div>
-                <h2 className="text-4xl font-bold text-foreground mb-6">
-                  Our Vision
-                </h2>
-                <p className="text-xl text-muted-foreground mb-4 font-medium">
-                  हमारी दृष्टि
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  To become India's leading agricultural waste-to-energy platform, serving over 
-                  10,000 farmers across rural India and contributing significantly to the nation's 
-                  renewable energy capacity.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Through technology, transparency, and trust, we aim to revolutionize how rural 
-                  communities participate in and benefit from the clean energy transition.
-                </p>
+            <div className="grid lg:grid-cols-2 gap-16 items-stretch max-w-6xl mx-auto lg:flex-row-reverse">
+              <div className="flex order-2 lg:order-1">
+                <Card className="p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-secondary/20 bg-gradient-to-br from-white to-secondary/5 w-full">
+                  <div className="border-l-4 border-secondary pl-6 mb-6">
+                    <h2 className="text-4xl font-bold text-foreground mb-3">
+                      Our Vision
+                    </h2>
+                    <p className="text-xl text-secondary font-semibold">
+                      हमारी दृष्टि
+                    </p>
+                  </div>
+                  <div className="space-y-6">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      To become India's premier agricultural waste-to-energy platform, directly serving over 10,000 farmers
+                      across 500+ villages in rural India within the next five years. We envision establishing 100+ CBG
+                      production facilities connected to our digital platform, collectively processing 500,000 tons of
+                      agricultural waste annually and producing 20,000 tons of Compressed Biogas - contributing meaningfully
+                      to India's renewable energy capacity and rural employment.
+                    </p>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      Through technology, transparency, and trust, we aim to revolutionize how rural communities participate
+                      in and benefit from India's clean energy transition. We envision a future where every rural household
+                      with cattle has access to fair markets for their agricultural waste, where digital tools empower even
+                      the smallest farmers, and where environmental conservation and economic prosperity go hand in hand.
+                    </p>
+                    <div className="bg-secondary/10 rounded-xl p-6 border-l-4 border-secondary">
+                      <p className="text-base text-foreground leading-relaxed font-medium">
+                        Beyond economic impact, we aspire to change mindsets - transforming agricultural waste from something to
+                        dispose of into a valuable resource, and positioning farmers not just as food producers but as essential
+                        contributors to India's renewable energy ecosystem and climate action efforts.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
               </div>
-              <div className="relative order-first lg:order-last">
-                <div className="rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src={farmersWorking} 
+              <div className="relative order-1 lg:order-2">
+                <div className="rounded-3xl overflow-hidden shadow-2xl h-full">
+                  <img
+                    src={farmersWorking}
                     alt="Farmers at work"
-                    className="w-full h-96 object-cover"
+                    className="w-full h-full object-cover min-h-[500px]"
                   />
                 </div>
               </div>

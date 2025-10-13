@@ -9,7 +9,7 @@ import {
   Truck,
   CheckCircle2
 } from "lucide-react";
-import fieldWorkerImage from "/attached_assets/stock_images/indian_farmer_with_a_7d997457.jpg";
+import fieldWorkerImage from "/attached_assets/stock_images/happy_indian_male_fa_c753e903.jpg";
 import biogasOperatorImage from "/attached_assets/stock_images/indian_biogas_plant__50076640.jpg";
 import purificationImage from "/attached_assets/stock_images/indian_industrial_wo_b86bded3.jpg";
 import salesImage from "/attached_assets/stock_images/indian_business_prof_67ccf01d.jpg";
@@ -24,16 +24,16 @@ export const UserTypes = () => {
       icon: Smartphone,
       image: fieldWorkerImage,
       gradient: "bg-gradient-hero",
-      description: "Field operations, farmer onboarding, RFID scanning, weight capture, offline logging",
+      description: "Comprehensive mobile solution for field executives managing farmer relationships, material collection, and on-ground operations",
       features: [
-        "Farmer registration & KYC capture (photo, Aadhaar, bank details)",
-        "RFID / Gau-Aadhaar scanning (camera/Bluetooth)",
-        "Voice logging in Indic languages",
-        "IoT scale sync (LoRa connectivity)",
-        "Task list & pickup schedule",
-        "Offline caching & conflict resolution",
-        "Multi-language support",
-        "Payment initiation / cash-out log"
+        "Complete farmer onboarding with KYC verification: Capture photos, Aadhaar details, bank account information, and cattle documentation with built-in validation",
+        "RFID & Gau-Aadhaar scanning: Use smartphone camera or Bluetooth-enabled RFID readers to uniquely identify cattle and track their contribution",
+        "Multi-language voice logging: Record observations and notes in Hindi, Marathi, Gujarati, and other Indic languages with automatic transcription",
+        "IoT scale integration: Direct connectivity with LoRa-enabled weighing scales for real-time weight capture and automatic digital recording",
+        "Smart task management: Daily pickup schedules, route optimization, farmer visit tracking, and automated reminders",
+        "Offline-first architecture: Full functionality in areas with poor connectivity, with automatic data synchronization when online",
+        "Payment initiation: Process on-the-spot payments and maintain detailed cash-out logs with biometric verification",
+        "Real-time farmer support: Access farmer history, previous transactions, quality tips, and FAQ support during field visits"
       ]
     },
     {
@@ -42,14 +42,15 @@ export const UserTypes = () => {
       icon: MonitorCheck,
       image: biogasOperatorImage,
       gradient: "bg-gradient-earth",
-      description: "Supervise clusters, view digesters, reconcile inputs, and resolve disputes",
+      description: "Comprehensive cluster management portal for overseeing multiple biogas digesters, monitoring production metrics, and ensuring operational excellence",
       features: [
-        "Real-time IoT monitoring (CH₄%, volume, temp, pressure)",
-        "Alerts (low gas%, sensor failures, emergency shutdowns)",
-        "Transaction form entry & confirmation",
-        "Record payment (cash/online) with immutable logging",
-        "Audit trail: farmer proof photo + IoT readings",
-        "Offline support for poor connectivity"
+        "Real-time IoT dashboard: Monitor CH₄ percentage, biogas volume, digester temperature, and pressure across all digesters with live graphs and trend analysis",
+        "Intelligent alert system: Automated notifications for low gas production, CH₄ percentage drops below 55%, sensor failures, temperature anomalies, and emergency shutdown conditions",
+        "Transaction management: Digital forms for material receipt verification, weight confirmation, quality assessment, and farmer acknowledgment with timestamp and GPS location",
+        "Secure payment processing: Record both cash and online payments with blockchain-backed immutable logging, biometric authentication, and automatic receipt generation",
+        "Complete audit trails: Every transaction documented with farmer verification photos, IoT sensor readings, quality parameters, and digital signatures for full traceability",
+        "Dispute resolution tools: Access historical data, photo evidence, and sensor logs to quickly resolve any payment or quantity disputes with farmers",
+        "Offline capability: Continue operations during connectivity issues with automatic cloud synchronization when connection is restored"
       ]
     },
     {
@@ -131,8 +132,9 @@ export const UserTypes = () => {
               उपयोगकर्ता
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Empowering every stakeholder in the biogas ecosystem with specialized tools 
-              and real-time monitoring capabilities
+              Our comprehensive digital ecosystem provides specialized tools for every stakeholder in the
+              biogas value chain - from field workers to administrators - with real-time monitoring,
+              offline capabilities, and role-specific features designed to maximize efficiency and transparency
             </p>
           </div>
         </section>
@@ -145,19 +147,19 @@ export const UserTypes = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-muted-foreground"><strong className="text-foreground">Field Operations:</strong> Mobile app for farmer onboarding, RFID scanning, and offline support</p>
+                  <p className="text-muted-foreground"><strong className="text-foreground">Field Operations - GauSakhi:</strong> Comprehensive mobile app for field executives enabling farmer registration with KYC/Aadhaar capture, RFID/Gau-Aadhaar scanning via camera/Bluetooth, IoT scale integration with LoRa connectivity, voice logging in Indic languages, task management, offline data caching with automatic synchronization, and payment initiation.</p>
                 </div>
                 <div className="flex gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-muted-foreground"><strong className="text-foreground">Plant Management:</strong> Real-time IoT monitoring of biogas production and quality control</p>
+                  <p className="text-muted-foreground"><strong className="text-foreground">Plant Management - BiogasSangh:</strong> Cluster manager portal with real-time IoT monitoring of CH₄ percentage, volume, temperature, and pressure. Includes automated alerts for low gas levels, sensor failures, and emergency shutdowns. Features transaction management, payment recording with immutable logging, complete audit trails with photos and IoT readings, and offline support.</p>
                 </div>
                 <div className="flex gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-muted-foreground"><strong className="text-foreground">Sales & Inventory:</strong> Complete CBG inventory management with buyer e-commerce integration</p>
+                  <p className="text-muted-foreground"><strong className="text-foreground">Sales & Inventory - UrjaVyapar:</strong> Corporate sales platform managing CBG inventory auto-synced from purification units, buyer e-commerce integration (Megha Gas, ONDC, BGCL), price benchmarking, automated invoice generation with PDF/voice options, PESO compliance tracking, payment monitoring (UPI/cash/credit), buyer management, sales orders, and contract storage with Zoho Sign integration.</p>
                 </div>
                 <div className="flex gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-muted-foreground"><strong className="text-foreground">Admin Control:</strong> Centralized oversight with audit logs, KPIs, and predictive analytics</p>
+                  <p className="text-muted-foreground"><strong className="text-foreground">Admin Control - SAUBHAGYA Portal:</strong> Centralized administrative dashboard with RBAC user management for multiple roles, comprehensive device registry (RFID readers, IoT scales, CH₄ sensors, GPS trackers), detailed audit logs for all transactions and operations, revenue and carbon credit accounting, KPI dashboards (CBG production, revenue, cluster statistics), predictive analytics for expansion planning, and compliance report generation.</p>
                 </div>
               </div>
             </div>

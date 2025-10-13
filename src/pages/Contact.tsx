@@ -12,15 +12,15 @@ export const Contact = () => {
       title: "Call Us",
       subtitle: "हमें कॉल करें",
       details: "+91 98765 43210",
-      description: "Speak directly with our farmer support team",
+      description: "Toll-free multilingual support in Hindi, English, Marathi, Gujarati. Avg 2-min wait time. Available for registration, payments, technical help",
       gradient: "bg-gradient-hero"
     },
     {
       icon: MessageSquare,
-      title: "WhatsApp",
+      title: "WhatsApp Support",
       subtitle: "व्हाट्सऐप",
       details: "+91 98765 43211",
-      description: "Quick support and updates via WhatsApp",
+      description: "24/7 messaging support. Send photos/videos. Track pickups, payment status, and get instant FAQ answers. Join farmer community group",
       gradient: "bg-gradient-earth"
     },
     {
@@ -28,15 +28,15 @@ export const Contact = () => {
       title: "Email Support",
       subtitle: "ईमेल सहायता",
       details: "support@saubhagya.com",
-      description: "Detailed queries and documentation",
+      description: "Detailed technical queries, documentation, complaints. 24-hour guaranteed response. Supports attachments up to 10MB",
       gradient: "bg-gradient-warm"
     },
     {
       icon: MapPin,
-      title: "Visit Office",
+      title: "Visit Our Office",
       subtitle: "कार्यालय आएं",
       details: "Sector 14, Gurgaon",
-      description: "Meet our team in person",
+      description: "Schedule in-person meetings. Farmer orientation sessions every Wednesday. Bring Aadhaar, bank passbook for instant registration",
       gradient: "bg-primary"
     }
   ];
@@ -75,23 +75,35 @@ export const Contact = () => {
   const faqs = [
     {
       question: "How quickly will I receive payment?",
-      answer: "Payments are processed within 24 hours of material verification and directly transferred to your registered bank account."
+      answer: "Payments are automatically processed within 24 hours of material verification at the biogas plant. Money is transferred directly to your registered bank account or UPI mobile wallet. You'll receive SMS and app notifications confirming the payment with transaction ID, amount breakdown, and digital receipt. No intermediaries or delays - guaranteed."
     },
     {
       question: "What is the minimum quantity for pickup?",
-      answer: "We collect minimum 50kg of cattle dung. For smaller quantities, you can accumulate and request pickup when ready."
+      answer: "We collect a minimum of 50kg of cattle dung per pickup to ensure transport efficiency. If you have smaller quantities, you can store them properly (covered, dry location) and accumulate until you reach the minimum. For farmers with 15-20 cattle, this typically takes 1-2 days. We can schedule pickups daily, every 2 days, or weekly based on your convenience and production volume."
     },
     {
-      question: "How do you ensure fair weighing?",
-      answer: "We use IoT-enabled digital weighing scales with real-time data recording. You receive SMS confirmation of weights immediately."
+      question: "How do you ensure fair and transparent weighing?",
+      answer: "We use government-certified IoT-enabled digital weighing scales with tamper-proof load cells. Every measurement is automatically recorded with exact weight, timestamp, GPS coordinates, and photos. You receive instant SMS confirmation showing the weight. The scales are regularly calibrated and audited. No manual interference is possible - complete transparency through technology."
     },
     {
-      question: "What are the quality requirements?",
-      answer: "Fresh cattle dung with minimal contamination. Our team will guide you on proper storage and preparation methods."
+      question: "What are the quality requirements for material?",
+      answer: "We accept fresh cattle dung with minimal contamination (stones, plastic, soil). Ideal moisture content is 60-80%. Store in covered area away from rain. Avoid mixing with other materials. Our field team provides free training on proper collection, storage methods, and quality improvement techniques. Higher quality materials earn bonus payments of ₹0.50-1.00 per kg extra."
     },
     {
-      question: "Is there any registration fee?",
-      answer: "No registration fees. Joining Saubhagya is completely free for farmers. We only earn when you earn."
+      question: "Is there any registration fee or hidden charges?",
+      answer: "Absolutely no registration fees, membership charges, or hidden costs. Joining Saubhagya is 100% free for farmers. No equipment purchase required - we provide IoT scales and RFID tags at no cost. We only earn when you earn. All pricing is transparent and communicated upfront with no deductions except taxes as per government regulations."
+    },
+    {
+      question: "What documents do I need to register?",
+      answer: "You need: 1) Aadhaar card (for identity verification), 2) Bank account passbook or cancelled cheque (for direct payments), 3) Mobile number (for SMS and app access), 4) Cattle ownership proof (optional but helpful). Our field executives can help you with the entire registration process, which typically takes 15-20 minutes and can be completed at your farm."
+    },
+    {
+      question: "Can I track my pickups and payments?",
+      answer: "Yes! You can track everything through our mobile app or via SMS. Real-time GPS tracking shows vehicle location during pickup. You receive notifications for: pickup scheduled, vehicle en route, material weighed, quality assessed, payment processed. Complete transaction history with dates, weights, amounts, and receipts available anytime in the app or via WhatsApp."
+    },
+    {
+      question: "What if I have a dispute about weight or payment?",
+      answer: "Every transaction has complete digital audit trail: timestamped photos, IoT weight readings, GPS location, quality parameters, and your acknowledgment. If you have any concerns, contact our support immediately. We typically resolve disputes within 24 hours by reviewing the digital evidence. Our blockchain-backed logging ensures transaction records cannot be altered, protecting your interests."
     }
   ];
 
@@ -113,8 +125,9 @@ export const Contact = () => {
               संपर्क करें
             </p>
             <p className="text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-              Ready to start earning from your cattle dung? Have questions about our process? 
-              Our dedicated support team is here to help you every step of the way.
+              Ready to start earning from your cattle dung and transform waste into wealth? Have questions
+              about our process, pricing, or technology? Our dedicated multilingual support team is available
+              to assist you every step of the way - from initial registration to your first payment and beyond.
             </p>
           </div>
         </section>
@@ -127,19 +140,19 @@ export const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Phone Support:</strong> Call +91 98765 43210 for immediate assistance and farmer support</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Phone Support:</strong> Call +91 98765 43210 for immediate assistance. Available in Hindi, English, Marathi, and Gujarati. Average wait time under 2 minutes. Dedicated helpline for farmer registration, payment queries, and technical support.</p>
                   </div>
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">WhatsApp:</strong> Quick updates and support via +91 98765 43211</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">WhatsApp:</strong> Quick support via +91 98765 43211. Send photos, videos, or voice messages. Track pickup status, check payment history, and get instant answers to common questions. Join our farmer community group for tips and updates.</p>
                   </div>
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Email:</strong> Detailed queries at support@saubhagya.com with 24-hour response time</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Email:</strong> support@saubhagya.com for detailed queries, technical issues, or documentation requests. Guaranteed response within 24 hours. Include farmer ID or phone number for faster resolution. Attachment support for photos and documents.</p>
                   </div>
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Office Hours:</strong> Mon-Fri 9AM-6PM, Sat 9AM-2PM, Sunday emergency support only</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Office Hours:</strong> Mon-Fri 9AM-6PM, Sat 9AM-2PM for regular support. Emergency pickup requests and payment issues handled 24/7. Sunday emergency hotline available for urgent matters. Best calling times: 10AM-12PM and 2PM-4PM.</p>
                   </div>
                 </div>
               </div>

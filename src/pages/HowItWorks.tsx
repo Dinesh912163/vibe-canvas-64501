@@ -1,8 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Scale, TruckIcon, Factory, Banknote, ShieldCheck, Navigation, Lock } from "lucide-react";
-import farmersWorking from "@/assets/farmers-working.jpg";
-import smartTransport from "@/assets/smart-transport.jpg";
+import smartCollection from "/attached_assets/stock_images/indian_farmer_checki_06c5e61f.jpg";
+import smartTransport from "/attached_assets/stock_images/pickup_truck_farm_ag_7e87fea4.jpg";
 import biogasFacility from "@/assets/biogas-facility.jpg";
 import farmerPayment from "@/assets/farmer-payment.jpg";
 
@@ -12,17 +12,17 @@ export const HowItWorks = () => {
       icon: Scale,
       title: "Smart Collection",
       subtitle: "स्मार्ट संग्रह",
-      description: "IoT-verified weighing and instant recording",
-      details: "Our certified weighing stations ensure accurate measurement of your cattle dung. Every transaction is recorded digitally with timestamp and location verification.",
-      image: farmersWorking,
+      description: "IoT-verified weighing with tamper-proof digital recording",
+      details: "Our certified weighing stations use advanced load cells and IoT sensors to ensure precise, tamper-proof measurement of your cattle dung. Each weighing scale is calibrated regularly and certified by government authorities. Every transaction is automatically recorded digitally with exact weight, timestamp, GPS coordinates, and digital signatures. You receive instant SMS and mobile app notifications confirming the measurement, eliminating any possibility of manipulation or disputes. The system also captures quality parameters like moisture content to determine fair pricing.",
+      image: smartCollection,
       gradient: "bg-gradient-hero"
     },
     {
       icon: TruckIcon,
       title: "Safe Transport",
       subtitle: "सुरक्षित परिवहन",
-      description: "GPS-tracked pickup from your gaushala",
-      details: "Professional transport teams collect your materials with GPS tracking for complete transparency. Real-time updates keep you informed throughout the process.",
+      description: "GPS-tracked secure pickup with real-time monitoring",
+      details: "Our professional transport teams use specialized vehicles equipped with GPS tracking systems and temperature monitoring sensors. Collection is scheduled at your convenience through our mobile app or phone call. Throughout the journey from your gaushala to the biogas plant, you can track the vehicle's location in real-time. Photo documentation at pickup and delivery points ensures accountability. The covered transport vehicles maintain optimal conditions to preserve material quality. Insurance coverage protects against any unforeseen incidents during transportation.",
       image: smartTransport,
       gradient: "bg-gradient-earth"
     },
@@ -30,8 +30,8 @@ export const HowItWorks = () => {
       icon: Factory,
       title: "CBG Production",
       subtitle: "CBG उत्पादन",
-      description: "Clean biogas processing locally",
-      details: "State-of-the-art biogas plants convert your waste into valuable Compressed Biogas (CBG) using advanced anaerobic digestion technology.",
+      description: "Advanced anaerobic digestion and purification process",
+      details: "Your agricultural waste enters state-of-the-art biogas plants where it undergoes controlled anaerobic digestion in sealed reactors maintained at optimal temperature (35-40°C). Over 30-40 days, naturally occurring anaerobic bacteria break down organic matter, producing biogas containing 55-65% methane. This raw biogas then passes through multi-stage water scrubbing purification units that remove CO₂, hydrogen sulfide (H₂S), and moisture, yielding high-purity Compressed Biogas (CBG) with 90%+ methane content - equivalent to CNG and natural gas. The entire process is monitored by IoT sensors tracking gas composition, pressure, and temperature. The nutrient-rich digestate byproduct can be returned as organic fertilizer.",
       image: biogasFacility,
       gradient: "bg-gradient-warm"
     },
@@ -39,8 +39,8 @@ export const HowItWorks = () => {
       icon: Banknote,
       title: "Fair Payment",
       subtitle: "न्यायपूर्ण भुगतान",
-      description: "Same-day payout to your account",
-      details: "Transparent pricing based on quality and quantity. Payments are processed within 24 hours directly to your bank account or mobile wallet.",
+      description: "Transparent pricing with guaranteed same-day payment",
+      details: "Our transparent pricing model ensures you receive ₹3-5 per kilogram based on material quality (moisture content, contamination levels) and current market rates. All pricing parameters are clearly communicated upfront with no hidden deductions. Once your material is verified at the biogas plant, payment is automatically processed within 24 hours directly to your registered bank account or UPI mobile wallet. You receive a detailed digital receipt showing weight, quality grade, price per kg, total amount, and transaction ID. Payment history and monthly earning reports are available through the mobile app for your records.",
       image: farmerPayment,
       gradient: "bg-primary"
     }
@@ -49,20 +49,20 @@ export const HowItWorks = () => {
   const benefits = [
     {
       icon: ShieldCheck,
-      title: "Guaranteed Quality",
-      description: "IoT sensors ensure quality standards are met",
+      title: "Guaranteed Quality Standards",
+      description: "Continuous IoT sensor monitoring ensures material quality meets biogas production standards. Automated quality checks for moisture content, contamination levels, and organic matter composition with instant feedback",
       gradient: "bg-gradient-hero"
     },
     {
       icon: Navigation,
-      title: "Real-time Tracking",
-      description: "Track your materials from pickup to processing",
+      title: "End-to-End Real-time Tracking",
+      description: "Track your materials throughout the entire journey from pickup to biogas plant delivery. GPS location updates, estimated arrival times, and processing status notifications keep you informed at every stage",
       gradient: "bg-gradient-earth"
     },
     {
       icon: Lock,
-      title: "Secure Payments",
-      description: "Bank-grade security for all transactions",
+      title: "Secure Payment Infrastructure",
+      description: "Bank-grade encryption and security protocols protect all financial transactions. Multi-factor authentication, secure payment gateways, and complete transaction history with digital receipts for your records",
       gradient: "bg-gradient-warm"
     }
   ];
@@ -79,8 +79,9 @@ export const HowItWorks = () => {
               यह कैसे काम करता है
             </p>
             <p className="text-xl md:text-2xl max-w-4xl mx-auto text-muted-foreground leading-relaxed">
-              Our transparent 4-step process ensures fair compensation for farmers while 
-              contributing to clean energy production and environmental sustainability.
+              Our comprehensive, technology-enabled 4-step process ensures complete transparency,
+              fair compensation for farmers, and efficient conversion of agricultural waste into
+              valuable clean energy while maintaining environmental sustainability at every stage.
             </p>
           </div>
         </section>
@@ -93,19 +94,19 @@ export const HowItWorks = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Step 1:</strong> IoT-verified smart weighing with digital recording and instant confirmation</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Step 1 - Smart Collection:</strong> IoT-enabled certified weighing scales with tamper-proof sensors ensure accurate measurement. Digital recording with timestamp, GPS location, and instant SMS/app confirmation sent to farmers.</p>
                   </div>
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Step 2:</strong> GPS-tracked safe transport from your gaushala with real-time updates</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Step 2 - Safe Transport:</strong> Professional teams with GPS-tracked vehicles collect materials from your gaushala. Real-time route tracking, temperature monitoring, and photo documentation throughout the journey.</p>
                   </div>
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Step 3:</strong> Advanced biogas processing to produce clean Compressed Biogas (CBG)</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Step 3 - CBG Production:</strong> Anaerobic digestion in controlled digesters (35-40°C, 30-40 days) converts organic matter to biogas. Water scrubbing purification yields 90%+ methane CBG equivalent to CNG/natural gas.</p>
                   </div>
                   <div className="flex gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Step 4:</strong> Fair payment within 24 hours to your bank account or mobile wallet</p>
+                    <p className="text-muted-foreground"><strong className="text-foreground">Step 4 - Fair Payment:</strong> Transparent pricing at ₹3-5/kg based on quality. Automated payment processing within 24 hours directly to your registered bank account or UPI with detailed transaction receipt.</p>
                   </div>
                 </div>
               </div>
