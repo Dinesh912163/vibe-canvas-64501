@@ -3,9 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, MessageSquare, UserPlus, Headphones, Briefcase, HelpCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare, UserPlus, Headphones, Briefcase, HelpCircle, Languages } from "lucide-react";
+import { useState } from "react";
 
 export const Contact = () => {
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const [language, setLanguage] = useState<'english' | 'hindi'>('english');
   const contactMethods = [
     {
       icon: Phone,
@@ -107,50 +110,137 @@ export const Contact = () => {
     }
   ];
 
-  const officeHours = [
+  const officeHours = language === 'english' ? [
     { day: "Monday - Friday", time: "9:00 AM - 6:00 PM" },
     { day: "Saturday", time: "9:00 AM - 2:00 PM" },
     { day: "Sunday", time: "Emergency Support Only" }
+  ] : [
+    { day: "सोमवार - शुक्रवार", time: "सुबह 9:00 - शाम 6:00" },
+    { day: "शनिवार", time: "सुबह 9:00 - दोपहर 2:00" },
+    { day: "रविवार", time: "केवल आपातकालीन सहायता" }
   ];
+
+  const content = language === 'english' ? {
+    title: "Contact Us",
+    subtitle: "संपर्क करें",
+    description: "Ready to start earning from your cattle dung and transform waste into wealth? Have questions about our process, pricing, or technology? Our dedicated multilingual support team is available to assist you every step of the way - from initial registration to your first payment and beyond.",
+    quickContactTitle: "Quick Contact Guide",
+    getInTouch: "Get In Touch",
+    getInTouchSub: "संपर्क में रहें",
+    sendMessage: "Send us a Message",
+    firstName: "First Name *",
+    lastName: "Last Name *",
+    phone: "Phone Number *",
+    email: "Email Address",
+    location: "Village/Location *",
+    cattle: "Number of Cattle",
+    message: "Message *",
+    sendBtn: "Send Message",
+    officeHours: "Office Hours",
+    visitOffice: "Visit Our Office",
+    visitOfficeLocation: "Sector 14, Gurgaon, Haryana",
+    clickDetails: "Click to view contact details →",
+    clickMore: "Click for more details →",
+    howHelp: "How Can We Help?",
+    howHelpSub: "हम कैसे मदद कर सकते हैं?",
+    faqTitle: "Frequently Asked Questions",
+    faqSub: "अक्सर पूछे जाने वाले प्रश्न",
+    needHelp: "Need Immediate Help?",
+    needHelpDesc: "For urgent pickup requests or payment issues, contact our 24/7 support team",
+    callEmergency: "Call Emergency Support",
+    whatsappSupport: "WhatsApp Support"
+  } : {
+    title: "संपर्क करें",
+    subtitle: "Contact Us",
+    description: "अपने पशु गोबर से कमाई शुरू करने और कचरे को धन में बदलने के लिए तैयार हैं? हमारी प्रक्रिया, मूल्य निर्धारण, या तकनीक के बारे में प्रश्न हैं? हमारी समर्पित बहुभाषी सहायता टीम प्रारंभिक पंजीकरण से लेकर आपके पहले भुगतान तक और उसके बाद भी हर कदम पर आपकी सहायता के लिए उपलब्ध है।",
+    quickContactTitle: "त्वरित संपर्क गाइड",
+    getInTouch: "संपर्क में रहें",
+    getInTouchSub: "Get In Touch",
+    sendMessage: "हमें संदेश भेजें",
+    firstName: "पहला नाम *",
+    lastName: "अंतिम नाम *",
+    phone: "फ़ोन नंबर *",
+    email: "ईमेल पता",
+    location: "गांव/स्थान *",
+    cattle: "मवेशियों की संख्या",
+    message: "संदेश *",
+    sendBtn: "संदेश भेजें",
+    officeHours: "कार्यालय समय",
+    visitOffice: "हमारे कार्यालय आएं",
+    visitOfficeLocation: "सेक्टर 14, गुड़गांव, हरियाणा",
+    clickDetails: "संपर्क विवरण देखने के लिए क्लिक करें →",
+    clickMore: "अधिक जानकारी के लिए क्लिक करें →",
+    howHelp: "हम कैसे मदद कर सकते हैं?",
+    howHelpSub: "How Can We Help?",
+    faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
+    faqSub: "Frequently Asked Questions",
+    needHelp: "तुरंत सहायता चाहिए?",
+    needHelpDesc: "तत्काल पिकअप अनुरोध या भुगतान समस्याओं के लिए, हमारी 24/7 सहायता टीम से संपर्क करें",
+    callEmergency: "आपातकालीन सहायता कॉल करें",
+    whatsappSupport: "व्हाट्सऐप सहायता"
+  };
 
   return (
     <div className="min-h-screen relative">
       <div className="relative z-10">
         <section className="pt-20 pb-20 bg-gradient-to-b from-primary/10 to-white">
-          <div className="container mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
-              Contact Us
-            </h1>
-            <p className="text-2xl md:text-3xl mb-6 font-medium text-foreground">
-              संपर्क करें
-            </p>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-              Ready to start earning from your cattle dung and transform waste into wealth? Have questions
-              about our process, pricing, or technology? Our dedicated multilingual support team is available
-              to assist you every step of the way - from initial registration to your first payment and beyond.
-            </p>
+          <div className="container mx-auto px-6">
+            <div className="flex justify-end mb-8">
+              <div className="flex gap-2 bg-white rounded-lg shadow-md p-1">
+                <Button
+                  variant={language === 'english' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setLanguage('english')}
+                  className="flex items-center gap-2"
+                >
+                  <Languages className="w-4 h-4" />
+                  English
+                </Button>
+                <Button
+                  variant={language === 'hindi' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setLanguage('hindi')}
+                  className="flex items-center gap-2"
+                >
+                  <Languages className="w-4 h-4" />
+                  हिंदी
+                </Button>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
+                {content.title}
+              </h1>
+              <p className="text-2xl md:text-3xl mb-6 font-medium text-foreground">
+                {content.subtitle}
+              </p>
+              <p className="text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
+                {content.description}
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="py-16 bg-white">
+        <section id="quick-contact-guide" className="py-16 bg-white scroll-mt-20">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border-l-4 border-primary">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Quick Contact Guide</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-6">{content.quickContactTitle}</h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="flex gap-3">
+                  <div id="phone-support" className="flex gap-3 scroll-mt-20">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-muted-foreground"><strong className="text-foreground">Phone Support:</strong> Call +91 98765 43210 for immediate assistance. Available in Hindi, English, Marathi, and Gujarati. Average wait time under 2 minutes. Dedicated helpline for farmer registration, payment queries, and technical support.</p>
                   </div>
-                  <div className="flex gap-3">
+                  <div id="whatsapp-support" className="flex gap-3 scroll-mt-20">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-muted-foreground"><strong className="text-foreground">WhatsApp:</strong> Quick support via +91 98765 43211. Send photos, videos, or voice messages. Track pickup status, check payment history, and get instant answers to common questions. Join our farmer community group for tips and updates.</p>
                   </div>
-                  <div className="flex gap-3">
+                  <div id="email-support" className="flex gap-3 scroll-mt-20">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-muted-foreground"><strong className="text-foreground">Email:</strong> support@saubhagya.com for detailed queries, technical issues, or documentation requests. Guaranteed response within 24 hours. Include farmer ID or phone number for faster resolution. Attachment support for photos and documents.</p>
                   </div>
-                  <div className="flex gap-3">
+                  <div id="office-hours-support" className="flex gap-3 scroll-mt-20">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-muted-foreground"><strong className="text-foreground">Office Hours:</strong> Mon-Fri 9AM-6PM, Sat 9AM-2PM for regular support. Emergency pickup requests and payment issues handled 24/7. Sunday emergency hotline available for urgent matters. Best calling times: 10AM-12PM and 2PM-4PM.</p>
                   </div>
@@ -160,107 +250,122 @@ export const Contact = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-white/95 backdrop-blur-sm">
+        <section id="get-in-touch" className="py-20 bg-white/95 backdrop-blur-sm scroll-mt-20">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Get In Touch
+                {content.getInTouch}
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground">
-                संपर्क में रहें
+                {content.getInTouchSub}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-              {contactMethods.map((method, index) => (
-                <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm">
-                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                    <div className={`w-20 h-20 ${method.gradient} rounded-2xl flex items-center justify-center shadow-xl`}>
-                      <method.icon className="w-10 h-10 text-background" />
+              {contactMethods.map((method, index) => {
+                const scrollToIds = ['phone-support', 'whatsapp-support', 'email-support', 'office-hours-support'];
+
+                return (
+                  <Card
+                    key={index}
+                    onClick={() => {
+                      const element = document.getElementById(scrollToIds[index]);
+                      element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }}
+                    className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm cursor-pointer group"
+                  >
+                    <div className={`relative h-48 overflow-hidden ${method.gradient} flex items-center justify-center`}>
+                      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-white/10"></div>
+                      <div className="relative z-10 transform group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-28 h-28 bg-white/20 backdrop-blur-md rounded-3xl flex items-center justify-center shadow-2xl border border-white/30">
+                          <method.icon className="w-14 h-14 text-white drop-shadow-lg" strokeWidth={1.5} />
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-bold text-foreground mb-2">
-                      {method.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3 font-medium">
-                      {method.subtitle}
-                    </p>
-                    <p className="text-lg font-semibold text-primary mb-3">
-                      {method.details}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {method.description}
-                    </p>
-                  </div>
-                </Card>
-              ))}
+                    <div className="p-6 text-center">
+                      <h3 className="text-xl font-bold text-foreground mb-2">
+                        {method.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-3 font-medium">
+                        {method.subtitle}
+                      </p>
+                      <p className="text-lg font-semibold text-primary mb-3">
+                        {method.details}
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+                        {method.description}
+                      </p>
+                      <p className="text-xs text-primary font-semibold mt-2">{content.clickMore}</p>
+                    </div>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
 
         <section className="py-20 bg-white/95 backdrop-blur-sm">
           <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-              <Card className="p-8 bg-white/95 backdrop-blur-sm shadow-2xl">
+            <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
+              <Card className="p-8 bg-white/95 backdrop-blur-sm shadow-2xl h-full">
                 <h3 className="text-3xl font-bold text-foreground mb-8">
-                  Send us a Message
+                  {content.sendMessage}
                 </h3>
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="firstName" className="text-base font-semibold">First Name *</Label>
-                      <Input id="firstName" placeholder="Enter your first name" className="mt-2 h-12" />
+                      <Label htmlFor="firstName" className="text-base font-semibold">{content.firstName}</Label>
+                      <Input id="firstName" placeholder={content.firstName.replace(' *', '')} className="mt-2 h-12" />
                     </div>
                     <div>
-                      <Label htmlFor="lastName" className="text-base font-semibold">Last Name *</Label>
-                      <Input id="lastName" placeholder="Enter your last name" className="mt-2 h-12" />
+                      <Label htmlFor="lastName" className="text-base font-semibold">{content.lastName}</Label>
+                      <Input id="lastName" placeholder={content.lastName.replace(' *', '')} className="mt-2 h-12" />
                     </div>
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="phone" className="text-base font-semibold">Phone Number *</Label>
+                    <Label htmlFor="phone" className="text-base font-semibold">{content.phone}</Label>
                     <Input id="phone" placeholder="+91 XXXXX XXXXX" className="mt-2 h-12" />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="email" className="text-base font-semibold">Email Address</Label>
+                    <Label htmlFor="email" className="text-base font-semibold">{content.email}</Label>
                     <Input id="email" type="email" placeholder="your.email@example.com" className="mt-2 h-12" />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="location" className="text-base font-semibold">Village/Location *</Label>
-                    <Input id="location" placeholder="Enter your village or city" className="mt-2 h-12" />
+                    <Label htmlFor="location" className="text-base font-semibold">{content.location}</Label>
+                    <Input id="location" placeholder={content.location.replace(' *', '')} className="mt-2 h-12" />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="cattle" className="text-base font-semibold">Number of Cattle</Label>
-                    <Input id="cattle" placeholder="How many cattle do you have?" className="mt-2 h-12" />
+                    <Label htmlFor="cattle" className="text-base font-semibold">{content.cattle}</Label>
+                    <Input id="cattle" placeholder={content.cattle} className="mt-2 h-12" />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="message" className="text-base font-semibold">Message *</Label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Tell us about your requirements or questions..."
+                    <Label htmlFor="message" className="text-base font-semibold">{content.message}</Label>
+                    <Textarea
+                      id="message"
+                      placeholder={content.message.replace(' *', '')}
                       className="h-36 mt-2"
                     />
                   </div>
-                  
+
                   <Button type="submit" size="lg" className="w-full text-lg h-14">
-                    Send Message
+                    {content.sendBtn}
                   </Button>
                 </form>
               </Card>
 
-              <div className="space-y-8">
-                <Card className="p-8 bg-white/95 backdrop-blur-sm shadow-2xl">
+              <div className="flex flex-col gap-6 h-full">
+                <Card className="p-8 bg-white/95 backdrop-blur-sm shadow-2xl flex-1">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 bg-gradient-hero rounded-lg flex items-center justify-center shadow-md">
                       <Clock className="w-7 h-7 text-background" />
                     </div>
                     <h3 className="text-3xl font-bold text-foreground">
-                      Office Hours
+                      {content.officeHours}
                     </h3>
                   </div>
                   <div className="space-y-4">
@@ -273,13 +378,20 @@ export const Contact = () => {
                   </div>
                 </Card>
 
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/10 to-secondary/10 p-8">
-                  <div className="flex flex-col items-center justify-center h-72">
-                    <div className="w-24 h-24 bg-gradient-hero rounded-2xl flex items-center justify-center shadow-xl mb-6">
+                <div
+                  onClick={() => {
+                    const element = document.getElementById('get-in-touch');
+                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                  className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/10 to-secondary/10 p-8 cursor-pointer hover:shadow-3xl hover:scale-105 transition-all duration-300 flex-1"
+                >
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <div className="w-24 h-24 bg-gradient-hero rounded-2xl flex items-center justify-center shadow-xl mb-6 group-hover:scale-110 transition-transform">
                       <MapPin className="w-12 h-12 text-background" />
                     </div>
-                    <h4 className="text-2xl font-bold mb-3 text-foreground text-center">Visit Our Office</h4>
-                    <p className="text-lg text-muted-foreground text-center">Sector 14, Gurgaon, Haryana</p>
+                    <h4 className="text-2xl font-bold mb-3 text-foreground text-center">{content.visitOffice}</h4>
+                    <p className="text-lg text-muted-foreground text-center">{content.visitOfficeLocation}</p>
+                    <p className="text-sm text-primary mt-3 font-semibold">{content.clickDetails}</p>
                   </div>
                 </div>
               </div>
@@ -291,33 +403,79 @@ export const Contact = () => {
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                How Can We Help?
+                {content.howHelp}
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground">
-                हम कैसे मदद कर सकते हैं?
+                {content.howHelpSub}
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {supportTypes.map((support, index) => (
-                <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm">
-                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                    <div className={`w-20 h-20 ${support.gradient} rounded-2xl flex items-center justify-center shadow-xl`}>
-                      <support.icon className="w-10 h-10 text-background" />
-                    </div>
+            <div className="relative max-w-5xl mx-auto h-[500px] flex items-center justify-center">
+              {supportTypes.map((support, index) => {
+                const isActive = index === activeCardIndex;
+                const position = (index - activeCardIndex + supportTypes.length) % supportTypes.length;
+
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setActiveCardIndex(index)}
+                    className={`absolute transition-all duration-500 ease-in-out cursor-pointer ${
+                      isActive
+                        ? 'z-30 scale-100 opacity-100'
+                        : 'opacity-40 hover:opacity-60'
+                    }`}
+                    style={{
+                      transform: isActive
+                        ? 'translateX(0) scale(1)'
+                        : position === 1
+                        ? 'translateX(280px) scale(0.85)'
+                        : position === 2
+                        ? 'translateX(0px) translateY(-100px) scale(0.75)'
+                        : 'translateX(-280px) scale(0.85)',
+                      zIndex: isActive ? 30 : position === 1 || position === 3 ? 20 : 10,
+                    }}
+                  >
+                    <Card className={`w-96 overflow-hidden shadow-2xl bg-white/95 backdrop-blur-sm transition-all duration-500 ${
+                      isActive ? 'ring-4 ring-primary/50' : ''
+                    }`}>
+                      <div className="relative h-56 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                        <div className={`w-24 h-24 ${support.gradient} rounded-2xl flex items-center justify-center shadow-xl transition-transform ${
+                          isActive ? 'scale-110' : 'scale-100'
+                        }`}>
+                          <support.icon className="w-12 h-12 text-background" />
+                        </div>
+                      </div>
+                      <div className="p-8">
+                        <h4 className="text-2xl font-bold text-foreground mb-4">
+                          {support.title}
+                        </h4>
+                        <p className="text-muted-foreground mb-6 leading-relaxed text-base">
+                          {support.description}
+                        </p>
+                        {isActive && (
+                          <Button className="w-full h-12 text-base font-semibold">
+                            {support.action}
+                          </Button>
+                        )}
+                      </div>
+                    </Card>
                   </div>
-                  <div className="p-6">
-                    <h4 className="text-xl font-bold text-foreground mb-4">
-                      {support.title}
-                    </h4>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {support.description}
-                    </p>
-                    <Button variant="outline" className="w-full h-12 text-base font-semibold">
-                      {support.action}
-                    </Button>
-                  </div>
-                </Card>
+                );
+              })}
+            </div>
+
+            <div className="flex justify-center gap-3 mt-12">
+              {supportTypes.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveCardIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === activeCardIndex
+                      ? 'bg-primary w-8'
+                      : 'bg-primary/30 hover:bg-primary/50'
+                  }`}
+                  aria-label={`Go to card ${index + 1}`}
+                />
               ))}
             </div>
           </div>
@@ -327,10 +485,10 @@ export const Contact = () => {
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Frequently Asked Questions
+                {content.faqTitle}
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground">
-                अक्सर पूछे जाने वाले प्रश्न
+                {content.faqSub}
               </p>
             </div>
 
@@ -352,19 +510,19 @@ export const Contact = () => {
         <section className="py-24 bg-gradient-to-r from-primary/90 to-secondary/90 backdrop-blur-sm">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white drop-shadow-lg">
-              Need Immediate Help?
+              {content.needHelp}
             </h2>
             <p className="text-xl md:text-2xl mb-10 text-white/95 max-w-3xl mx-auto drop-shadow-md">
-              For urgent pickup requests or payment issues, contact our 24/7 support team
+              {content.needHelpDesc}
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button variant="hero" size="lg" className="text-lg px-10 py-7 shadow-2xl hover:shadow-3xl transition-all">
                 <Phone className="w-6 h-6 mr-3" />
-                Call Emergency Support
+                {content.callEmergency}
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-10 py-7 bg-white text-primary hover:bg-white/90 border-2 border-white shadow-2xl">
                 <MessageSquare className="w-6 h-6 mr-3" />
-                WhatsApp Support
+                {content.whatsappSupport}
               </Button>
             </div>
           </div>
