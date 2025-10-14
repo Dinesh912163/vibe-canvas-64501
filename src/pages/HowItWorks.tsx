@@ -1,46 +1,214 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Scale, TruckIcon, Factory, Banknote, ShieldCheck, Navigation, Lock } from "lucide-react";
-import smartCollection from "/attached_assets/stock_images/indian_farmer_checki_06c5e61f.jpg";
-import smartTransport from "/attached_assets/stock_images/pickup_truck_farm_ag_7e87fea4.jpg";
+import { Scale, TruckIcon, Factory, Banknote, ShieldCheck, Navigation, Lock, CheckCircle } from "lucide-react";
+import farmersWorking from "@/assets/farmers-working.jpg";
+import smartTransport from "@/assets/smart-transport.jpg";
 import biogasFacility from "@/assets/biogas-facility.jpg";
 import farmerPayment from "@/assets/farmer-payment.jpg";
+import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { howItWorksTranslations } from "@/translations/howItWorks";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
 export const HowItWorks = () => {
+  const { t } = useLanguage();
+
+  const scrollToStep = (stepNumber: number) => {
+    const element = document.getElementById(`step-${stepNumber}-detail`);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const taglines = [
+    {
+      title: "Farmer Power",
+      english: "Farmer Power",
+      hindi: "किसान की ताकत से भारत की प्रगति।"
+    },
+    {
+      title: "Clean Tomorrow",
+      english: "Clean Tomorrow",
+      hindi: "हर किसान के प्रयास से स्वच्छ कल।"
+    },
+    {
+      title: "Rural Energy",
+      english: "Rural Energy",
+      hindi: "गांव की क्षमता, देश की ऊर्जा।"
+    },
+    {
+      title: "Tradition Meets Tech",
+      english: "Tradition Meets Tech",
+      hindi: "परंपरा और तकनीक से हरित भारत।"
+    },
+    {
+      title: "Waste to Wealth",
+      english: "Waste to Wealth",
+      hindi: "गांव के अपशिष्ट से उन्नति की ऊर्जा।"
+    },
+    {
+      title: "Rural Innovation",
+      english: "Rural Innovation",
+      hindi: "गांव की सोच, टिकाऊ कल।"
+    },
+    {
+      title: "Farmer Partners",
+      english: "Farmer Partners",
+      hindi: "हर किसान, स्वच्छ ऊर्जा का भागीदार।"
+    },
+    {
+      title: "Hard Work, Clean Power",
+      english: "Hard Work, Clean Power",
+      hindi: "मेहनत से स्वच्छ ऊर्जा तक — सौभाग्य का मार्ग।"
+    },
+    {
+      title: "Empowering Hands",
+      english: "Empowering Hands",
+      hindi: "जो देश को खिलाते हैं, उन्हें सशक्त बनाते हैं।"
+    },
+    {
+      title: "Sustainable Roots",
+      english: "Sustainable Roots",
+      hindi: "हर गांव में टिकाऊ विकास की जड़ें।"
+    },
+    {
+      title: "Dung to Dream",
+      english: "Dung to Dream",
+      hindi: "गोबर से ऊर्जा, सपनों से हकीकत।"
+    },
+    {
+      title: "Smart Livelihoods",
+      english: "Smart Livelihoods",
+      hindi: "कमाई, स्थिरता और सशक्तिकरण का समझदार तरीका।"
+    },
+    {
+      title: "Green Villages",
+      english: "Green Villages",
+      hindi: "हरित भारत की शुरुआत गांवों से।"
+    },
+    {
+      title: "Clean Origins",
+      english: "Clean Origins",
+      hindi: "स्वच्छ ऊर्जा, ग्रामीण भारत के दिल से।"
+    },
+    {
+      title: "Grown Progress",
+      english: "Grown Progress",
+      hindi: "प्रगति जो पनपी है, निकाली नहीं गई।"
+    },
+    {
+      title: "Rural Story",
+      english: "Rural Story",
+      hindi: "हम मिलकर लिख रहे हैं गांवों की नई ऊर्जा कहानी।"
+    },
+    {
+      title: "Driving Hope",
+      english: "Driving Hope",
+      hindi: "नवाचार, ईमानदारी और उम्मीद से परिवर्तन।"
+    },
+    {
+      title: "Farmer Leaders",
+      english: "Farmer Leaders",
+      hindi: "किसान ही हैं नवीकरणीय क्रांति के अग्रदूत।"
+    },
+    {
+      title: "Fields to Fuel",
+      english: "Fields to Fuel",
+      hindi: "खेतों से ईंधन तक — टिकाऊ भविष्य की दिशा।"
+    },
+    {
+      title: "Dignified Earning",
+      english: "Dignified Earning",
+      hindi: "सम्मान और उद्देश्य से कचरे से कमाई।"
+    },
+    {
+      title: "Future Energy",
+      english: "Future Energy",
+      hindi: "स्वच्छ ऊर्जा का भविष्य — किसान के हाथों में।"
+    },
+    {
+      title: "Balanced Growth",
+      english: "Balanced Growth",
+      hindi: "रोज़गार भी, पर्यावरण भी सुरक्षित।"
+    },
+    {
+      title: "Pure Prosperity",
+      english: "Pure Prosperity",
+      hindi: "किसान की समृद्धि, प्रकृति की पवित्रता।"
+    },
+    {
+      title: "Rural Strength",
+      english: "Rural Strength",
+      hindi: "गांव की दृढ़ता से देश की नई शुरुआत।"
+    },
+    {
+      title: "Village Power",
+      english: "Village Power",
+      hindi: "हर गांव से ऊर्जा, हर किसान से प्रेरणा।"
+    }
+  ];
+
+  const [currentTagline, setCurrentTagline] = useState(taglines[0]);
+
+  useEffect(() => {
+    // Select a random tagline on component mount
+    const randomIndex = Math.floor(Math.random() * taglines.length);
+    setCurrentTagline(taglines[randomIndex]);
+  }, []);
+
   const steps = [
     {
       icon: Scale,
-      title: "Smart Collection",
-      subtitle: "स्मार्ट संग्रह",
-      description: "IoT-verified weighing with tamper-proof digital recording",
-      details: "Our certified weighing stations use advanced load cells and IoT sensors to ensure precise, tamper-proof measurement of your cattle dung. Each weighing scale is calibrated regularly and certified by government authorities. Every transaction is automatically recorded digitally with exact weight, timestamp, GPS coordinates, and digital signatures. You receive instant SMS and mobile app notifications confirming the measurement, eliminating any possibility of manipulation or disputes. The system also captures quality parameters like moisture content to determine fair pricing.",
-      image: smartCollection,
+      title: t(howItWorksTranslations.steps.smartCollection.title),
+      subtitle: t(howItWorksTranslations.steps.smartCollection.subtitle),
+      description: t(howItWorksTranslations.steps.smartCollection.description),
+      detailsText: t(howItWorksTranslations.steps.smartCollection.detailsText),
+      highlight1: t(howItWorksTranslations.steps.smartCollection.highlight1),
+      highlight2: t(howItWorksTranslations.steps.smartCollection.highlight2),
+      highlight3: t(howItWorksTranslations.steps.smartCollection.highlight3),
+      whyItMatters: t(howItWorksTranslations.steps.smartCollection.whyItMatters),
+      image: farmersWorking,
       gradient: "bg-gradient-hero"
     },
     {
       icon: TruckIcon,
-      title: "Safe Transport",
-      subtitle: "सुरक्षित परिवहन",
-      description: "GPS-tracked secure pickup with real-time monitoring",
-      details: "Our professional transport teams use specialized vehicles equipped with GPS tracking systems and temperature monitoring sensors. Collection is scheduled at your convenience through our mobile app or phone call. Throughout the journey from your gaushala to the biogas plant, you can track the vehicle's location in real-time. Photo documentation at pickup and delivery points ensures accountability. The covered transport vehicles maintain optimal conditions to preserve material quality. Insurance coverage protects against any unforeseen incidents during transportation.",
+      title: t(howItWorksTranslations.steps.safeTransport.title),
+      subtitle: t(howItWorksTranslations.steps.safeTransport.subtitle),
+      description: t(howItWorksTranslations.steps.safeTransport.description),
+      detailsText: t(howItWorksTranslations.steps.safeTransport.detailsText),
+      highlight1: t(howItWorksTranslations.steps.safeTransport.highlight1),
+      highlight2: t(howItWorksTranslations.steps.safeTransport.highlight2),
+      highlight3: t(howItWorksTranslations.steps.safeTransport.highlight3),
+      whyItMatters: t(howItWorksTranslations.steps.safeTransport.whyItMatters),
       image: smartTransport,
       gradient: "bg-gradient-earth"
     },
     {
       icon: Factory,
-      title: "CBG Production",
-      subtitle: "CBG उत्पादन",
-      description: "Advanced anaerobic digestion and purification process",
-      details: "Your agricultural waste enters state-of-the-art biogas plants where it undergoes controlled anaerobic digestion in sealed reactors maintained at optimal temperature (35-40°C). Over 30-40 days, naturally occurring anaerobic bacteria break down organic matter, producing biogas containing 55-65% methane. This raw biogas then passes through multi-stage water scrubbing purification units that remove CO₂, hydrogen sulfide (H₂S), and moisture, yielding high-purity Compressed Biogas (CBG) with 90%+ methane content - equivalent to CNG and natural gas. The entire process is monitored by IoT sensors tracking gas composition, pressure, and temperature. The nutrient-rich digestate byproduct can be returned as organic fertilizer.",
+      title: t(howItWorksTranslations.steps.cbgProduction.title),
+      subtitle: t(howItWorksTranslations.steps.cbgProduction.subtitle),
+      description: t(howItWorksTranslations.steps.cbgProduction.description),
+      detailsText: t(howItWorksTranslations.steps.cbgProduction.detailsText),
+      highlight1: t(howItWorksTranslations.steps.cbgProduction.highlight1),
+      highlight2: t(howItWorksTranslations.steps.cbgProduction.highlight2),
+      highlight3: t(howItWorksTranslations.steps.cbgProduction.highlight3),
+      whyItMatters: t(howItWorksTranslations.steps.cbgProduction.whyItMatters),
       image: biogasFacility,
       gradient: "bg-gradient-warm"
     },
     {
       icon: Banknote,
-      title: "Fair Payment",
-      subtitle: "न्यायपूर्ण भुगतान",
-      description: "Transparent pricing with guaranteed same-day payment",
-      details: "Our transparent pricing model ensures you receive ₹3-5 per kilogram based on material quality (moisture content, contamination levels) and current market rates. All pricing parameters are clearly communicated upfront with no hidden deductions. Once your material is verified at the biogas plant, payment is automatically processed within 24 hours directly to your registered bank account or UPI mobile wallet. You receive a detailed digital receipt showing weight, quality grade, price per kg, total amount, and transaction ID. Payment history and monthly earning reports are available through the mobile app for your records.",
+      title: t(howItWorksTranslations.steps.fairPayment.title),
+      subtitle: t(howItWorksTranslations.steps.fairPayment.subtitle),
+      description: t(howItWorksTranslations.steps.fairPayment.description),
+      detailsText: t(howItWorksTranslations.steps.fairPayment.detailsText),
+      highlight1: t(howItWorksTranslations.steps.fairPayment.highlight1),
+      highlight2: t(howItWorksTranslations.steps.fairPayment.highlight2),
+      highlight3: t(howItWorksTranslations.steps.fairPayment.highlight3),
+      whyItMatters: t(howItWorksTranslations.steps.fairPayment.whyItMatters),
       image: farmerPayment,
       gradient: "bg-primary"
     }
@@ -49,66 +217,126 @@ export const HowItWorks = () => {
   const benefits = [
     {
       icon: ShieldCheck,
-      title: "Guaranteed Quality Standards",
-      description: "Continuous IoT sensor monitoring ensures material quality meets biogas production standards. Automated quality checks for moisture content, contamination levels, and organic matter composition with instant feedback",
+      title: t(howItWorksTranslations.benefits.guaranteedQuality.title),
+      description: t(howItWorksTranslations.benefits.guaranteedQuality.description),
       gradient: "bg-gradient-hero"
     },
     {
       icon: Navigation,
-      title: "End-to-End Real-time Tracking",
-      description: "Track your materials throughout the entire journey from pickup to biogas plant delivery. GPS location updates, estimated arrival times, and processing status notifications keep you informed at every stage",
+      title: t(howItWorksTranslations.benefits.realTimeTracking.title),
+      description: t(howItWorksTranslations.benefits.realTimeTracking.description),
       gradient: "bg-gradient-earth"
     },
     {
       icon: Lock,
-      title: "Secure Payment Infrastructure",
-      description: "Bank-grade encryption and security protocols protect all financial transactions. Multi-factor authentication, secure payment gateways, and complete transaction history with digital receipts for your records",
+      title: t(howItWorksTranslations.benefits.securePayments.title),
+      description: t(howItWorksTranslations.benefits.securePayments.description),
       gradient: "bg-gradient-warm"
     }
   ];
 
   return (
     <div className="min-h-screen relative">
+      <LanguageToggle />
       <div className="relative z-10">
         <section className="pt-20 pb-20 bg-gradient-to-b from-primary/10 to-white">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-foreground">
-              How Saubhagya Works
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground leading-tight">
+              {currentTagline.english}
             </h1>
-            <p className="text-2xl md:text-3xl mb-8 font-medium text-foreground">
-              यह कैसे काम करता है
+            <p className="text-2xl md:text-3xl mb-8 font-medium text-primary">
+              {currentTagline.hindi}
             </p>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-muted-foreground leading-relaxed">
-              Our comprehensive, technology-enabled 4-step process ensures complete transparency,
-              fair compensation for farmers, and efficient conversion of agricultural waste into
-              valuable clean energy while maintaining environmental sustainability at every stage.
-            </p>
+            <div className="text-xl md:text-2xl max-w-4xl mx-auto text-muted-foreground leading-relaxed space-y-4">
+              <p>
+                {t(howItWorksTranslations.hero.subtitle1)}
+              </p>
+              <p>
+                {t(howItWorksTranslations.hero.subtitle2)}
+              </p>
+            </div>
           </div>
         </section>
 
         <section className="py-16 bg-white">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border-l-4 border-primary">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Process Overview</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="flex gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Step 1 - Smart Collection:</strong> IoT-enabled certified weighing scales with tamper-proof sensors ensure accurate measurement. Digital recording with timestamp, GPS location, and instant SMS/app confirmation sent to farmers.</p>
+            <div className="max-w-6xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-12">
+                <h3 className="text-3xl md:text-4xl font-bold text-black mb-4">{t(howItWorksTranslations.processOverview.title)}</h3>
+                <p className="text-lg text-gray-600">{t(howItWorksTranslations.processOverview.subtitle)}</p>
+              </div>
+
+              {/* Process Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                {/* Step 1 */}
+                <Card
+                  className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 p-6 text-center cursor-pointer hover:border-primary/30"
+                  onClick={() => scrollToStep(1)}
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Scale className="w-6 h-6 text-primary" />
+                    </div>
                   </div>
-                  <div className="flex gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Step 2 - Safe Transport:</strong> Professional teams with GPS-tracked vehicles collect materials from your gaushala. Real-time route tracking, temperature monitoring, and photo documentation throughout the journey.</p>
+                  <h4 className="text-lg font-bold text-black mb-3">{t(howItWorksTranslations.processOverview.step1)}</h4>
+                  <div className="border-t border-gray-100 pt-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed">{t(howItWorksTranslations.processOverview.step1Description)}</p>
                   </div>
-                  <div className="flex gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Step 3 - CBG Production:</strong> Anaerobic digestion in controlled digesters (35-40°C, 30-40 days) converts organic matter to biogas. Water scrubbing purification yields 90%+ methane CBG equivalent to CNG/natural gas.</p>
+                </Card>
+
+                {/* Step 2 */}
+                <Card
+                  className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 p-6 text-center cursor-pointer hover:border-primary/30"
+                  onClick={() => scrollToStep(2)}
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <TruckIcon className="w-6 h-6 text-primary" />
+                    </div>
                   </div>
-                  <div className="flex gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground"><strong className="text-foreground">Step 4 - Fair Payment:</strong> Transparent pricing at ₹3-5/kg based on quality. Automated payment processing within 24 hours directly to your registered bank account or UPI with detailed transaction receipt.</p>
+                  <h4 className="text-lg font-bold text-black mb-3">{t(howItWorksTranslations.processOverview.step2)}</h4>
+                  <div className="border-t border-gray-100 pt-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed">{t(howItWorksTranslations.processOverview.step2Description)}</p>
                   </div>
-                </div>
+                </Card>
+
+                {/* Step 3 */}
+                <Card
+                  className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 p-6 text-center cursor-pointer hover:border-primary/30"
+                  onClick={() => scrollToStep(3)}
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Factory className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <h4 className="text-lg font-bold text-black mb-3">{t(howItWorksTranslations.processOverview.step3)}</h4>
+                  <div className="border-t border-gray-100 pt-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed">{t(howItWorksTranslations.processOverview.step3Description)}</p>
+                  </div>
+                </Card>
+
+                {/* Step 4 */}
+                <Card
+                  className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 p-6 text-center cursor-pointer hover:border-primary/30"
+                  onClick={() => scrollToStep(4)}
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Banknote className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <h4 className="text-lg font-bold text-black mb-3">{t(howItWorksTranslations.processOverview.step4)}</h4>
+                  <div className="border-t border-gray-100 pt-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed">{t(howItWorksTranslations.processOverview.step4Description)}</p>
+                  </div>
+                </Card>
+              </div>
+
+              {/* Finishing Line */}
+              <div className="text-center">
+                <p className="text-lg text-gray-600 italic">{t(howItWorksTranslations.processOverview.finishingLine)}</p>
               </div>
             </div>
           </div>
@@ -117,13 +345,13 @@ export const HowItWorks = () => {
         <section className="py-24 bg-white/95 backdrop-blur-sm">
           <div className="container mx-auto px-6">
             {steps.map((step, index) => (
-              <div key={index} className={`mb-24 last:mb-0 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} lg:flex items-center gap-16`}>
-                <div className="lg:w-1/2 mb-10 lg:mb-0">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300">
-                    <img 
-                      src={step.image} 
+              <div key={index} id={`step-${index + 1}-detail`} className={`mb-24 last:mb-0 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} lg:flex items-stretch gap-16`}>
+                <div className="lg:w-1/2 mb-10 lg:mb-0 flex">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300 w-full flex flex-col">
+                    <img
+                      src={step.image}
                       alt={`${step.title} process illustration`}
-                      className="w-full h-96 object-cover"
+                      className="w-full flex-1 object-cover min-h-[400px]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute bottom-8 left-8">
@@ -131,26 +359,74 @@ export const HowItWorks = () => {
                         <step.icon className="w-8 h-8 text-background" />
                       </div>
                       <div className="text-white text-3xl font-bold drop-shadow-lg">
-                        Step {index + 1}
+                        {t(index === 0 ? howItWorksTranslations.processOverview.step1 :
+                           index === 1 ? howItWorksTranslations.processOverview.step2 :
+                           index === 2 ? howItWorksTranslations.processOverview.step3 :
+                           howItWorksTranslations.processOverview.step4)}
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="lg:w-1/2">
-                  <Card className="p-10 shadow-2xl hover:shadow-3xl transition-all duration-300">
-                    <h3 className="text-3xl font-bold text-foreground mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-xl text-muted-foreground mb-4 font-medium">
-                      {step.subtitle}
-                    </p>
-                    <p className="text-lg text-primary font-semibold mb-6">
-                      {step.description}
-                    </p>
-                    <p className="text-base text-muted-foreground leading-relaxed">
-                      {step.details}
-                    </p>
+                <div className="lg:w-1/2 flex">
+                  <Card className="p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 w-full flex flex-col justify-between min-h-[400px]">
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-3xl font-bold text-foreground mb-3">
+                          {step.title}
+                        </h3>
+                        <p className="text-xl text-muted-foreground mb-4 font-medium">
+                          {step.subtitle}
+                        </p>
+                        <p className="text-lg text-primary font-semibold mb-6">
+                          {step.description}
+                        </p>
+                        <p className="text-base text-muted-foreground leading-relaxed mb-6">
+                          {step.detailsText}
+                        </p>
+                      </div>
+
+                      {/* Highlights Section */}
+                      <div className={`rounded-xl p-4 shadow-sm ${index === 0 ? 'bg-green-50' :
+                        index === 1 ? 'bg-blue-50' :
+                          index === 2 ? 'bg-orange-50' :
+                            'bg-yellow-50'
+                        }`}>
+                        <h4 className="text-sm font-semibold text-primary uppercase mb-3">{t(howItWorksTranslations.highlights.title)}</h4>
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2">
+                            <CheckCircle className="text-green-500 w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm text-muted-foreground">
+                              {step.highlight1}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <CheckCircle className="text-green-500 w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm text-muted-foreground">
+                              {step.highlight2}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <CheckCircle className="text-green-500 w-4 h-4 flex-shrink-0" />
+                            <span className="text-sm text-muted-foreground">
+                              {step.highlight3}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Why It Matters Section */}
+                      <div className={`rounded-xl p-4 shadow-sm ${index === 0 ? 'bg-green-50' :
+                        index === 1 ? 'bg-blue-50' :
+                          index === 2 ? 'bg-orange-50' :
+                            'bg-yellow-50'
+                        }`}>
+                        <h4 className="text-sm font-semibold text-primary uppercase mb-2">{t(howItWorksTranslations.whyItMatters.title)}</h4>
+                        <p className="text-sm text-muted-foreground italic font-medium">
+                          {step.whyItMatters}
+                        </p>
+                      </div>
+                    </div>
                   </Card>
                 </div>
               </div>
@@ -162,11 +438,8 @@ export const HowItWorks = () => {
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-                Additional Benefits
+                {t(howItWorksTranslations.benefits.title)}
               </h2>
-              <p className="text-xl md:text-2xl text-white/95 drop-shadow-md">
-                अतिरिक्त लाभ
-              </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-16">
@@ -191,7 +464,7 @@ export const HowItWorks = () => {
 
             <div className="text-center">
               <Button variant="hero" size="lg" className="text-xl px-12 py-8 shadow-2xl hover:shadow-3xl">
-                Join Saubhagya Today / आज ही जुड़ें
+                {t(howItWorksTranslations.cta.button)}
               </Button>
             </div>
           </div>
