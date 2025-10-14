@@ -1,15 +1,17 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  Smartphone, 
-  MonitorCheck, 
-  Droplet, 
-  TrendingUp, 
-  Shield, 
+import {
+  Smartphone,
+  MonitorCheck,
+  Droplet,
+  TrendingUp,
+  Shield,
   Truck,
-  CheckCircle2
+  CheckCircle2,
+  Languages
 } from "lucide-react";
-import fieldWorkerImage from "/attached_assets/stock_images/happy_indian_male_fa_c753e903.jpg";
+import { useState } from "react";
+import fieldWorkerImage from "/attached_assets/stock_images/happy_indian_farmers_41d19399.jpg";
 import biogasOperatorImage from "/attached_assets/stock_images/indian_biogas_plant__50076640.jpg";
 import purificationImage from "/attached_assets/stock_images/indian_industrial_wo_b86bded3.jpg";
 import salesImage from "/attached_assets/stock_images/indian_business_prof_67ccf01d.jpg";
@@ -17,23 +19,25 @@ import adminImage from "/attached_assets/stock_images/indian_admin_working_266b0
 import transportImage from "/attached_assets/stock_images/indian_truck_driver__9dc29f99.jpg";
 
 export const UserTypes = () => {
-  const userTypes = [
+  const [language, setLanguage] = useState<'english' | 'hindi'>('english');
+
+  const userTypesEnglish = [
     {
       title: "GauSakhi — Gau-sewa Executive (Field App)",
       subtitle: "मोबाइल फील्ड ऐप",
       icon: Smartphone,
       image: fieldWorkerImage,
       gradient: "bg-gradient-hero",
-      description: "Comprehensive mobile solution for field executives managing farmer relationships, material collection, and on-ground operations",
+      description: "Mobile app for field executives to manage farmers, cattle, and daily collection operations with offline support",
       features: [
-        "Complete farmer onboarding with KYC verification: Capture photos, Aadhaar details, bank account information, and cattle documentation with built-in validation",
-        "RFID & Gau-Aadhaar scanning: Use smartphone camera or Bluetooth-enabled RFID readers to uniquely identify cattle and track their contribution",
-        "Multi-language voice logging: Record observations and notes in Hindi, Marathi, Gujarati, and other Indic languages with automatic transcription",
-        "IoT scale integration: Direct connectivity with LoRa-enabled weighing scales for real-time weight capture and automatic digital recording",
-        "Smart task management: Daily pickup schedules, route optimization, farmer visit tracking, and automated reminders",
-        "Offline-first architecture: Full functionality in areas with poor connectivity, with automatic data synchronization when online",
-        "Payment initiation: Process on-the-spot payments and maintain detailed cash-out logs with biometric verification",
-        "Real-time farmer support: Access farmer history, previous transactions, quality tips, and FAQ support during field visits"
+        "Farmer Onboarding: Register farmers with KYC, Aadhaar, bank details, and photo capture",
+        "Cattle Management: Complete cattle database with RFID/Gau-Aadhaar scanning, breed info, and photo records",
+        "Health History: Track cattle health records, vaccinations, medical treatments, and veterinary visits",
+        "Food History: Monitor cattle feeding patterns, diet changes, and nutrition tracking",
+        "Transport History: View pickup schedules, delivery routes, and material collection logs",
+        "IoT Scale Integration: Auto-capture weights from connected scales during collection",
+        "Payment Processing: Instant payment to farmers with digital receipts",
+        "Offline Mode: Full app functionality works without internet, syncs automatically when online"
       ]
     },
     {
@@ -42,15 +46,16 @@ export const UserTypes = () => {
       icon: MonitorCheck,
       image: biogasOperatorImage,
       gradient: "bg-gradient-earth",
-      description: "Comprehensive cluster management portal for overseeing multiple biogas digesters, monitoring production metrics, and ensuring operational excellence",
+      description: "Portal for cluster managers to monitor digesters, manage transactions, and handle operations at biogas plants",
       features: [
-        "Real-time IoT dashboard: Monitor CH₄ percentage, biogas volume, digester temperature, and pressure across all digesters with live graphs and trend analysis",
-        "Intelligent alert system: Automated notifications for low gas production, CH₄ percentage drops below 55%, sensor failures, temperature anomalies, and emergency shutdown conditions",
-        "Transaction management: Digital forms for material receipt verification, weight confirmation, quality assessment, and farmer acknowledgment with timestamp and GPS location",
-        "Secure payment processing: Record both cash and online payments with blockchain-backed immutable logging, biometric authentication, and automatic receipt generation",
-        "Complete audit trails: Every transaction documented with farmer verification photos, IoT sensor readings, quality parameters, and digital signatures for full traceability",
-        "Dispute resolution tools: Access historical data, photo evidence, and sensor logs to quickly resolve any payment or quantity disputes with farmers",
-        "Offline capability: Continue operations during connectivity issues with automatic cloud synchronization when connection is restored"
+        "Digester Monitoring: Real-time tracking of CH₄ percentage, biogas volume, temperature, and pressure with live graphs",
+        "Batch Management: Track production batches, input materials, output volumes, and quality parameters",
+        "Transaction Entry: Record material receipts, verify weights, confirm quality, and log farmer acknowledgments",
+        "Payment Conciliation: Reconcile farmer payments (cash/online) with digital receipts and transaction logs",
+        "Pickup Schedule: View and manage daily collection schedules, routes, and field executive assignments",
+        "Dispute Resolution: Access historical records, photos, and IoT data to resolve farmer payment or quantity disputes",
+        "Alerts Management: Receive and manage alerts for low gas production, sensor failures, and emergency conditions",
+        "Offline Support: Continue operations without internet, data syncs automatically when connection restored"
       ]
     },
     {
@@ -59,14 +64,15 @@ export const UserTypes = () => {
       icon: Droplet,
       image: purificationImage,
       gradient: "bg-gradient-warm",
-      description: "Monitor water scrubbing purification unit; ensure CH₄% targets and schedule maintenance",
+      description: "App for purification unit operators to monitor gas quality, manage cycles, and track maintenance schedules",
       features: [
-        "Real-time CH₄%, pressure, flow, temp readings",
-        "1-hour purification cycle logs",
-        "Maintenance scheduler & alerts for filters/valves",
-        "Slurry output volume tracking and byproduct records",
-        "Monitoring gas flow from multiple digesters",
-        "Track inventory of purified gas (ready for sales)"
+        "Cycle Management: Track 1-hour purification cycles with start/end times, input/output volumes, and efficiency logs",
+        "Real-Time Monitoring: Live display of CH₄ percentage, pressure, flow rate, and temperature with alerts",
+        "Quality Control Maintenance: Schedule and track filter replacements, valve servicing, and equipment checks",
+        "Slurry Management: Monitor slurry output volumes, byproduct quality, and disposal/usage records",
+        "Inventory Transfer: Track purified gas inventory ready for sales, automatic sync with sales team",
+        "Alert System: Instant notifications for CH₄ drops, pressure issues, or equipment failures",
+        "Performance Reports: Daily and monthly reports on purification efficiency and output quality"
       ]
     },
     {
@@ -75,16 +81,17 @@ export const UserTypes = () => {
       icon: TrendingUp,
       image: salesImage,
       gradient: "bg-primary",
-      description: "Manage inventory of CBG, buyer contacts, pricing, invoicing, and PESO compliance",
+      description: "Sales platform for managing CBG inventory, customer orders, invoicing, and market pricing with compliance tracking",
       features: [
-        "Daily inventory auto-sync from purification unit",
-        "Buyer e-commerce (Megha Gas, ONDC, BGCL)",
-        "Price benchmarking & invoice generation (PDF)",
-        "Voice invoicing option",
-        "Automated PESO compliance tagging per batch",
-        "Track payment (UPI/cash/credit)",
-        "Manage buyers & create sales orders",
-        "Store contracts with versioning & Zoho Sign"
+        "Customer Management: Maintain buyer database with company details, contact persons, and purchase history",
+        "Contact Management: Track communication history, follow-ups, and relationship management with all customers",
+        "Inventory Management: Real-time CBG stock levels with auto-sync from purification unit, batch tracking",
+        "Order and Invoice: Create sales orders, generate PDF invoices, and manage delivery documentation",
+        "Voice Invoicing: Generate invoices using voice commands in multiple languages for quick processing",
+        "Payment Tracking: Monitor payments via UPI, cash, or credit with automated reminders and reconciliation",
+        "Delivery Scheduling: Plan and track CBG deliveries to customers with GPS-enabled logistics",
+        "Price Benchmarking: Compare market prices from Megha Gas, ONDC, BGCL for competitive pricing",
+        "Compliance and Reports: PESO compliance tagging, tax reports, revenue analytics, and audit-ready documentation"
       ]
     },
     {
@@ -120,106 +127,228 @@ export const UserTypes = () => {
     }
   ];
 
+  const userTypesHindi = [
+    {
+      title: "गौसखी — गौ-सेवा कार्यकारी (फील्ड ऐप)",
+      subtitle: "मोबाइल फील्ड ऐप",
+      icon: Smartphone,
+      image: fieldWorkerImage,
+      gradient: "bg-gradient-hero",
+      description: "फील्ड कार्यकारियों के लिए मोबाइल ऐप जो किसानों, मवेशियों और दैनिक संग्रह कार्यों को ऑफलाइन समर्थन के साथ प्रबंधित करता है",
+      features: [
+        "किसान ऑनबोर्डिंग: KYC, आधार, बैंक विवरण और फोटो कैप्चर के साथ किसानों को पंजीकृत करें",
+        "मवेशी प्रबंधन: RFID/गौ-आधार स्कैनिंग, नस्ल जानकारी और फोटो रिकॉर्ड के साथ पूर्ण मवेशी डेटाबेस",
+        "स्वास्थ्य इतिहास: मवेशियों के स्वास्थ्य रिकॉर्ड, टीकाकरण, चिकित्सा उपचार और पशु चिकित्सक दौरे ट्रैक करें",
+        "भोजन इतिहास: मवेशियों के भोजन पैटर्न, आहार परिवर्तन और पोषण ट्रैकिंग की निगरानी करें",
+        "परिवहन इतिहास: पिकअप शेड्यूल, डिलीवरी रूट और सामग्री संग्रह लॉग देखें",
+        "IoT स्केल एकीकरण: संग्रह के दौरान जुड़े तराजू से स्वचालित रूप से वजन कैप्चर करें",
+        "भुगतान प्रक्रिया: डिजिटल रसीदों के साथ किसानों को त्वरित भुगतान",
+        "ऑफलाइन मोड: पूर्ण ऐप कार्यक्षमता इंटरनेट के बिना काम करती है, ऑनलाइन होने पर स्वचालित रूप से सिंक होती है"
+      ]
+    },
+    {
+      title: "बायोगैससंघ — क्लस्टर मैनेजर ऐप",
+      subtitle: "संचालक पोर्टल",
+      icon: MonitorCheck,
+      image: biogasOperatorImage,
+      gradient: "bg-gradient-earth",
+      description: "क्लस्टर प्रबंधकों के लिए पोर्टल जो डाइजेस्टर की निगरानी, लेनदेन प्रबंधन और बायोगैस संयंत्रों में संचालन को संभालता है",
+      features: [
+        "डाइजेस्टर मॉनिटरिंग: CH₄ प्रतिशत, बायोगैस वॉल्यूम, तापमान और दबाव की लाइव ग्राफ के साथ वास्तविक समय ट्रैकिंग",
+        "बैच प्रबंधन: उत्पादन बैच, इनपुट सामग्री, आउटपुट वॉल्यूम और गुणवत्ता पैरामीटर ट्रैक करें",
+        "लेनदेन प्रविष्टि: सामग्री रसीद रिकॉर्ड करें, वजन सत्यापित करें, गुणवत्ता की पुष्टि करें और किसान स्वीकृति लॉग करें",
+        "भुगतान समाधान: डिजिटल रसीद और लेनदेन लॉग के साथ किसान भुगतान (नकद/ऑनलाइन) का समाधान करें",
+        "पिकअप शेड्यूल: दैनिक संग्रह शेड्यूल, मार्ग और फील्ड कार्यकारी असाइनमेंट देखें और प्रबंधित करें",
+        "विवाद समाधान: किसान भुगतान या मात्रा विवादों को हल करने के लिए ऐतिहासिक रिकॉर्ड, फोटो और IoT डेटा एक्सेस करें",
+        "अलर्ट प्रबंधन: कम गैस उत्पादन, सेंसर विफलता और आपातकालीन स्थितियों के लिए अलर्ट प्राप्त करें और प्रबंधित करें",
+        "ऑफलाइन समर्थन: इंटरनेट के बिना संचालन जारी रखें, कनेक्शन बहाल होने पर डेटा स्वचालित रूप से सिंक होता है"
+      ]
+    },
+    {
+      title: "शुद्धिदूत — शुद्धिकरण इकाई ऐप",
+      subtitle: "शुद्धीकरण संयंत्र संचालक",
+      icon: Droplet,
+      image: purificationImage,
+      gradient: "bg-gradient-warm",
+      description: "शुद्धिकरण इकाई संचालकों के लिए ऐप जो गैस गुणवत्ता की निगरानी, चक्र प्रबंधन और रखरखाव शेड्यूल ट्रैक करता है",
+      features: [
+        "चक्र प्रबंधन: प्रारंभ/समाप्ति समय, इनपुट/आउटपुट वॉल्यूम और दक्षता लॉग के साथ 1-घंटे के शुद्धिकरण चक्रों को ट्रैक करें",
+        "वास्तविक समय निगरानी: अलर्ट के साथ CH₄ प्रतिशत, दबाव, प्रवाह दर और तापमान का लाइव डिस्प्ले",
+        "गुणवत्ता नियंत्रण रखरखाव: फिल्टर प्रतिस्थापन, वाल्व सर्विसिंग और उपकरण जांच को शेड्यूल और ट्रैक करें",
+        "स्लरी प्रबंधन: स्लरी आउटपुट वॉल्यूम, उपोत्पाद गुणवत्ता और निपटान/उपयोग रिकॉर्ड की निगरानी करें",
+        "इन्वेंटरी ट्रांसफर: बिक्री के लिए तैयार शुद्ध गैस इन्वेंटरी ट्रैक करें, बिक्री टीम के साथ स्वचालित सिंक",
+        "अलर्ट सिस्टम: CH₄ गिरावट, दबाव मुद्दों या उपकरण विफलता के लिए तत्काल सूचनाएं",
+        "प्रदर्शन रिपोर्ट: शुद्धिकरण दक्षता और आउटपुट गुणवत्ता पर दैनिक और मासिक रिपोर्ट"
+      ]
+    },
+    {
+      title: "ऊर्जाव्यापार — कॉर्पोरेट बिक्री और इन्वेंटरी ऐप",
+      subtitle: "कॉर्पोरेट बिक्री प्रबंधक",
+      icon: TrendingUp,
+      image: salesImage,
+      gradient: "bg-primary",
+      description: "अनुपालन ट्रैकिंग के साथ CBG इन्वेंटरी, ग्राहक आदेश, इनवॉइसिंग और बाजार मूल्य निर्धारण के प्रबंधन के लिए बिक्री प्लेटफॉर्म",
+      features: [
+        "ग्राहक प्रबंधन: कंपनी विवरण, संपर्क व्यक्तियों और खरीद इतिहास के साथ खरीदार डेटाबेस बनाए रखें",
+        "संपर्क प्रबंधन: सभी ग्राहकों के साथ संचार इतिहास, फॉलो-अप और संबंध प्रबंधन ट्रैक करें",
+        "इन्वेंटरी प्रबंधन: शुद्धिकरण इकाई से स्वचालित सिंक, बैच ट्रैकिंग के साथ वास्तविक समय CBG स्टॉक स्तर",
+        "आदेश और इनवॉइस: बिक्री आदेश बनाएं, PDF इनवॉइस जेनरेट करें और डिलीवरी दस्तावेज़ीकरण प्रबंधित करें",
+        "वॉयस इनवॉइसिंग: त्वरित प्रसंस्करण के लिए कई भाषाओं में वॉयस कमांड का उपयोग करके इनवॉइस जेनरेट करें",
+        "भुगतान ट्रैकिंग: स्वचालित अनुस्मारक और समाधान के साथ UPI, नकद या क्रेडिट के माध्यम से भुगतान की निगरानी करें",
+        "डिलीवरी शेड्यूलिंग: GPS-सक्षम लॉजिस्टिक्स के साथ ग्राहकों को CBG डिलीवरी की योजना बनाएं और ट्रैक करें",
+        "मूल्य बेंचमार्किंग: प्रतिस्पर्धी मूल्य निर्धारण के लिए मेघा गैस, ONDC, BGCL से बाजार मूल्यों की तुलना करें",
+        "अनुपालन और रिपोर्ट: PESO अनुपालन टैगिंग, कर रिपोर्ट, राजस्व विश्लेषण और ऑडिट-तैयार दस्तावेज़ीकरण"
+      ]
+    },
+    {
+      title: "एडमिन पोर्टल",
+      subtitle: "SAUBHAGYA व्यवस्थापक",
+      icon: Shield,
+      image: adminImage,
+      gradient: "bg-gradient-hero",
+      description: "केंद्रीय निगरानी: उपयोगकर्ता प्रबंधन, उपकरण, ऑडिट लॉग, राजस्व और कार्बन लेखांकन",
+      features: [
+        "उपयोगकर्ता प्रबंधन (RBAC): व्यवस्थापक, क्लस्टर प्रबंधक, बिक्री, संचालक",
+        "डिवाइस रजिस्ट्री (RFID, IoT तराजू, CH₄ सेंसर, GPS)",
+        "ऑडिट लॉग (लेनदेन, डिवाइस और संचालक लॉग)",
+        "रिपोर्ट: राजस्व, कार्बन क्रेडिट, अनुपालन निर्यात",
+        "KPI देखें (दैनिक CBG, राजस्व, क्लस्टर-स्तर के आंकड़े)",
+        "भविष्यसूचक विश्लेषण: विस्तार आवश्यकताएं, राजस्व अनुमान",
+        "अनुपालन और ऑडिट रिपोर्ट"
+      ]
+    },
+    {
+      title: "ट्रांसपोर्टर (मोबाइल ऐप)",
+      subtitle: "परिवहन समन्वयक",
+      icon: Truck,
+      image: transportImage,
+      gradient: "bg-gradient-earth",
+      description: "ग्रामीण मार्गों के लिए GPS ट्रैकिंग और ऑफलाइन समर्थन के साथ पिकअप/डिलीवरी शेड्यूलिंग प्रबंधित करें",
+      features: [
+        "पिकअप/ड्रॉप-ऑफ शेड्यूल स्वचालित रूप से असाइन किए गए",
+        "GPS-आधारित मार्ग ट्रैकिंग",
+        "फोटो + टाइमस्टैम्प के साथ डिलीवरी पुष्टि",
+        "ग्रामीण मार्गों के लिए ऑफलाइन मोड"
+      ]
+    }
+  ];
+
+  const userTypes = language === 'english' ? userTypesEnglish : userTypesHindi;
+  const content = language === 'english' ? {
+    title: "Users",
+    subtitle: "उपयोगकर्ता",
+    description: "Our comprehensive digital ecosystem provides specialized tools for every stakeholder in the biogas value chain - from field workers to administrators - with real-time monitoring, offline capabilities, and role-specific features designed to maximize efficiency and transparency",
+    keyFeatures: "Key Features",
+    learnMore: "Learn More",
+    ctaTitle: "Ready to Join Our Platform?",
+    ctaDescription: "Whether you're a field worker, operator, or administrator, we have the right tools for you",
+    ctaButton: "Get Started Today"
+  } : {
+    title: "उपयोगकर्ता",
+    subtitle: "Users",
+    description: "हमारा व्यापक डिजिटल पारिस्थितिकी तंत्र बायोगैस मूल्य श्रृंखला में हर हितधारक के लिए विशेष उपकरण प्रदान करता है - फील्ड कार्यकर्ताओं से लेकर प्रशासकों तक - वास्तविक समय निगरानी, ऑफलाइन क्षमताओं और भूमिका-विशिष्ट सुविधाओं के साथ जो दक्षता और पारदर्शिता को अधिकतम करने के लिए डिज़ाइन किए गए हैं",
+    keyFeatures: "मुख्य विशेषताएं",
+    learnMore: "और जानें",
+    ctaTitle: "हमारे प्लेटफॉर्म में शामिल होने के लिए तैयार हैं?",
+    ctaDescription: "चाहे आप फील्ड वर्कर, ऑपरेटर या प्रशासक हों, हमारे पास आपके लिए सही उपकरण हैं",
+    ctaButton: "आज ही शुरू करें"
+  };
+
   return (
     <div className="min-h-screen relative">
       <div className="relative z-10">
         <section className="pt-20 pb-20 bg-gradient-to-b from-primary/10 to-white">
-          <div className="container mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Users
-            </h1>
-            <p className="text-xl md:text-2xl text-foreground mb-4">
-              उपयोगकर्ता
-            </p>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Our comprehensive digital ecosystem provides specialized tools for every stakeholder in the
-              biogas value chain - from field workers to administrators - with real-time monitoring,
-              offline capabilities, and role-specific features designed to maximize efficiency and transparency
-            </p>
+          <div className="container mx-auto px-6">
+            <div className="flex justify-end mb-8">
+              <div className="flex gap-2 bg-white rounded-lg shadow-md p-1">
+                <Button
+                  variant={language === 'english' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setLanguage('english')}
+                  className="flex items-center gap-2"
+                >
+                  <Languages className="w-4 h-4" />
+                  English
+                </Button>
+                <Button
+                  variant={language === 'hindi' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setLanguage('hindi')}
+                  className="flex items-center gap-2"
+                >
+                  <Languages className="w-4 h-4" />
+                  हिंदी
+                </Button>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+                {content.title}
+              </h1>
+              <p className="text-xl md:text-2xl text-foreground mb-4">
+                {content.subtitle}
+              </p>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                {content.description}
+              </p>
+            </div>
           </div>
         </section>
 
         <div className="container mx-auto px-4 py-0">
 
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border-l-4 border-primary">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Platform Highlights</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-muted-foreground"><strong className="text-foreground">Field Operations - GauSakhi:</strong> Comprehensive mobile app for field executives enabling farmer registration with KYC/Aadhaar capture, RFID/Gau-Aadhaar scanning via camera/Bluetooth, IoT scale integration with LoRa connectivity, voice logging in Indic languages, task management, offline data caching with automatic synchronization, and payment initiation.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-muted-foreground"><strong className="text-foreground">Plant Management - BiogasSangh:</strong> Cluster manager portal with real-time IoT monitoring of CH₄ percentage, volume, temperature, and pressure. Includes automated alerts for low gas levels, sensor failures, and emergency shutdowns. Features transaction management, payment recording with immutable logging, complete audit trails with photos and IoT readings, and offline support.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-muted-foreground"><strong className="text-foreground">Sales & Inventory - UrjaVyapar:</strong> Corporate sales platform managing CBG inventory auto-synced from purification units, buyer e-commerce integration (Megha Gas, ONDC, BGCL), price benchmarking, automated invoice generation with PDF/voice options, PESO compliance tracking, payment monitoring (UPI/cash/credit), buyer management, sales orders, and contract storage with Zoho Sign integration.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-muted-foreground"><strong className="text-foreground">Admin Control - SAUBHAGYA Portal:</strong> Centralized administrative dashboard with RBAC user management for multiple roles, comprehensive device registry (RFID readers, IoT scales, CH₄ sensors, GPS trackers), detailed audit logs for all transactions and operations, revenue and carbon credit accounting, KPI dashboards (CBG production, revenue, cluster statistics), predictive analytics for expansion planning, and compliance report generation.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-24">
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
           {userTypes.map((userType, index) => {
             const Icon = userType.icon;
             return (
-              <div key={index} className={`${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} lg:flex items-stretch gap-8`}>
-                <div className="lg:w-1/2 mb-10 lg:mb-0">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300 h-full min-h-[600px]">
-                    <img 
-                      src={userType.image} 
-                      alt={`${userType.title} illustration`}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8">
-                      <div className={`w-16 h-16 ${userType.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
-                        <Icon className="w-8 h-8 text-background" />
-                      </div>
+              <Card key={index} className="group overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={userType.image}
+                    alt={`${userType.title} illustration`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  <div className="absolute top-6 right-6">
+                    <div className={`w-14 h-14 ${userType.gradient} rounded-xl flex items-center justify-center shadow-lg backdrop-blur-sm`}>
+                      <Icon className="w-7 h-7 text-background" />
                     </div>
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-2xl font-bold text-white mb-1">
+                      {userType.title}
+                    </h3>
+                    <p className="text-lg text-white/90 font-medium">
+                      {userType.subtitle}
+                    </p>
                   </div>
                 </div>
 
-                <div className="lg:w-1/2 flex">
-                  <Card className="p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 flex flex-col justify-between w-full">
-                    <div>
-                      <h3 className="text-3xl font-bold text-foreground mb-3">
-                        {userType.title}
-                      </h3>
-                      <p className="text-xl text-muted-foreground mb-4 font-medium">
-                        {userType.subtitle}
-                      </p>
-                      <p className="text-lg text-primary font-semibold mb-6">
-                        {userType.description}
-                      </p>
-                      
-                      <h4 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                        <CheckCircle2 className="w-6 h-6 text-primary" />
-                        Key Features
-                      </h4>
-                      
-                      <ul className="space-y-3 mb-8">
-                        {userType.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                            <span className="text-muted-foreground leading-relaxed">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                <div className="p-8">
+                  <p className="text-base text-primary font-semibold mb-6 leading-relaxed">
+                    {userType.description}
+                  </p>
 
-                    <Button size="lg" className="w-full md:w-auto mt-auto">
-                      Learn More
-                    </Button>
-                  </Card>
+                  <h4 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                    {content.keyFeatures}
+                  </h4>
+
+                  <ul className="space-y-2.5 mb-6">
+                    {userType.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Button size="lg" className="w-full">
+                    {content.learnMore}
+                  </Button>
                 </div>
-              </div>
+              </Card>
             );
           })}
           </div>
@@ -227,13 +356,13 @@ export const UserTypes = () => {
           <div className="mt-20 text-center">
             <Card className="p-10 bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 border-2 border-primary/20 bg-white/95 backdrop-blur-sm">
               <h3 className="text-3xl font-bold text-foreground mb-4">
-                Ready to Join Our Platform?
+                {content.ctaTitle}
               </h3>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Whether you're a field worker, operator, or administrator, we have the right tools for you
+                {content.ctaDescription}
               </p>
               <Button size="lg" className="text-lg px-10 py-6">
-                Get Started Today
+                {content.ctaButton}
               </Button>
             </Card>
           </div>

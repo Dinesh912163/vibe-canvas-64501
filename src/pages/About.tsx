@@ -1,8 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Eye, ShieldCheck, Sprout } from "lucide-react";
-import villageLife from "@/assets/village-life.jpg";
-import farmersWorking from "@/assets/farmers-working.jpg";
+import missionImage from "/attached_assets/stock_images/happy_indian_farmers_20eac185.jpg";
+import visionImage from "/attached_assets/stock_images/indian_farmer_with_a_7d997457.jpg";
 
 export const About = () => {
   const values = [
@@ -92,8 +92,8 @@ export const About = () => {
               <div className="relative">
                 <div className="rounded-3xl overflow-hidden shadow-2xl h-full">
                   <img
-                    src={villageLife}
-                    alt="Rural community life"
+                    src={missionImage}
+                    alt="Indian farmers working together in lush green terraced fields"
                     className="w-full h-full object-cover min-h-[500px]"
                   />
                 </div>
@@ -171,8 +171,8 @@ export const About = () => {
               <div className="relative order-1 lg:order-2">
                 <div className="rounded-3xl overflow-hidden shadow-2xl h-full">
                   <img
-                    src={farmersWorking}
-                    alt="Farmers at work"
+                    src={visionImage}
+                    alt="Indian farmer in traditional turban in golden wheat field representing prosperous future"
                     className="w-full h-full object-cover min-h-[500px]"
                   />
                 </div>
