@@ -269,67 +269,107 @@ export const HowItWorks = () => {
 
               {/* Process Cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                {/* Step 1 */}
+                {/* Step 1 - Smart Collection */}
                 <Card
-                  className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 p-6 text-center cursor-pointer hover:border-primary/30"
+                  className="relative overflow-hidden rounded-2xl border-0 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group bg-gradient-to-br from-green-50 via-emerald-50 to-green-100"
                   onClick={() => scrollToStep(1)}
                 >
-                  <div className="flex justify-center mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Scale className="w-6 h-6 text-primary" />
+                  {/* Decorative Background Elements */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-green-200/30 rounded-full blur-3xl transform group-hover:scale-150 transition-transform duration-500"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-emerald-200/30 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-500"></div>
+
+                  <div className="relative p-6 flex flex-col items-center text-center space-y-4">
+                    {/* Icon Container */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                      <Scale className="w-8 h-8 text-white" />
                     </div>
-                  </div>
-                  <h4 className="text-lg font-bold text-black mb-3">{t(howItWorksTranslations.processOverview.step1)}</h4>
-                  <div className="border-t border-gray-100 pt-3">
-                    <p className="text-sm text-muted-foreground leading-relaxed">{t(howItWorksTranslations.processOverview.step1Description)}</p>
+
+                    {/* Title */}
+                    <h4 className="text-lg font-bold text-gray-800 pt-2">{t(howItWorksTranslations.processOverview.step1)}</h4>
+
+                    {/* Divider */}
+                    <div className="h-0.5 w-12 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"></div>
+
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 leading-relaxed">{t(howItWorksTranslations.processOverview.step1Description)}</p>
                   </div>
                 </Card>
 
-                {/* Step 2 */}
+                {/* Step 2 - Safe Transport */}
                 <Card
-                  className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 p-6 text-center cursor-pointer hover:border-primary/30"
+                  className="relative overflow-hidden rounded-2xl border-0 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group bg-gradient-to-br from-blue-50 via-sky-50 to-blue-100"
                   onClick={() => scrollToStep(2)}
                 >
-                  <div className="flex justify-center mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <TruckIcon className="w-6 h-6 text-primary" />
+                  {/* Decorative Background Elements */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl transform group-hover:scale-150 transition-transform duration-500"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-sky-200/30 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-500"></div>
+
+                  <div className="relative p-6 flex flex-col items-center text-center space-y-4">
+                    {/* Icon Container */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-sky-600 rounded-2xl flex items-center justify-center shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                      <TruckIcon className="w-8 h-8 text-white" />
                     </div>
-                  </div>
-                  <h4 className="text-lg font-bold text-black mb-3">{t(howItWorksTranslations.processOverview.step2)}</h4>
-                  <div className="border-t border-gray-100 pt-3">
-                    <p className="text-sm text-muted-foreground leading-relaxed">{t(howItWorksTranslations.processOverview.step2Description)}</p>
+
+                    {/* Title */}
+                    <h4 className="text-lg font-bold text-gray-800 pt-2">{t(howItWorksTranslations.processOverview.step2)}</h4>
+
+                    {/* Divider */}
+                    <div className="h-0.5 w-12 bg-gradient-to-r from-blue-400 to-sky-500 rounded-full"></div>
+
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 leading-relaxed">{t(howItWorksTranslations.processOverview.step2Description)}</p>
                   </div>
                 </Card>
 
-                {/* Step 3 */}
+                {/* Step 3 - CBG Production */}
                 <Card
-                  className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 p-6 text-center cursor-pointer hover:border-primary/30"
+                  className="relative overflow-hidden rounded-2xl border-0 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100"
                   onClick={() => scrollToStep(3)}
                 >
-                  <div className="flex justify-center mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Factory className="w-6 h-6 text-primary" />
+                  {/* Decorative Background Elements */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-orange-200/30 rounded-full blur-3xl transform group-hover:scale-150 transition-transform duration-500"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-amber-200/30 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-500"></div>
+
+                  <div className="relative p-6 flex flex-col items-center text-center space-y-4">
+                    {/* Icon Container */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                      <Factory className="w-8 h-8 text-white" />
                     </div>
-                  </div>
-                  <h4 className="text-lg font-bold text-black mb-3">{t(howItWorksTranslations.processOverview.step3)}</h4>
-                  <div className="border-t border-gray-100 pt-3">
-                    <p className="text-sm text-muted-foreground leading-relaxed">{t(howItWorksTranslations.processOverview.step3Description)}</p>
+
+                    {/* Title */}
+                    <h4 className="text-lg font-bold text-gray-800 pt-2">{t(howItWorksTranslations.processOverview.step3)}</h4>
+
+                    {/* Divider */}
+                    <div className="h-0.5 w-12 bg-gradient-to-r from-orange-400 to-amber-500 rounded-full"></div>
+
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 leading-relaxed">{t(howItWorksTranslations.processOverview.step3Description)}</p>
                   </div>
                 </Card>
 
-                {/* Step 4 */}
+                {/* Step 4 - Fair Payment */}
                 <Card
-                  className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 p-6 text-center cursor-pointer hover:border-primary/30"
+                  className="relative overflow-hidden rounded-2xl border-0 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group bg-gradient-to-br from-yellow-50 via-amber-50 to-yellow-100"
                   onClick={() => scrollToStep(4)}
                 >
-                  <div className="flex justify-center mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Banknote className="w-6 h-6 text-primary" />
+                  {/* Decorative Background Elements */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-200/30 rounded-full blur-3xl transform group-hover:scale-150 transition-transform duration-500"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-amber-200/30 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-500"></div>
+
+                  <div className="relative p-6 flex flex-col items-center text-center space-y-4">
+                    {/* Icon Container */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                      <Banknote className="w-8 h-8 text-white" />
                     </div>
-                  </div>
-                  <h4 className="text-lg font-bold text-black mb-3">{t(howItWorksTranslations.processOverview.step4)}</h4>
-                  <div className="border-t border-gray-100 pt-3">
-                    <p className="text-sm text-muted-foreground leading-relaxed">{t(howItWorksTranslations.processOverview.step4Description)}</p>
+
+                    {/* Title */}
+                    <h4 className="text-lg font-bold text-gray-800 pt-2">{t(howItWorksTranslations.processOverview.step4)}</h4>
+
+                    {/* Divider */}
+                    <div className="h-0.5 w-12 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full"></div>
+
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 leading-relaxed">{t(howItWorksTranslations.processOverview.step4Description)}</p>
                   </div>
                 </Card>
               </div>

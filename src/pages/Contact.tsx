@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, MessageSquare, UserPlus, Headphones, Briefcase, HelpCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare, UserPlus, Headphones, Briefcase, HelpCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { contactTranslations } from "@/translations/contact";
@@ -12,6 +12,7 @@ import { LanguageToggle } from "@/components/LanguageToggle";
 export const Contact = () => {
   const { t } = useLanguage();
   const [activeSupport, setActiveSupport] = useState(0);
+  const [activeFaq, setActiveFaq] = useState(0);
   const contactMethods = [
     {
       icon: Phone,
@@ -413,16 +414,109 @@ export const Contact = () => {
               </h2>
             </div>
 
-            <div className="max-w-4xl mx-auto space-y-6">
-              {faqs.map((faq, index) => (
-                <Card key={index} className="p-8 hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm">
-                  <h4 className="text-xl font-bold text-foreground mb-4">
-                    {faq.question}
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed text-base">
-                    {faq.answer}
-                  </p>
-                </Card>
+            <div className="relative max-w-4xl mx-auto h-[500px] flex items-center justify-center">
+              {/* Stack of FAQ Cards */}
+              {faqs.map((faq, index) => {
+                const isActive = activeFaq === index;
+
+                // Calculate positions for card stack
+                let translateY = 0;
+                let scale = 0.85;
+                let zIndex = 10;
+                let opacity = 0.3;
+
+                if (isActive) {
+                  // Active card in front center
+                  translateY = 0;
+                  scale = 1;
+                  zIndex = 50;
+                  opacity = 1;
+                } else if (index > activeFaq) {
+                  // Cards after active - stack behind with increasing offset
+                  const offset = (index - activeFaq) * 20;
+                  translateY = offset;
+                  zIndex = 10 - (index - activeFaq);
+                } else {
+                  // Cards before active - stack behind with decreasing offset
+                  const offset = (activeFaq - index) * 20;
+                  translateY = offset;
+                  zIndex = 10 - (activeFaq - index);
+                }
+
+                return (
+                  <Card
+                    key={index}
+                    onClick={() => setActiveFaq(index)}
+                    className={`absolute w-full transition-all duration-700 ease-in-out cursor-pointer ${
+                      isActive
+                        ? 'bg-white shadow-2xl border-2 border-primary/40'
+                        : 'bg-white/40 backdrop-blur-sm shadow-md hover:shadow-lg'
+                    }`}
+                    style={{
+                      transform: `translateY(${translateY}px) scale(${scale})`,
+                      zIndex: zIndex,
+                      opacity: opacity,
+                    }}
+                  >
+                    <div className="p-8">
+                      <div className="flex items-start justify-between gap-4 mb-4">
+                        <h4 className={`text-2xl font-bold transition-all duration-700 ${
+                          isActive ? 'text-foreground' : 'text-foreground/70'
+                        }`}>
+                          {faq.question}
+                        </h4>
+                        <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-700 ${
+                          isActive ? 'bg-primary text-white shadow-lg' : 'bg-gray-300 text-gray-600'
+                        }`}>
+                          <span className="text-sm font-bold">{index + 1}</span>
+                        </div>
+                      </div>
+
+                      <div className={`overflow-hidden transition-all duration-700 ${
+                        isActive ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}>
+                        <div className="border-t border-gray-200 pt-4">
+                          <p className="text-muted-foreground leading-relaxed text-base">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                );
+              })}
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={() => setActiveFaq(activeFaq > 0 ? activeFaq - 1 : faqs.length - 1)}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-[60] w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 group"
+                aria-label="Previous FAQ"
+              >
+                <ChevronLeft className="w-6 h-6 text-primary group-hover:text-white" />
+              </button>
+
+              <button
+                onClick={() => setActiveFaq(activeFaq < faqs.length - 1 ? activeFaq + 1 : 0)}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-[60] w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 group"
+                aria-label="Next FAQ"
+              >
+                <ChevronRight className="w-6 h-6 text-primary group-hover:text-white" />
+              </button>
+            </div>
+
+            {/* Navigation indicators */}
+            <div className="flex justify-center gap-3 mt-12">
+              {faqs.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveFaq(index)}
+                  className={`transition-all duration-300 rounded-full ${
+                    activeFaq === index
+                      ? 'w-12 h-3 bg-primary'
+                      : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Show FAQ ${index + 1}`}
+                />
               ))}
             </div>
           </div>

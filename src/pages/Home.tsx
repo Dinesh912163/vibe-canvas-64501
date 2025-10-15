@@ -3,31 +3,37 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight, Leaf, Cog, Users, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
 import WorkingFlow from "@/components/WorkingFlow";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { homeTranslations } from "@/translations/home";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
 export const Home = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen relative">
+      <LanguageToggle />
       <div className="relative z-10">
         <section className="min-h-screen flex items-center overflow-hidden pt-20 bg-gradient-to-b from-primary/10 to-white">
           <div className="container mx-auto px-6 py-20">
             <div className="max-w-5xl mx-auto">
               <div className="text-center">
                 <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
-                  From Dung to Dhan
+                  {t(homeTranslations.hero.title)}
                 </h1>
                 <p className="text-2xl md:text-3xl text-foreground mb-6 font-medium">
-                  गौशाला से रोज़ी — किसानों के लिए न्यायपूर्ण भुगतान
+                  {t(homeTranslations.hero.subtitle)}
                 </p>
                 <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto">
-                  IoT-verified weighments, same-day payouts, local CBG production
+                  {t(homeTranslations.hero.description)}
                 </p>
-                
+
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Button variant="hero" size="lg" className="text-xl px-10 py-8 shadow-2xl hover:shadow-3xl transition-all duration-300 ease-in-out">
-                    Join as Farmer / फार्मर बनें
+                    {t(homeTranslations.hero.joinFarmer)}
                   </Button>
                   <Button variant="hero" size="lg" className="text-xl px-10 py-8 shadow-2xl hover:shadow-3xl transition-all duration-300 ease-in-out">
-                    Request Pickup / रिक्वेस्ट पिकअप
+                    {t(homeTranslations.hero.requestPickup)}
                   </Button>
                 </div>
               </div>
@@ -41,11 +47,10 @@ export const Home = () => {
           <div className="container mx-auto px-6">
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-                Empowering Rural India
+                {t(homeTranslations.empoweringRural.title)}
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                Saubhagya connects farmers with biogas production facilities, creating sustainable income 
-                from agricultural waste while contributing to clean energy solutions.
+                {t(homeTranslations.empoweringRural.description)}
               </p>
             </div>
 
@@ -58,13 +63,13 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="p-6 text-center flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-foreground mb-3">For Farmers</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{t(homeTranslations.cards.forFarmers.title)}</h3>
                   <p className="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
-                    Convert cattle waste into daily earnings with transparent pricing and instant digital receipts.
+                    {t(homeTranslations.cards.forFarmers.description)}
                   </p>
                   <Link to="/benefits">
                     <Button className="bg-green-600 hover:bg-green-700 text-white h-10 px-4 text-sm font-medium w-full rounded-lg transition-all duration-300 group/btn">
-                      Join as Farmer <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      {t(homeTranslations.cards.forFarmers.button)} <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </Button>
                   </Link>
                 </div>
@@ -78,13 +83,13 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="p-6 text-center flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-foreground mb-3">How It Works</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{t(homeTranslations.cards.howItWorks.title)}</h3>
                   <p className="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
-                    From collection to clean energy — a simple 4-step process powered by smart logistics and IoT.
+                    {t(homeTranslations.cards.howItWorks.description)}
                   </p>
                   <Link to="/how-it-works">
                     <Button className="bg-green-600 hover:bg-green-700 text-white h-10 px-4 text-sm font-medium w-full rounded-lg transition-all duration-300 group/btn">
-                      Explore Process <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      {t(homeTranslations.cards.howItWorks.button)} <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </Button>
                   </Link>
                 </div>
@@ -98,13 +103,13 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="p-6 text-center flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-foreground mb-3">Platform Users</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{t(homeTranslations.cards.platformUsers.title)}</h3>
                   <p className="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
-                    From field collectors to biogas managers — discover the apps that power Saubhagya.
+                    {t(homeTranslations.cards.platformUsers.description)}
                   </p>
                   <Link to="/user-types">
                     <Button className="bg-green-600 hover:bg-green-700 text-white h-10 px-4 text-sm font-medium w-full rounded-lg transition-all duration-300 group/btn">
-                      View Apps <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      {t(homeTranslations.cards.platformUsers.button)} <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </Button>
                   </Link>
                 </div>
@@ -118,13 +123,13 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="p-6 text-center flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-foreground mb-3">Get Started</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{t(homeTranslations.cards.getStarted.title)}</h3>
                   <p className="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
-                    Join our growing network of farmers, gaushalas, and biogas operators today.
+                    {t(homeTranslations.cards.getStarted.description)}
                   </p>
                   <Link to="/contact">
                     <Button className="bg-green-600 hover:bg-green-700 text-white h-10 px-4 text-sm font-medium w-full rounded-lg transition-all duration-300 group/btn">
-                      Get Onboard <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      {t(homeTranslations.cards.getStarted.button)} <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </Button>
                   </Link>
                 </div>
