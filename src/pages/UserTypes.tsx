@@ -28,7 +28,7 @@ export const UserTypes = () => {
       icon: Smartphone,
       image: fieldWorkerImage,
       gradient: "bg-gradient-hero",
-      description: "Mobile app for field executives to manage farmers, cattle, and daily collection operations with offline support",
+      description: "A unified mobile solution for field executives to manage farmers, cattle, and daily collection tasks efficiently. It streamlines data management, route planning, quality checks, and payments — ensuring smooth, transparent, and real-time operations. The app supports full offline functionality, enabling uninterrupted work and automatic data sync in remote areas.",
       features: [
         "Farmer Onboarding: Register farmers with KYC, Aadhaar, bank details, and photo capture",
         "Cattle Management: Complete cattle database with RFID/Gau-Aadhaar scanning, breed info, and photo records",
@@ -46,7 +46,7 @@ export const UserTypes = () => {
       icon: MonitorCheck,
       image: biogasOperatorImage,
       gradient: "bg-gradient-earth",
-      description: "Portal for cluster managers to monitor digesters, manage transactions, and handle operations at biogas plants",
+      description: "A centralized portal designed for cluster managers to monitor digestion units, manage the supply chain, and oversee overall operations efficiently. It enables complete control through real-time analytics, performance tracking, and seamless coordination among all stakeholders. The system ensures optimized resource use, quality assurance, and transparent communication across every stage of the production and supply process.",
       features: [
         "Digester Monitoring: Real-time tracking of CH₄ percentage, biogas volume, temperature, and pressure with live graphs",
         "Batch Management: Track production batches, input materials, output volumes, and quality parameters",
@@ -64,7 +64,7 @@ export const UserTypes = () => {
       icon: Droplet,
       image: purificationImage,
       gradient: "bg-gradient-warm",
-      description: "App for purification unit operators to monitor gas quality, manage cycles, and track maintenance schedules",
+      description: "A dedicated app for operators to monitor gas quality, manage orders, and oversee plant operations efficiently. It ensures real-time tracking of gas purity, plant performance, and operational efficiency while maintaining strict safety and quality standards. The system streamlines order processing, production monitoring, and compliance reporting, enabling smooth, transparent, and optimized plant operations.",
       features: [
         "Cycle Management: Track 1-hour purification cycles with start/end times, input/output volumes, and efficiency logs",
         "Real-Time Monitoring: Live display of CH₄ percentage, pressure, flow rate, and temperature with alerts",
@@ -81,7 +81,7 @@ export const UserTypes = () => {
       icon: TrendingUp,
       image: salesImage,
       gradient: "bg-primary",
-      description: "Sales platform for managing CBG inventory, customer orders, invoicing, and market pricing with compliance tracking",
+      description: "A centralized platform for managing CBG inventory, customer orders, invoicing, and market operations efficiently. It enables real-time inventory tracking, streamlined order processing, and automated invoicing while maintaining compliance and financial transparency. The system provides market insights, sales analytics, and logistics coordination to optimize sales performance and customer satisfaction.",
       features: [
         "Customer Management: Maintain buyer database with company details, contact persons, and purchase history",
         "Contact Management: Track communication history, follow-ups, and relationship management with all customers",
@@ -100,7 +100,7 @@ export const UserTypes = () => {
       icon: Shield,
       image: adminImage,
       gradient: "bg-gradient-hero",
-      description: "Central oversight: user management, devices, audit logs, revenue & carbon accounting",
+      description: "A central platform for managing users, devices, audits, and tracking revenue & carbon credits efficiently. It enables streamlined user and device management, maintains detailed audit trails, and generates reports for revenue, carbon credits, and compliance. The system also supports predictive analytics for revenue projections, expansion trends, and overall operational oversight.",
       features: [
         "User management (RBAC): admin, cluster_manager, sales, operator",
         "Device registry (RFID, IoT scales, CH₄ sensors, GPS)",
@@ -117,7 +117,7 @@ export const UserTypes = () => {
       icon: Truck,
       image: transportImage,
       gradient: "bg-gradient-earth",
-      description: "Manage pickup/delivery scheduling with GPS tracking and offline support for rural routes",
+      description: "An app to manage pickup and delivery operations efficiently, especially in rural areas. It enables real-time scheduling, GPS-based route tracking, and delivery notifications with photos and messaging. Offline support ensures uninterrupted operations even in low-network regions, with automatic data sync when connectivity is restored.",
       features: [
         "Pickup/drop-off schedules auto-assigned",
         "GPS-based route tracking",
@@ -134,7 +134,7 @@ export const UserTypes = () => {
       icon: Smartphone,
       image: fieldWorkerImage,
       gradient: "bg-gradient-hero",
-      description: "फील्ड कार्यकारियों के लिए मोबाइल ऐप जो किसानों, मवेशियों और दैनिक संग्रह कार्यों को ऑफलाइन समर्थन के साथ प्रबंधित करता है",
+      description: "फील्ड कार्यकारियों के लिए एक एकीकृत मोबाइल समाधान जो किसानों, मवेशियों और दैनिक संग्रह कार्यों को कुशलता से प्रबंधित करता है। यह डेटा प्रबंधन, मार्ग योजना, गुणवत्ता जांच और भुगतान को सुव्यवस्थित करता है — सुचारू, पारदर्शी और वास्तविक समय के संचालन को सुनिश्चित करता है। ऐप पूर्ण ऑफलाइन कार्यक्षमता का समर्थन करता है, जो दूरदराज के क्षेत्रों में निर्बाध कार्य और स्वचालित डेटा सिंक को सक्षम करता है।",
       features: [
         "किसान ऑनबोर्डिंग: KYC, आधार, बैंक विवरण और फोटो कैप्चर के साथ किसानों को पंजीकृत करें",
         "मवेशी प्रबंधन: RFID/गौ-आधार स्कैनिंग, नस्ल जानकारी और फोटो रिकॉर्ड के साथ पूर्ण मवेशी डेटाबेस",
@@ -152,7 +152,7 @@ export const UserTypes = () => {
       icon: MonitorCheck,
       image: biogasOperatorImage,
       gradient: "bg-gradient-earth",
-      description: "क्लस्टर प्रबंधकों के लिए पोर्टल जो डाइजेस्टर की निगरानी, लेनदेन प्रबंधन और बायोगैस संयंत्रों में संचालन को संभालता है",
+      description: "क्लस्टर प्रबंधकों के लिए एक केंद्रीकृत पोर्टल जो पाचन इकाइयों की निगरानी करने, आपूर्ति श्रृंखला का प्रबंधन करने और समग्र संचालन को कुशलता से देखरेख करने के लिए डिज़ाइन किया गया है। यह वास्तविक समय विश्लेषण, प्रदर्शन ट्रैकिंग और सभी हितधारकों के बीच निर्बाध समन्वय के माध्यम से पूर्ण नियंत्रण को सक्षम करता है। सिस्टम उत्पादन और आपूर्ति प्रक्रिया के हर चरण में अनुकूलित संसाधन उपयोग, गुणवत्ता आश्वासन और पारदर्शी संचार सुनिश्चित करता है।",
       features: [
         "डाइजेस्टर मॉनिटरिंग: CH₄ प्रतिशत, बायोगैस वॉल्यूम, तापमान और दबाव की लाइव ग्राफ के साथ वास्तविक समय ट्रैकिंग",
         "बैच प्रबंधन: उत्पादन बैच, इनपुट सामग्री, आउटपुट वॉल्यूम और गुणवत्ता पैरामीटर ट्रैक करें",
@@ -170,7 +170,7 @@ export const UserTypes = () => {
       icon: Droplet,
       image: purificationImage,
       gradient: "bg-gradient-warm",
-      description: "शुद्धिकरण इकाई संचालकों के लिए ऐप जो गैस गुणवत्ता की निगरानी, चक्र प्रबंधन और रखरखाव शेड्यूल ट्रैक करता है",
+      description: "संचालकों के लिए एक समर्पित ऐप जो गैस गुणवत्ता की निगरानी करता है, आदेशों का प्रबंधन करता है और संयंत्र संचालन को कुशलता से देखता है। यह सख्त सुरक्षा और गुणवत्ता मानकों को बनाए रखते हुए गैस शुद्धता, संयंत्र प्रदर्शन और परिचालन दक्षता की वास्तविक समय ट्रैकिंग सुनिश्चित करता है। सिस्टम आदेश प्रसंस्करण, उत्पादन निगरानी और अनुपालन रिपोर्टिंग को सुव्यवस्थित करता है, जो सुचारू, पारदर्शी और अनुकूलित संयंत्र संचालन को सक्षम करता है।",
       features: [
         "चक्र प्रबंधन: प्रारंभ/समाप्ति समय, इनपुट/आउटपुट वॉल्यूम और दक्षता लॉग के साथ 1-घंटे के शुद्धिकरण चक्रों को ट्रैक करें",
         "वास्तविक समय निगरानी: अलर्ट के साथ CH₄ प्रतिशत, दबाव, प्रवाह दर और तापमान का लाइव डिस्प्ले",
@@ -187,7 +187,7 @@ export const UserTypes = () => {
       icon: TrendingUp,
       image: salesImage,
       gradient: "bg-primary",
-      description: "अनुपालन ट्रैकिंग के साथ CBG इन्वेंटरी, ग्राहक आदेश, इनवॉइसिंग और बाजार मूल्य निर्धारण के प्रबंधन के लिए बिक्री प्लेटफॉर्म",
+      description: "CBG इन्वेंटरी, ग्राहक आदेश, इनवॉइसिंग और बाजार संचालन को कुशलता से प्रबंधित करने के लिए एक केंद्रीकृत प्लेटफॉर्म। यह अनुपालन और वित्तीय पारदर्शिता बनाए रखते हुए वास्तविक समय इन्वेंटरी ट्रैकिंग, सुव्यवस्थित आदेश प्रसंस्करण और स्वचालित इनवॉइसिंग को सक्षम करता है। सिस्टम बिक्री प्रदर्शन और ग्राहक संतुष्टि को अनुकूलित करने के लिए बाजार अंतर्दृष्टि, बिक्री विश्लेषण और लॉजिस्टिक्स समन्वय प्रदान करता है।",
       features: [
         "ग्राहक प्रबंधन: कंपनी विवरण, संपर्क व्यक्तियों और खरीद इतिहास के साथ खरीदार डेटाबेस बनाए रखें",
         "संपर्क प्रबंधन: सभी ग्राहकों के साथ संचार इतिहास, फॉलो-अप और संबंध प्रबंधन ट्रैक करें",
@@ -206,7 +206,7 @@ export const UserTypes = () => {
       icon: Shield,
       image: adminImage,
       gradient: "bg-gradient-hero",
-      description: "केंद्रीय निगरानी: उपयोगकर्ता प्रबंधन, उपकरण, ऑडिट लॉग, राजस्व और कार्बन लेखांकन",
+      description: "उपयोगकर्ताओं, उपकरणों, ऑडिट का प्रबंधन करने और राजस्व और कार्बन क्रेडिट को कुशलता से ट्रैक करने के लिए एक केंद्रीय प्लेटफॉर्म। यह सुव्यवस्थित उपयोगकर्ता और डिवाइस प्रबंधन को सक्षम करता है, विस्तृत ऑडिट ट्रेल्स बनाए रखता है, और राजस्व, कार्बन क्रेडिट और अनुपालन के लिए रिपोर्ट तैयार करता है। सिस्टम राजस्व अनुमानों, विस्तार रुझानों और समग्र परिचालन निरीक्षण के लिए भविष्यसूचक विश्लेषण का भी समर्थन करता है।",
       features: [
         "उपयोगकर्ता प्रबंधन (RBAC): व्यवस्थापक, क्लस्टर प्रबंधक, बिक्री, संचालक",
         "डिवाइस रजिस्ट्री (RFID, IoT तराजू, CH₄ सेंसर, GPS)",
@@ -223,7 +223,7 @@ export const UserTypes = () => {
       icon: Truck,
       image: transportImage,
       gradient: "bg-gradient-earth",
-      description: "ग्रामीण मार्गों के लिए GPS ट्रैकिंग और ऑफलाइन समर्थन के साथ पिकअप/डिलीवरी शेड्यूलिंग प्रबंधित करें",
+      description: "विशेष रूप से ग्रामीण क्षेत्रों में पिकअप और डिलीवरी संचालन को कुशलता से प्रबंधित करने के लिए एक ऐप। यह फोटो और मैसेजिंग के साथ वास्तविक समय शेड्यूलिंग, GPS-आधारित मार्ग ट्रैकिंग और डिलीवरी सूचनाएं सक्षम करता है। ऑफलाइन समर्थन कम-नेटवर्क क्षेत्रों में भी निर्बाध संचालन सुनिश्चित करता है, कनेक्टिविटी बहाल होने पर स्वचालित डेटा सिंक के साथ।",
       features: [
         "पिकअप/ड्रॉप-ऑफ शेड्यूल स्वचालित रूप से असाइन किए गए",
         "GPS-आधारित मार्ग ट्रैकिंग",
