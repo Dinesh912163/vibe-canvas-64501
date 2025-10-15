@@ -434,36 +434,78 @@ export const HowItWorks = () => {
           </div>
         </section>
 
-        <section className="py-24 bg-gradient-to-r from-primary/90 to-secondary/90 backdrop-blur-sm">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+        <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+          {/* Background Decoration */}
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-20">
+              <div className="inline-block mb-4">
+                <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold uppercase tracking-wider">
+                  Why Choose Us
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-tight">
                 {t(howItWorksTranslations.benefits.title)}
               </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Experience transparency, security, and efficiency at every step
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-16">
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
               {benefits.map((benefit, index) => (
-                <Card key={index} className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 bg-white/95 backdrop-blur-sm">
-                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                    <div className={`w-20 h-20 ${benefit.gradient} rounded-2xl flex items-center justify-center shadow-xl`}>
-                      <benefit.icon className="w-10 h-10 text-background" />
+                <div
+                  key={index}
+                  className="group relative"
+                >
+                  {/* Card */}
+                  <Card className="relative overflow-hidden bg-white/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/30 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full">
+                    {/* Icon Section with Gradient Background */}
+                    <div className="relative p-8 pb-6">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-bl-[100px] transition-all duration-500 group-hover:scale-110"></div>
+
+                      <div className="relative flex justify-center mb-6">
+                        <div className={`w-20 h-20 ${benefit.gradient} rounded-2xl flex items-center justify-center shadow-xl transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6`}>
+                          <benefit.icon className="w-10 h-10 text-white" />
+                        </div>
+                      </div>
+
+                      {/* Index Number */}
+                      <div className="absolute top-4 left-4">
+                        <span className="text-6xl font-bold text-primary/10 group-hover:text-primary/20 transition-all duration-500">
+                          0{index + 1}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-8 text-center">
-                    <h4 className="text-xl font-bold text-foreground mb-4">
-                      {benefit.title}
-                    </h4>
-                    <p className="text-muted-foreground leading-relaxed text-base">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </Card>
+
+                    {/* Content Section */}
+                    <div className="px-8 pb-8 text-center">
+                      <h4 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                        {benefit.title}
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed text-base">
+                        {benefit.description}
+                      </p>
+
+                      {/* Decorative Line */}
+                      <div className="mt-6 flex justify-center">
+                        <div className="w-16 h-1 bg-gradient-to-r from-primary to-secondary rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                      </div>
+                    </div>
+
+                    {/* Bottom Accent */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                  </Card>
+                </div>
               ))}
             </div>
 
             <div className="text-center">
-              <Button variant="hero" size="lg" className="text-xl px-12 py-8 shadow-2xl hover:shadow-3xl">
+              <Button variant="hero" size="lg" className="text-xl px-12 py-8 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
                 {t(howItWorksTranslations.cta.button)}
               </Button>
             </div>

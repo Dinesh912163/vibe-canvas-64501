@@ -10,7 +10,7 @@ export const usersTranslations = {
   userTypes: {
     gauSakhi: {
       title: { en: "GauSakhi — Data-based Executive (Field App)", hi: "गौ सखी — डेटा-आधारित कार्यकारी (फील्ड ऐप)" },
-      description: { en: "Mobile app for field executives to manage farmers, cattle, and daily collection activities with offline support.", hi: "ऑफ़लाइन समर्थन के साथ किसानों, मवेशियों और दैनिक संग्रह गतिविधियों का प्रबंधन करने के लिए फील्ड कार्यकारी के लिए मोबाइल ऐप।" },
+      description: { en: "A unified mobile solution for field executives to manage farmers, cattle, and daily collection tasks efficiently.", hi: "फील्ड कार्यकारियों के लिए एक एकीकृत मोबाइल समाधान जो किसानों, मवेशियों और दैनिक संग्रह कार्यों को कुशलता से प्रबंधित करता है।" },
       features: {
         cattleManagement: { en: "Cattle Management: Complete cattle database with RFID tagging, health records, and productivity tracking.", hi: "मवेशी प्रबंधन: RFID टैगिंग, स्वास्थ्य रिकॉर्ड और उत्पादकता ट्रैकिंग के साथ पूर्ण मवेशी डेटाबेस।" },
         collectionScheduling: { en: "Collection Scheduling: Plan and schedule daily collection routes with GPS navigation and time optimization.", hi: "संग्रह शेड्यूलिंग: GPS नेविगेशन और समय अनुकूलन के साथ दैनिक संग्रह मार्गों की योजना बनाएं और शेड्यूल करें।" },
@@ -22,7 +22,7 @@ export const usersTranslations = {
     },
     biogasSangh: {
       title: { en: "BiogasSangh — Cluster Manager App", hi: "बायोगैस संघ — क्लस्टर प्रबंधक ऐप" },
-      description: { en: "Portal for cluster managers to monitor digestion, manage supply-chain, and oversee operations with real-time analytics.", hi: "रीयल-टाइम एनालिटिक्स के साथ पाचन की निगरानी, आपूर्ति-श्रृंखला का प्रबंधन और संचालन की देखरेख करने के लिए क्लस्टर प्रबंधकों के लिए पोर्टल।" },
+      description: { en: "A centralized portal for cluster managers to monitor digestion units, manage supply chain, and oversee operations with real-time analytics.", hi: "क्लस्टर प्रबंधकों के लिए एक केंद्रीकृत पोर्टल जो पाचन इकाइयों की निगरानी, आपूर्ति श्रृंखला प्रबंधन और वास्तविक समय विश्लेषण के साथ संचालन देखरेख करता है।" },
       features: {
         supplyChainOversight: { en: "Supply Chain Oversight: End-to-end visibility of the supply chain from collection to processing with real-time status updates.", hi: "आपूर्ति श्रृंखला निगरानी: रीयल-टाइम स्थिति अपडेट के साथ संग्रह से प्रसंस्करण तक आपूर्ति श्रृंखला की अंत-से-अंत दृश्यता।" },
         digesterMonitoring: { en: "Digester Monitoring: Live monitoring of digester performance, gas production rates, and maintenance schedules.", hi: "डाइजेस्टर मॉनिटरिंग: डाइजेस्टर प्रदर्शन, गैस उत्पादन दर और रखरखाव कार्यक्रम की लाइव निगरानी।" },
@@ -34,7 +34,7 @@ export const usersTranslations = {
     },
     shuddhiDoot: {
       title: { en: "ShudhiDoot — Purification Unit App", hi: "शुद्धि दूत — शुद्धिकरण इकाई ऐप" },
-      description: { en: "App for purification unit operators to monitor gas quality, manage orders, and track plant operations.", hi: "गैस गुणवत्ता की निगरानी, ऑर्डर प्रबंधित करने और संयंत्र संचालन को ट्रैक करने के लिए शुद्धिकरण इकाई ऑपरेटरों के लिए ऐप।" },
+      description: { en: "A dedicated app for operators to monitor gas quality, manage orders, and oversee plant operations with real-time tracking and safety standards.", hi: "संचालकों के लिए एक समर्पित ऐप जो गैस गुणवत्ता की निगरानी, आदेश प्रबंधन और संयंत्र संचालन को वास्तविक समय ट्रैकिंग और सुरक्षा मानकों के साथ देखता है।" },
       features: {
         gasQualityMonitoring: { en: "Gas Quality Monitoring: Real-time monitoring of gas purity, methane content, and quality parameters with automated alerts.", hi: "गैस गुणवत्ता मॉनिटरिंग: स्वचालित अलर्ट के साथ गैस शुद्धता, मीथेन सामग्री और गुणवत्ता मापदंडों की रीयल-टाइम निगरानी।" },
         plantOperations: { en: "Plant Operations: Comprehensive plant management with equipment status, maintenance schedules, and operational efficiency tracking.", hi: "संयंत्र संचालन: उपकरण स्थिति, रखरखाव कार्यक्रम और परिचालन दक्षता ट्रैकिंग के साथ व्यापक संयंत्र प्रबंधन।" },
@@ -46,7 +46,7 @@ export const usersTranslations = {
     },
     urjaVyapar: {
       title: { en: "UrjaVyapar — Corporate Sales & Inventory App", hi: "ऊर्जा व्यापार — कॉर्पोरेट बिक्री और इन्वेंटरी ऐप" },
-      description: { en: "Sales platform for managing CBG inventory, customer orders, invoicing, and market pricing with comprehensive tracking.", hi: "व्यापक ट्रैकिंग के साथ CBG इन्वेंटरी, ग्राहक ऑर्डर, चालान और बाजार मूल्य निर्धारण के प्रबंधन के लिए बिक्री प्लेटफॉर्म।" },
+      description: { en: "A centralized platform for managing CBG inventory, customer orders, invoicing, and market operations with real-time tracking and compliance.", hi: "CBG इन्वेंटरी, ग्राहक आदेश, इनवॉइसिंग और बाजार संचालन को वास्तविक समय ट्रैकिंग और अनुपालन के साथ प्रबंधित करने के लिए एक केंद्रीकृत प्लेटफॉर्म।" },
       features: {
         inventoryManagement: { en: "Inventory Management: Real-time inventory tracking with automated stock alerts, batch management, and expiry monitoring.", hi: "इन्वेंटरी प्रबंधन: स्वचालित स्टॉक अलर्ट, बैच प्रबंधन और समाप्ति निगरानी के साथ रीयल-टाइम इन्वेंटरी ट्रैकिंग।" },
         customerManagement: { en: "Customer Management: Comprehensive customer database with order history, credit management, and relationship tracking.", hi: "ग्राहक प्रबंधन: ऑर्डर इतिहास, क्रेडिट प्रबंधन और संबंध ट्रैकिंग के साथ व्यापक ग्राहक डेटाबेस।" },
@@ -62,7 +62,7 @@ export const usersTranslations = {
     adminPortal: {
       title: { en: "Admin Portal", hi: "एडमिन पोर्टल" },
       subtitle: { en: "SAUBHAGYA Admin", hi: "सौभाग्य एडमिन" },
-      description: { en: "Central oversight and user management, devices, audit logs, revenue & carbon accounting.", hi: "केंद्रीय निगरानी और उपयोगकर्ता प्रबंधन, उपकरण, ऑडिट लॉग, राजस्व और कार्बन लेखांकन।" },
+      description: { en: "A central platform for managing users, devices, audits, tracking revenue & carbon credits with predictive analytics and compliance reporting.", hi: "उपयोगकर्ताओं, उपकरणों, ऑडिट का प्रबंधन करने और भविष्यसूचक विश्लेषण और अनुपालन रिपोर्टिंग के साथ राजस्व और कार्बन क्रेडिट को ट्रैक करने के लिए एक केंद्रीय प्लेटफॉर्म।" },
       features: {
         userManagement: { en: "User management (CRUD): admin, cluster_manager, data_operator", hi: "उपयोगकर्ता प्रबंधन (CRUD): व्यवस्थापक, क्लस्टर प्रबंधक, डेटा ऑपरेटर" },
         deviceRegistry: { en: "Device registry (RFID) of cattle, CG, sensors, GPS", hi: "मवेशी, CG, सेंसर, GPS का उपकरण रजिस्ट्री (RFID)" },
@@ -75,7 +75,7 @@ export const usersTranslations = {
     },
     transporter: {
       title: { en: "Transporter (Mobile App)", hi: "परिवहन हैंडलर (मोबाइल ऐप)" },
-      description: { en: "Manage pickup/delivery scheduling with GPS tracking and offline support for rural routes.", hi: "ग्रामीण मार्गों के लिए GPS ट्रैकिंग और ऑफ़लाइन समर्थन के साथ पिकअप/डिलीवरी शेड्यूलिंग का प्रबंधन करें।" },
+      description: { en: "An app to manage pickup and delivery operations with GPS tracking and offline support for rural areas.", hi: "ग्रामीण क्षेत्रों के लिए GPS ट्रैकिंग और ऑफलाइन समर्थन के साथ पिकअप और डिलीवरी संचालन का प्रबंधन करने के लिए एक ऐप।" },
       features: {
         scheduling: { en: "Pickup/drop-off scheduling with real-time", hi: "रीयल-टाइम के साथ पिकअप/ड्रॉप-ऑफ शेड्यूलिंग" },
         gpsTracking: { en: "GPS-based route tracking", hi: "GPS-आधारित रूट ट्रैकिंग" },
