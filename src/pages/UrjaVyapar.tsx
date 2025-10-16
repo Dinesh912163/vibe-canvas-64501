@@ -185,7 +185,7 @@ const UrjaVyapar = () => {
             <p className="mt-6 text-sm text-blue-200">
               Trusted by IOCL, GAIL & leading CGDs | PESO Certified Supply | 24/7 Support
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
