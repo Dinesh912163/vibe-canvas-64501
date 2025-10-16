@@ -29,11 +29,11 @@ export const HeroSection = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="lg" className="text-lg px-8 py-6">
+              <Button variant="hero" size="lg" className="text-lg px-8 py-6 transition-all duration-300 ease-in-out">
                 <Users className="w-5 h-5" />
                 Join as Farmer / फार्मर बनें
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-background/10 backdrop-blur-sm border-background/30 text-background hover:bg-background hover:text-foreground">
+              <Button variant="hero" size="lg" className="text-lg px-8 py-6 transition-all duration-300 ease-in-out">
                 <Truck className="w-5 h-5" />
                 Request Pickup / रिक्वेस्ट पिकअप
               </Button>

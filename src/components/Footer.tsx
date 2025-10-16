@@ -19,10 +19,10 @@ export const Footer = () => {
               Fair payments, transparent processes, and environmental benefits for farming communities.
             </p>
             <div className="flex gap-4">
-              <Button variant="secondary" size="lg">
+              <Button variant="secondary" size="lg" className="transition-all duration-300 ease-in-out">
                 Join as Farmer
               </Button>
-              <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button variant="secondary" size="lg" className="transition-all duration-300 ease-in-out">
                 Request Pickup
               </Button>
             </div>

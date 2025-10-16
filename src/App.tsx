@@ -13,6 +13,12 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Users from "./pages/Users";
 import NotFound from "./pages/NotFound";
+import GauSakhi from "./pages/GauSakhi";
+import UrjaVyapar from "./pages/UrjaVyapar";
+import UrjaSanyojak from "./pages/UrjaSanyojak";
+import CommandCenter from "./pages/CommandCenter";
+import ShuddhiDoot from "./pages/ShuddhiDoot";
+import VahanVyavastha from "./pages/VahanVyavastha";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +39,13 @@ const App = () => (
                 <Route path="/about" element={<About />} />
                 <Route path="/user-types" element={<Users />} />
                 <Route path="/contact" element={<Contact />} />
+                {/* Landing Pages for Each Platform */}
+                <Route path="/gau-sakhi" element={<GauSakhi />} />
+                <Route path="/urja-vyapar" element={<UrjaVyapar />} />
+                <Route path="/urja-sanyojak" element={<UrjaSanyojak />} />
+                <Route path="/command-center" element={<CommandCenter />} />
+                <Route path="/shuddhi-doot" element={<ShuddhiDoot />} />
+                <Route path="/vahan-vyavastha" element={<VahanVyavastha />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
