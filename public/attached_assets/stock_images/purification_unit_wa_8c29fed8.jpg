@@ -1,80 +1,195 @@
 <svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="1200" height="800" fill="#E1F5FE"/>
+  <defs>
+    <linearGradient id="factoryBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E1F5FE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B3E5FC;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tankGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#90A4AE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#607D8B;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="shine" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FFF;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#FFF;stop-opacity:0" />
+    </radialGradient>
+  </defs>
 
-  <!-- Factory floor -->
-  <rect x="0" y="500" width="1200" height="300" fill="#90A4AE"/>
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#factoryBg)"/>
 
   <!-- Factory walls -->
-  <rect x="0" y="0" width="1200" height="500" fill="#B0BEC5"/>
+  <rect x="0" y="0" width="1200" height="600" fill="#B0BEC5"/>
+  <rect x="0" y="595" width="1200" height="5" fill="#90A4AE"/>
 
-  <!-- Large purification tanks -->
-  <ellipse cx="300" cy="520" rx="120" ry="30" fill="#546E7A"/>
-  <rect x="180" y="300" width="240" height="220" fill="#78909C"/>
-  <ellipse cx="300" cy="300" rx="120" ry="30" fill="#90A4AE"/>
-  <circle cx="300" cy="350" r="40" fill="#B0BEC5" stroke="#37474F" stroke-width="3"/>
-  <text x="300" y="360" font-family="Arial" font-size="16" fill="#000" text-anchor="middle" font-weight="bold">CH₄</text>
+  <!-- Floor -->
+  <rect x="0" y="600" width="1200" height="200" fill="#78909C"/>
 
-  <ellipse cx="600" cy="520" rx="120" ry="30" fill="#546E7A"/>
-  <rect x="480" y="300" width="240" height="220" fill="#78909C"/>
-  <ellipse cx="600" cy="300" rx="120" ry="30" fill="#90A4AE"/>
-  <circle cx="600" cy="350" r="40" fill="#B0BEC5" stroke="#37474F" stroke-width="3"/>
-  <text x="600" y="360" font-family="Arial" font-size="16" fill="#000" text-anchor="middle" font-weight="bold">H₂S</text>
+  <!-- Structural beams -->
+  <rect x="350" y="0" width="20" height="600" fill="#546E7A"/>
+  <rect x="800" y="0" width="20" height="600" fill="#546E7A"/>
 
-  <ellipse cx="900" cy="520" rx="120" ry="30" fill="#546E7A"/>
-  <rect x="780" y="300" width="240" height="220" fill="#78909C"/>
-  <ellipse cx="900" cy="300" rx="120" ry="30" fill="#90A4AE"/>
-  <circle cx="900" cy="350" r="40" fill="#B0BEC5" stroke="#37474F" stroke-width="3"/>
-  <text x="900" y="360" font-family="Arial" font-size="16" fill="#000" text-anchor="middle" font-weight="bold">CO₂</text>
+  <!-- Purification Tank 1 (CH₄) -->
+  <ellipse cx="280" cy="550" rx="110" ry="35" fill="#455A64"/>
+  <rect x="170" y="280" width="220" height="270" fill="url(#tankGrad)"/>
+  <ellipse cx="280" cy="280" rx="110" ry="35" fill="#90A4AE"/>
+  <ellipse cx="280" cy="285" rx="105" ry="30" fill="url(#shine)"/>
 
-  <!-- Pipes connecting tanks -->
-  <rect x="400" y="400" width="100" height="15" fill="#607D8B"/>
-  <rect x="700" y="400" width="100" height="15" fill="#607D8B"/>
+  <!-- Tank label and gauge -->
+  <circle cx="280" cy="380" r="50" fill="#263238" stroke="#37474F" stroke-width="4"/>
+  <text x="280" y="390" font-family="Arial" font-size="24" fill="#4CAF50" text-anchor="middle" font-weight="bold">CH₄</text>
+  <text x="280" y="410" font-family="Arial" font-size="12" fill="#81C784" text-anchor="middle">96.2%</text>
 
-  <!-- Control panel -->
-  <rect x="100" y="580" width="200" height="150" fill="#37474F" rx="5"/>
-  <rect x="110" y="590" width="180" height="100" fill="#1a237e"/>
+  <!-- Tank piping -->
+  <rect x="280" y="250" width="15" height="40" fill="#607D8B"/>
+  <circle cx="287" cy="250" r="10" fill="#546E7A"/>
+
+  <!-- Purification Tank 2 (H₂S Removal) -->
+  <ellipse cx="550" cy="550" rx="110" ry="35" fill="#455A64"/>
+  <rect x="440" y="300" width="220" height="250" fill="url(#tankGrad)"/>
+  <ellipse cx="550" cy="300" rx="110" ry="35" fill="#90A4AE"/>
+  <ellipse cx="550" cy="305" rx="105" ry="30" fill="url(#shine)"/>
+
+  <circle cx="550" cy="400" r="50" fill="#263238" stroke="#37474F" stroke-width="4"/>
+  <text x="550" y="410" font-family="Arial" font-size="24" fill="#FF9800" text-anchor="middle" font-weight="bold">H₂S</text>
+  <text x="550" y="430" font-family="Arial" font-size="12" fill="#FFB74D" text-anchor="middle">Removing</text>
+
+  <rect x="550" y="270" width="15" height="40" fill="#607D8B"/>
+  <circle cx="557" cy="270" r="10" fill="#546E7A"/>
+
+  <!-- Purification Tank 3 (CO₂) -->
+  <ellipse cx="820" cy="550" rx="110" ry="35" fill="#455A64"/>
+  <rect x="710" y="290" width="220" height="260" fill="url(#tankGrad)"/>
+  <ellipse cx="820" cy="290" rx="110" ry="35" fill="#90A4AE"/>
+  <ellipse cx="820" cy="295" rx="105" ry="30" fill="url(#shine)"/>
+
+  <circle cx="820" cy="390" r="50" fill="#263238" stroke="#37474F" stroke-width="4"/>
+  <text x="820" y="400" font-family="Arial" font-size="24" fill="#2196F3" text-anchor="middle" font-weight="bold">CO₂</text>
+  <text x="820" y="420" font-family="Arial" font-size="12" fill="#64B5F6" text-anchor="middle">Captured</text>
+
+  <rect x="820" y="260" width="15" height="40" fill="#607D8B"/>
+  <circle cx="827" cy="260" r="10" fill="#546E7A"/>
+
+  <!-- Connecting pipes -->
+  <rect x="380" y="410" width="70" height="18" fill="#607D8B" rx="9"/>
+  <rect x="650" y="420" width="70" height="18" fill="#607D8B" rx="9"/>
+
+  <!-- Valves on pipes -->
+  <circle cx="415" cy="419" r="15" fill="#FF5722"/>
+  <rect x="408" y="412" width="14" height="14" fill="#C62828" transform="rotate(45 415 419)"/>
+  <circle cx="685" cy="429" r="15" fill="#FF5722"/>
+  <rect x="678" y="422" width="14" height="14" fill="#C62828" transform="rotate(45 685 429)"/>
+
+  <!-- Control Panel -->
+  <rect x="80" y="600" width="250" height="180" fill="#263238" rx="10"/>
+  <rect x="90" y="610" width="230" height="140" fill="#1a237e" rx="8"/>
 
   <!-- Display readings -->
-  <text x="200" y="620" font-family="monospace" font-size="14" fill="#4CAF50" text-anchor="middle">Purity: 98.5%</text>
-  <text x="200" y="645" font-family="monospace" font-size="14" fill="#4CAF50" text-anchor="middle">CH₄: 96.2%</text>
-  <text x="200" y="670" font-family="monospace" font-size="14" fill="#FF9800" text-anchor="middle">Temp: 35°C</text>
+  <text x="205" y="640" font-family="monospace" font-size="16" fill="#4CAF50" text-anchor="middle" font-weight="bold">PURITY: 98.5%</text>
+  <text x="205" y="665" font-family="monospace" font-size="14" fill="#81C784" text-anchor="middle">CH₄: 96.2%</text>
+  <text x="205" y="685" font-family="monospace" font-size="14" fill="#64B5F6" text-anchor="middle">Pressure: 6.2 bar</text>
+  <text x="205" y="705" font-family="monospace" font-size="14" fill="#FF9800" text-anchor="middle">Temp: 35°C</text>
+  <text x="205" y="725" font-family="monospace" font-size="13" fill="#9FA8DA" text-anchor="middle">Flow: 120 m³/h</text>
 
-  <!-- Buttons -->
-  <circle cx="130" cy="710" r="12" fill="#4CAF50"/>
-  <circle cx="160" cy="710" r="12" fill="#FF5722"/>
-  <circle cx="190" cy="710" r="12" fill="#2196F3"/>
-  <circle cx="220" cy="710" r="12" fill="#FFC107"/>
-  <circle cx="270" cy="710" r="12" fill="#9C27B0"/>
+  <!-- Control buttons -->
+  <circle cx="110" cy="760" r="14" fill="#4CAF50"/>
+  <circle cx="145" cy="760" r="14" fill="#FF5722"/>
+  <circle cx="180" cy="760" r="14" fill="#2196F3"/>
+  <circle cx="215" cy="760" r="14" fill="#FFC107"/>
+  <circle cx="250" cy="760" r="14" fill="#9C27B0"/>
+  <circle cx="285" cy="760" r="14" fill="#00BCD4"/>
 
-  <!-- Indian technician -->
-  <circle cx="500" cy="620" r="40" fill="#D4A574"/>
-  <rect x="475" y="645" width="50" height="100" fill="#FF6B35"/>
-  <rect x="465" y="730" width="20" height="60" fill="#5D4037"/>
-  <rect x="505" y="730" width="20" height="60" fill="#5D4037"/>
+  <!-- Indian Technician -->
+  <!-- Legs -->
+  <rect x="480" y="670" width="20" height="110" fill="#455A64" rx="8"/>
+  <rect x="510" y="670" width="20" height="110" fill="#455A64" rx="8"/>
+  <!-- Safety boots -->
+  <ellipse cx="490" cy="780" rx="15" ry="10" fill="#212121"/>
+  <ellipse cx="520" cy="780" rx="15" ry="10" fill="#212121"/>
 
-  <!-- Safety helmet -->
-  <ellipse cx="500" cy="600" rx="45" ry="25" fill="#FFC107"/>
-  <rect x="455" y="595" width="90" height="15" fill="#FFA000"/>
+  <!-- Body/Work uniform -->
+  <ellipse cx="505" cy="630" rx="50" ry="65" fill="#FF6B35"/>
+  <rect x="455" y="595" width="100" height="75" fill="#FF6B35" rx="12"/>
+  <path d="M 505,595 L 505,670" stroke="#E64A19" stroke-width="3"/>
 
-  <!-- Clipboard -->
-  <rect x="560" y="660" width="50" height="70" fill="#8D6E63"/>
-  <rect x="565" y="665" width="40" height="60" fill="#fff"/>
-  <rect x="568" y="670" width="34" height="3" fill="#000"/>
-  <rect x="568" y="678" width="30" height="3" fill="#000"/>
-  <rect x="568" y="686" width="28" height="3" fill="#000"/>
+  <!-- Safety vest stripes -->
+  <rect x="465" y="610" width="80" height="8" fill="#FFEB3B" rx="2"/>
+  <rect x="465" y="640" width="80" height="8" fill="#FFEB3B" rx="2"/>
+
+  <!-- Clipboard/tablet -->
+  <rect x="570" y="640" width="60" height="90" fill="#6D4C41" rx="5"/>
+  <rect x="575" y="645" width="50" height="80" fill="#FFF"/>
+  <rect x="580" y="652" width="40" height="5" fill="#1976D2" rx="2"/>
+  <rect x="582" y="662" width="36" height="3" fill="#757575"/>
+  <rect x="582" y="670" width="32" height="3" fill="#757575"/>
+  <rect x="582" y="678" width="28" height="3" fill="#757575"/>
+  <rect x="582" y="686" width="30" height="3" fill="#757575"/>
 
   <!-- Arm holding clipboard -->
-  <rect x="525" y="670" width="40" height="12" fill="#D4A574"/>
+  <rect x="535" y="650" width="45" height="18" fill="#C9976B" rx="9" transform="rotate(15 557 659)"/>
+  <circle cx="570" cy="665" r="13" fill="#C9976B"/>
 
-  <!-- Quality check badge -->
-  <circle cx="1000" cy="200" r="80" fill="#4CAF50" opacity="0.9"/>
-  <text x="1000" y="190" font-family="Arial" font-size="20" fill="#fff" text-anchor="middle" font-weight="bold">Quality</text>
-  <text x="1000" y="215" font-family="Arial" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">✓</text>
-  <text x="1000" y="235" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">Certified</text>
+  <!-- Left arm -->
+  <rect x="435" y="620" width="45" height="18" fill="#C9976B" rx="9" transform="rotate(-15 457 629)"/>
+  <circle cx="430" cy="635" r="13" fill="#C9976B"/>
 
-  <!-- Title -->
-  <rect x="50" y="40" width="550" height="90" fill="rgba(255,255,255,0.9)" rx="10"/>
-  <text x="325" y="80" font-family="Arial" font-size="26" fill="#1976D2" text-anchor="middle" font-weight="bold">Purification Unit - शुद्धिकरण इकाई</text>
-  <text x="325" y="115" font-family="Arial" font-size="18" fill="#388E3C" text-anchor="middle">Gas Quality & Plant Operations</text>
+  <!-- Neck -->
+  <rect x="495" y="580" width="20" height="28" fill="#C9976B" rx="6"/>
+
+  <!-- Head -->
+  <circle cx="505" cy="560" r="38" fill="#C9976B"/>
+  <circle cx="505" cy="555" r="35" fill="#D4A574"/>
+
+  <!-- Safety Helmet -->
+  <ellipse cx="505" cy="530" rx="42" ry="22" fill="#FFC107"/>
+  <rect x="463" y="525" width="84" height="20" fill="#FFA000" rx="8"/>
+  <ellipse cx="505" cy="525" rx="40" ry="18" fill="#FFCA28"/>
+  <rect x="485" y="522" width="40" height="6" fill="#F57C00"/>
+
+  <!-- Face -->
+  <circle cx="495" cy="555" r="4" fill="#000"/>
+  <circle cx="515" cy="555" r="4" fill="#000"/>
+  <circle cx="496" cy="556" r="1.5" fill="#FFF" opacity="0.7"/>
+  <circle cx="516" cy="556" r="1.5" fill="#FFF" opacity="0.7"/>
+
+  <!-- Eyebrows -->
+  <path d="M 488,547 Q 495,545 502,547" stroke="#654321" stroke-width="2" fill="none"/>
+  <path d="M 508,547 Q 515,545 522,547" stroke="#654321" stroke-width="2" fill="none"/>
+
+  <!-- Nose -->
+  <path d="M 505,560 L 503,568 L 507,568 Z" fill="#B8956B"/>
+
+  <!-- Mouth -->
+  <path d="M 495,575 Q 505,580 515,575" stroke="#8B4513" stroke-width="2" fill="none"/>
+
+  <!-- Safety goggles -->
+  <ellipse cx="495" cy="555" rx="14" ry="12" fill="none" stroke="#263238" stroke-width="2"/>
+  <ellipse cx="515" cy="555" rx="14" ry="12" fill="none" stroke="#263238" stroke-width="2"/>
+  <line x1="509" y1="555" x2="501" y2="555" stroke="#263238" stroke-width="2"/>
+
+  <!-- Quality Certification Badge -->
+  <circle cx="1020" cy="200" r="90" fill="#4CAF50" opacity="0.95"/>
+  <circle cx="1020" cy="200" r="75" fill="none" stroke="#FFF" stroke-width="4"/>
+  <text x="1020" y="185" font-family="Arial" font-size="22" fill="#FFF" text-anchor="middle" font-weight="bold">QUALITY</text>
+  <text x="1020" cy="210" font-family="Arial" font-size="40" fill="#FFF" text-anchor="middle" font-weight="bold">✓</text>
+  <text x="1020" y="235" font-family="Arial" font-size="18" fill="#FFF" text-anchor="middle">CERTIFIED</text>
+
+  <!-- Title Panel -->
+  <rect x="30" y="30" width="650" height="120" fill="rgba(255,255,255,0.95)" rx="12" stroke="#2196F3" stroke-width="3"/>
+
+  <!-- Indian flag -->
+  <rect x="45" y="45" width="14" height="28" fill="#FF9933"/>
+  <rect x="45" y="73" width="14" height="28" fill="#FFF"/>
+  <circle cx="52" cy="87" r="6" fill="#000080"/>
+  <rect x="45" y="101" width="14" height="28" fill="#138808"/>
+
+  <text x="380" y="80" font-family="Arial" font-size="32" fill="#2196F3" text-anchor="middle" font-weight="bold">Purification Unit - शुद्धिकरण इकाई</text>
+  <text x="380" y="115" font-family="Arial" font-size="22" fill="#388E3C" text-anchor="middle" font-weight="bold">Gas Quality & Plant Operations</text>
+
+  <!-- Status indicators -->
+  <rect x="950" y="650" width="220" height="130" fill="rgba(255,255,255,0.95)" rx="10" stroke="#4CAF50" stroke-width="2"/>
+  <text x="1060" y="680" font-family="Arial" font-size="18" fill="#2C3E50" text-anchor="middle" font-weight="bold">System Status</text>
+  <circle cx="1010" cy="710" r="8" fill="#4CAF50"/>
+  <text x="1030" y="716" font-family="Arial" font-size="14" fill="#388E3C" text-anchor="start" font-weight="bold">Online</text>
+  <text x="1060" y="740" font-family="Arial" font-size="14" fill="#546E7A" text-anchor="middle">Purity: 98.5%</text>
+  <text x="1060" y="765" font-family="Arial" font-size="14" fill="#546E7A" text-anchor="middle">Uptime: 99.2%</text>
 </svg>

@@ -1,72 +1,214 @@
 <svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
-  <!-- Sky gradient -->
   <defs>
-    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <!-- Gradients for realistic lighting -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#B0D8F0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E6F2FF;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#8B7355;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#A0826D;stop-opacity:1" />
+    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C8A882;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B7355;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFF9E6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFE5B4;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="cowBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5DEB3;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F0E5CD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DEB887;stop-opacity:1" />
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="800" fill="url(#skyGrad)"/>
+  <!-- Sky with sun -->
+  <rect width="1200" height="800" fill="url(#skyGradient)"/>
 
-  <!-- Ground -->
-  <ellipse cx="600" cy="700" rx="600" ry="100" fill="url(#groundGrad)"/>
-  <rect x="0" y="650" width="1200" height="150" fill="#8B7355"/>
+  <!-- Sun with glow -->
+  <circle cx="200" cy="150" r="120" fill="url(#sunGlow)"/>
+  <circle cx="200" cy="150" r="60" fill="#FDB813" opacity="0.9"/>
 
-  <!-- Village houses in background -->
-  <rect x="80" y="400" width="120" height="100" fill="#D4A574"/>
-  <polygon points="80,400 140,350 200,400" fill="#CD853F"/>
-  <rect x="250" y="420" width="100" height="80" fill="#D4A574"/>
-  <polygon points="250,420 300,380 350,420" fill="#CD853F"/>
+  <!-- Distant hills -->
+  <ellipse cx="300" cy="450" rx="350" ry="80" fill="#A8C5A5" opacity="0.6"/>
+  <ellipse cx="800" cy="470" rx="400" ry="100" fill="#9DB89A" opacity="0.5"/>
 
-  <!-- Trees -->
-  <circle cx="900" cy="380" r="60" fill="#228B22"/>
-  <rect x="890" y="400" width="20" height="80" fill="#8B4513"/>
+  <!-- Village houses -->
+  <rect x="70" y="350" width="130" height="120" fill="#D4A574"/>
+  <polygon points="70,350 135,300 200,350" fill="#CD853F"/>
+  <rect x="90" y="390" width="30" height="50" fill="#8B6914"/>
+  <rect x="150" y="400" width="25" height="35" fill="#6B4423"/>
 
-  <!-- Indian cow (Gir breed) -->
-  <ellipse cx="320" cy="580" rx="90" ry="60" fill="#F5DEB3"/>
-  <ellipse cx="280" cy="550" rx="40" ry="50" fill="#F5DEB3"/>
-  <rect x="310" y="600" width="12" height="50" fill="#DEB887"/>
-  <rect x="340" y="600" width="12" height="50" fill="#DEB887"/>
-  <circle cx="270" cy="540" r="4" fill="#000"/>
-  <path d="M 260,530 Q 255,520 260,515" stroke="#8B4513" stroke-width="3" fill="none"/>
-  <path d="M 250,530 Q 245,520 250,515" stroke="#8B4513" stroke-width="3" fill="none"/>
+  <rect x="230" y="370" width="110" height="100" fill="#C9A87C"/>
+  <polygon points="230,370 285,330 340,370" fill="#B8946E"/>
+  <rect x="250" y="410" width="25" height="40" fill="#8B6914"/>
 
-  <!-- Field worker in traditional attire -->
-  <ellipse cx="600" cy="620" rx="35" ry="45" fill="#FF6B35"/>
-  <circle cx="600" cy="540" r="30" fill="#D4A574"/>
-  <rect x="585" y="650" width="15" height="70" fill="#8B4513"/>
-  <rect x="600" y="650" width="15" height="70" fill="#8B4513"/>
-  <rect x="570" y="570" width="60" height="50" fill="#4A90E2"/>
-  <circle cx="590" cy="535" r="3" fill="#000"/>
-  <circle cx="610" cy="535" r="3" fill="#000"/>
-  <path d="M 590,550 Q 600,555 610,550" stroke="#000" stroke-width="2" fill="none"/>
+  <!-- Trees in background -->
+  <ellipse cx="900" cy="350" rx="70" ry="90" fill="#228B22"/>
+  <ellipse cx="880" cy="330" rx="50" ry="70" fill="#32CD32"/>
+  <ellipse cx="920" cy="340" rx="45" ry="60" fill="#2E8B57"/>
+  <rect x="890" y="400" width="20" height="90" fill="#654321"/>
 
-  <!-- Turban -->
-  <ellipse cx="600" cy="520" rx="35" ry="15" fill="#FF8C00"/>
-  <rect x="565" y="515" width="70" height="15" fill="#FF8C00" rx="5"/>
+  <ellipse cx="1050" cy="370" rx="60" ry="80" fill="#228B22"/>
+  <rect x="1042" y="410" width="16" height="80" fill="#654321"/>
 
-  <!-- Mobile phone with app -->
-  <rect x="520" y="600" width="50" height="80" fill="#2C3E50" rx="5"/>
-  <rect x="525" y="610" width="40" height="60" fill="#ECF0F1"/>
-  <circle cx="545" cy="675" r="4" fill="#34495E"/>
-  <text x="545" y="635" font-family="Arial" font-size="12" fill="#27AE60" text-anchor="middle" font-weight="bold">गौ सखी</text>
-  <rect x="530" y="640" width="30" height="3" fill="#27AE60" rx="1"/>
-  <rect x="530" y="645" width="25" height="3" fill="#95A5A6" rx="1"/>
-  <rect x="530" y="650" width="20" height="3" fill="#95A5A6" rx="1"/>
+  <!-- Ground/field -->
+  <ellipse cx="600" cy="650" rx="700" ry="180" fill="url(#groundGradient)"/>
+  <rect x="0" y="600" width="1200" height="200" fill="#A8865F"/>
 
-  <!-- Data collection icon -->
-  <circle cx="750" cy="560" r="50" fill="#FF9933" opacity="0.9"/>
-  <path d="M 730,560 L 745,575 L 770,545" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Grass patches -->
+  <ellipse cx="200" cy="620" rx="80" ry="15" fill="#7A9253" opacity="0.6"/>
+  <ellipse cx="450" cy="640" rx="100" ry="18" fill="#8AA55C" opacity="0.5"/>
+  <ellipse cx="800" cy="630" rx="90" ry="16" fill="#7A9253" opacity="0.6"/>
 
-  <!-- Hindi text -->
-  <rect x="50" y="50" width="450" height="120" fill="rgba(255,255,255,0.85)" rx="10"/>
-  <text x="275" y="95" font-family="Arial" font-size="28" fill="#FF9933" text-anchor="middle" font-weight="bold">गौ सखी - Field Executive</text>
-  <text x="275" y="130" font-family="Arial" font-size="20" fill="#138808" text-anchor="middle">किसान पंजीकरण और गोबर संग्रह</text>
-  <text x="275" y="155" font-family="Arial" font-size="16" fill="#000080" text-anchor="middle">Farmer Registration & Dung Collection</text>
+  <!-- Indian Gir Cow (detailed) -->
+  <!-- Body -->
+  <ellipse cx="350" cy="580" rx="100" ry="70" fill="url(#cowBody)"/>
+  <ellipse cx="350" cy="570" rx="95" ry="65" fill="#FAF0E6" opacity="0.3"/>
+
+  <!-- Neck and head -->
+  <ellipse cx="290" cy="545" rx="45" ry="55" fill="url(#cowBody)"/>
+  <ellipse cx="270" cy="515" rx="35" ry="38" fill="url(#cowBody)"/>
+
+  <!-- Ears -->
+  <ellipse cx="255" cy="505" rx="18" ry="28" fill="#DEB887" transform="rotate(-20 255 505)"/>
+  <ellipse cx="285" cy="500" rx="18" ry="28" fill="#DEB887" transform="rotate(20 285 500)"/>
+
+  <!-- Horns (Gir cow characteristic) -->
+  <path d="M 260,495 Q 250,475 258,465" stroke="#8B7355" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 280,492 Q 290,472 282,462" stroke="#8B7355" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- Face details -->
+  <circle cx="258" cy="515" r="5" fill="#000"/>
+  <circle cx="260" cy="517" r="1.5" fill="#FFF" opacity="0.7"/>
+
+  <!-- Nose/mouth -->
+  <ellipse cx="265" cy="530" rx="12" ry="10" fill="#8B7355"/>
+  <path d="M 260,533 Q 265,536 270,533" stroke="#654321" stroke-width="1.5" fill="none"/>
+
+  <!-- Hump (Gir characteristic) -->
+  <ellipse cx="370" cy="540" rx="35" ry="45" fill="url(#cowBody)"/>
+
+  <!-- Legs -->
+  <rect x="315" y="620" width="15" height="70" fill="#C8A882" rx="7"/>
+  <rect x="345" y="620" width="15" height="70" fill="#C8A882" rx="7"/>
+  <rect x="375" y="620" width="15" height="70" fill="#C8A882" rx="7"/>
+  <rect x="405" y="620" width="15" height="70" fill="#C8A882" rx="7"/>
+
+  <!-- Hooves -->
+  <ellipse cx="322" cy="690" rx="10" ry="6" fill="#5A3D2B"/>
+  <ellipse cx="352" cy="690" rx="10" ry="6" fill="#5A3D2B"/>
+  <ellipse cx="382" cy="690" rx="10" ry="6" fill="#5A3D2B"/>
+  <ellipse cx="412" cy="690" rx="10" ry="6" fill="#5A3D2B"/>
+
+  <!-- Tail -->
+  <path d="M 440,570 Q 480,580 490,620" stroke="#8B7355" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 490,620 L 485,640 L 495,640 Z" fill="#654321"/>
+
+  <!-- RFID ear tag -->
+  <rect x="282" y="510" width="15" height="12" fill="#FFD700" rx="2"/>
+  <text x="289" y="519" font-family="Arial" font-size="6" fill="#000" font-weight="bold">ID</text>
+
+  <!-- Indian Field Worker (detailed) -->
+  <!-- Legs -->
+  <rect x="590" y="660" width="18" height="90" fill="#654321" rx="5"/>
+  <rect x="615" y="660" width="18" height="90" fill="#654321" rx="5"/>
+  <!-- Feet -->
+  <ellipse cx="599" cy="750" rx="12" ry="8" fill="#8B4513"/>
+  <ellipse cx="624" cy="750" rx="12" ry="8" fill="#8B4513"/>
+
+  <!-- Body/Kurta -->
+  <ellipse cx="610" cy="620" rx="45" ry="60" fill="#4A90E2"/>
+  <rect x="565" y="595" width="90" height="65" fill="#4A90E2" rx="10"/>
+  <path d="M 610,595 L 610,660" stroke="#2E5C8A" stroke-width="2"/>
+
+  <!-- Arms -->
+  <rect x="530" y="605" width="45" height="18" fill="#C9976B" rx="9" transform="rotate(-25 552 614)"/>
+  <rect x="640" y="605" width="45" height="18" fill="#C9976B" rx="9" transform="rotate(25 662 614)"/>
+
+  <!-- Hands -->
+  <circle cx="540" cy="625" r="12" fill="#C9976B"/>
+  <circle cx="680" cy="625" r="12" fill="#C9976B"/>
+
+  <!-- Neck -->
+  <rect x="600" y="565" width="20" height="30" fill="#C9976B" rx="5"/>
+
+  <!-- Head -->
+  <ellipse cx="610" cy="545" rx="35" ry="42" fill="#C9976B"/>
+  <ellipse cx="610" cy="540" rx="32" ry="38" fill="#D4A574"/>
+
+  <!-- Facial features -->
+  <circle cx="598" cy="540" r="4" fill="#000"/>
+  <circle cx="622" cy="540" r="4" fill="#000"/>
+  <circle cx="599" cy="541" r="1.5" fill="#FFF" opacity="0.8"/>
+  <circle cx="623" cy="541" r="1.5" fill="#FFF" opacity="0.8"/>
+
+  <!-- Eyebrows -->
+  <path d="M 592,532 Q 600,530 605,532" stroke="#654321" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 615,532 Q 620,530 628,532" stroke="#654321" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M 610,548 L 608,558 L 612,558 Z" fill="#B8956B"/>
+
+  <!-- Mouth/Smile -->
+  <path d="M 600,565 Q 610,572 620,565" stroke="#8B4513" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Mustache -->
+  <path d="M 595,560 Q 600,558 610,558 Q 620,558 625,560" stroke="#000" stroke-width="2.5" fill="none"/>
+
+  <!-- Turban (detailed) -->
+  <ellipse cx="610" cy="515" rx="42" ry="20" fill="#FF8C00"/>
+  <rect x="568" y="505" width="84" height="25" fill="#FF8C00" rx="8"/>
+  <ellipse cx="610" cy="505" rx="40" ry="18" fill="#FFA500"/>
+  <path d="M 575,515 Q 610,510 645,515" stroke="#CC7000" stroke-width="2" fill="none"/>
+  <path d="M 580,520 Q 610,516 640,520" stroke="#CC7000" stroke-width="1.5" fill="none"/>
+
+  <!-- Mobile Phone (GauSakhi App) -->
+  <rect x="515" y="610" width="60" height="95" fill="#2C3E50" rx="6"/>
+  <rect x="518" y="613" width="54" height="89" fill="#000" rx="4"/>
+  <rect x="522" y="622" width="46" height="72" fill="#ECF0F1"/>
+
+  <!-- App screen details -->
+  <rect x="522" y="622" width="46" height="18" fill="#27AE60"/>
+  <text x="545" y="635" font-family="Arial" font-size="10" fill="#FFF" text-anchor="middle" font-weight="bold">गौ सखी</text>
+
+  <!-- App icons -->
+  <circle cx="535" cy="655" r="6" fill="#3498DB"/>
+  <circle cx="555" cy="655" r="6" fill="#E74C3C"/>
+  <rect x="530" y="668" width="30" height="4" fill="#2ECC71" rx="2"/>
+  <rect x="530" y="675" width="25" height="4" fill="#95A5A6" rx="2"/>
+  <rect x="530" y="682" width="20" height="4" fill="#95A5A6" rx="2"/>
+
+  <!-- Home button -->
+  <circle cx="545" cy="698" r="5" fill="#34495E"/>
+
+  <!-- GPS/Location icon floating -->
+  <circle cx="750" cy="520" r="55" fill="#FF9933" opacity="0.95"/>
+  <circle cx="750" cy="520" r="50" fill="#FF9933"/>
+  <path d="M 750,495 L 750,530" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 735,520 L 765,520" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="750" cy="520" r="8" fill="none" stroke="#FFF" stroke-width="3"/>
+  <text x="750" y="570" font-family="Arial" font-size="14" fill="#FFF" text-anchor="middle" font-weight="bold">LIVE GPS</text>
+
+  <!-- Checkmark badge -->
+  <circle cx="880" cy="600" r="50" fill="#27AE60" opacity="0.95"/>
+  <path d="M 860,600 L 875,620 L 905,580" stroke="#FFF" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Title Panel -->
+  <rect x="30" y="30" width="520" height="140" fill="rgba(255,255,255,0.92)" rx="12" stroke="#FF9933" stroke-width="3"/>
+
+  <!-- Indian flag colors strip -->
+  <rect x="40" y="40" width="10" height="35" fill="#FF9933"/>
+  <rect x="40" y="75" width="10" height="35" fill="#FFF"/>
+  <circle cx="45" cy="92" r="4" fill="#000080"/>
+  <rect x="40" y="110" width="10" height="35" fill="#138808"/>
+
+  <text x="290" y="80" font-family="Arial" font-size="32" fill="#FF9933" text-anchor="middle" font-weight="bold">गौ सखी - Field Executive</text>
+  <text x="290" y="115" font-family="Arial" font-size="22" fill="#138808" text-anchor="middle" font-weight="bold">किसान पंजीकरण और गोबर संग्रह</text>
+  <text x="290" y="145" font-family="Arial" font-size="18" fill="#000080" text-anchor="middle">Farmer Registration & Cattle Dung Collection</text>
+
+  <!-- Info badges -->
+  <rect x="950" y="650" width="220" height="120" fill="rgba(255,255,255,0.9)" rx="10" stroke="#4A90E2" stroke-width="2"/>
+  <text x="1060" y="680" font-family="Arial" font-size="16" fill="#2C3E50" text-anchor="middle" font-weight="bold">Today's Collection</text>
+  <text x="1060" y="715" font-family="Arial" font-size="36" fill="#27AE60" text-anchor="middle" font-weight="bold">250 kg</text>
+  <text x="1060" y="745" font-family="Arial" font-size="14" fill="#7F8C8D" text-anchor="middle">Farmers Registered: 47</text>
 </svg>

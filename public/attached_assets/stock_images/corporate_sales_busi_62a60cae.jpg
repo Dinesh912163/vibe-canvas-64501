@@ -1,98 +1,227 @@
 <svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="officeWall" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFAFA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ECEFF1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tableWood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8D6E63;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6D4C41;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
   <!-- Office background -->
-  <rect width="1200" height="800" fill="#FFF8E1"/>
+  <rect width="1200" height="800" fill="url(#officeWall)"/>
 
-  <!-- Office wall -->
-  <rect x="0" y="0" width="1200" height="600" fill="#ECEFF1"/>
+  <!-- Windows with city view -->
+  <rect x="40" y="60" width="220" height="350" fill="#81D4FA" rx="8"/>
+  <rect x="43" y="63" width="214" height="344" fill="#B3E5FC"/>
+  <rect x="150" y="60" width="4" height="350" fill="#546E7A"/>
+  <rect x="40" y="233" width="220" height="4" fill="#546E7A"/>
 
-  <!-- Windows showing city -->
-  <rect x="50" y="80" width="200" height="300" fill="#81D4FA" rx="5"/>
-  <rect x="53" y="83" width="194" height="294" fill="#B3E5FC"/>
-  <rect x="150" y="80" width="3" height="300" fill="#546E7A"/>
-  <rect x="50" y="228" width="200" height="3" fill="#546E7A"/>
-
-  <rect x="300" y="80" width="200" height="300" fill="#81D4FA" rx="5"/>
-  <rect x="303" y="83" width="194" height="294" fill="#B3E5FC"/>
-  <rect x="400" y="80" width="3" height="300" fill="#546E7A"/>
-  <rect x="300" y="228" width="200" height="3" fill="#546E7A"/>
+  <rect x="300" y="60" width="220" height="350" fill="#81D4FA" rx="8"/>
+  <rect x="303" y="63" width="214" height="344" fill="#B3E5FC"/>
+  <rect x="410" y="60" width="4" height="350" fill="#546E7A"/>
+  <rect x="300" y="233" width="220" height="4" fill="#546E7A"/>
 
   <!-- Conference table -->
-  <ellipse cx="600" cy="600" rx="400" ry="150" fill="#6D4C41"/>
-  <ellipse cx="600" cy="580" rx="400" ry="150" fill="#8D6E63"/>
+  <ellipse cx="600" cy="620" rx="420" ry="170" fill="#5D4037"/>
+  <ellipse cx="600" cy="600" rx="420" ry="170" fill="url(#tableWood)"/>
+  <ellipse cx="600" cy="595" rx="415" ry="165" fill="#A1887F" opacity="0.2"/>
 
   <!-- Laptop on table -->
-  <rect x="500" y="520" width="200" height="120" fill="#263238" rx="5"/>
-  <rect x="510" y="530" width="180" height="100" fill="#1a237e"/>
+  <rect x="480" y="520" width="240" height="140" fill="#263238" rx="8"/>
+  <rect x="485" y="525" width="230" height="130" fill="#000" rx="6"/>
+  <rect x="495" y="535" width="210" height="110" fill="#1a237e"/>
 
-  <!-- Sales chart on laptop -->
-  <text x="600" y="560" font-family="Arial" font-size="16" fill="#4CAF50" text-anchor="middle" font-weight="bold">CBG Sales Dashboard</text>
-  <rect x="530" y="575" width="20" height="40" fill="#4CAF50"/>
-  <rect x="560" y="560" width="20" height="55" fill="#8BC34A"/>
-  <rect x="590" y="545" width="20" height="70" fill="#4CAF50"/>
-  <rect x="620" y="530" width="20" height="85" fill="#8BC34A"/>
-  <rect x="650" y="520" width="20" height="95" fill="#4CAF50"/>
+  <!-- Screen content - Sales Dashboard -->
+  <rect x="495" y="535" width="210" height="35" fill="#1976D2"/>
+  <text x="600" y="558" font-family="Arial" font-size="16" fill="#FFF" text-anchor="middle" font-weight="bold">CBG Sales Dashboard</text>
+  <text x="600" y="575" font-family="Arial" font-size="11" fill="#81D4FA" text-anchor="middle">सीबीजी बिक्री डैशबोर्ड</text>
+
+  <!-- Bar chart on screen -->
+  <rect x="515" y="590" width="25" height="40" fill="#4CAF50" rx="3"/>
+  <rect x="550" y="580" width="25" height="50" fill="#8BC34A" rx="3"/>
+  <rect x="585" y="570" width="25" height="60" fill="#4CAF50" rx="3"/>
+  <rect x="620" y="560" width="25" height="70" fill="#66BB6A" rx="3"/>
+  <rect x="655" y="550" width="25" height="80" fill="#4CAF50" rx="3"/>
+
+  <!-- Revenue indicator -->
+  <text x="600" y="615" font-family="Arial" font-size="12" fill="#FFC107" text-anchor="middle" font-weight="bold">₹4.2 Cr Revenue</text>
+  <text x="600" y="630" font-family="Arial" font-size="10" fill="#81C784" text-anchor="middle">↑ +45% Growth</text>
 
   <!-- Documents on table -->
-  <rect x="350" y="540" width="100" height="80" fill="#fff" rx="3"/>
-  <rect x="355" y="545" width="90" height="3" fill="#FF9800"/>
-  <rect x="355" y="555" width="85" height="2" fill="#000"/>
-  <rect x="355" y="562" width="80" height="2" fill="#000"/>
-  <rect x="355" y="569" width="75" height="2" fill="#000"/>
+  <rect x="320" y="540" width="120" height="90" fill="#FFF" rx="5"/>
+  <rect x="325" y="545" width="110" height="8" fill="#FF9800"/>
+  <text x="380" y="562" font-family="Arial" font-size="10" fill="#FF6F00" text-anchor="middle" font-weight="bold">Q4 Report</text>
+  <rect x="330" y="572" width="100" height="3" fill="#757575"/>
+  <rect x="330" y="580" width="95" height="3" fill="#757575"/>
+  <rect x="330" y="588" width="90" height="3" fill="#757575"/>
+  <rect x="330" y="596" width="85" height="3" fill="#757575"/>
 
-  <!-- Indian business people -->
-  <!-- Person 1 - Man in formal attire -->
-  <circle cx="750" cy="500" r="45" fill="#D4A574"/>
-  <rect x="720" y="530" width="60" height="90" fill="#1976D2"/>
-  <rect x="710" y="540" width="30" height="70" fill="#1976D2"/>
-  <circle cx="740" cy="495" r="3" fill="#000"/>
-  <circle cx="760" cy="495" r="3" fill="#000"/>
+  <!-- Tablet -->
+  <rect x="800" y="540" width="150" height="110" fill="#263238" rx="8"/>
+  <rect x="805" y="545" width="140" height="100" fill="#FFF"/>
+  <rect x="810" y="550" width="130" height="30" fill="#1976D2"/>
+  <text x="875" y="570" font-family="Arial" font-size="12" fill="#FFF" text-anchor="middle" font-weight="bold">Analytics</text>
+
+  <!-- Pie chart on tablet -->
+  <circle cx="875" cy="605" r="25" fill="none" stroke="#E0E0E0" stroke-width="20"/>
+  <circle cx="875" cy="605" r="25" fill="none" stroke="#4CAF50" stroke-width="20"
+          stroke-dasharray="78.5 157" transform="rotate(-90 875 605)"/>
+
+  <!-- Indian Business Team Member 1 - Man -->
+  <!-- Body -->
+  <ellipse cx="720" cy="530" rx="50" ry="70" fill="#1976D2"/>
+  <rect x="670" y="500" width="100" height="80" fill="#1976D2" rx="12"/>
+  <polygon points="710,500 720,515 730,500" fill="#0D47A1"/>
   <!-- Tie -->
-  <polygon points="750,545 745,565 755,565" fill="#C62828"/>
+  <polygon points="720,515 715,545 725,545" fill="#C62828"/>
+  <rect x="718" y="520" width="4" height="25" fill="#B71C1C"/>
 
-  <!-- Person 2 - Woman in professional attire -->
-  <circle cx="900" cy="510" r="40" fill="#D4A574"/>
-  <rect x="875" y="535" width="50" height="85" fill="#E91E63"/>
-  <path d="M 900,485 Q 890,475 900,470 Q 910,475 900,485" fill="#000"/>
-  <circle cx="890" cy="505" r="3" fill="#000"/>
-  <circle cx="910" cy="505" r="3" fill="#000"/>
+  <!-- Arms -->
+  <rect x="640" y="520" width="45" height="20" fill="#C9976B" rx="10" transform="rotate(-15 662 530)"/>
+  <circle cx="635" cy="545" r="14" fill="#C9976B"/>
 
-  <!-- Person 3 - Another team member -->
-  <circle cx="450" cy="520" r="35" fill="#D4A574"/>
-  <rect x="430" y="545" width="40" height="75" fill="#00796B"/>
-  <circle cx="442" cy="516" r="3" fill="#000"/>
-  <circle cx="458" cy="516" r="3" fill="#000"/>
+  <rect x="745" y="520" width="45" height="20" fill="#C9976B" rx="10" transform="rotate(15 767 530)"/>
+  <circle cx="790" cy="545" r="14" fill="#C9976B"/>
 
-  <!-- Indian flag colors accent -->
-  <rect x="950" y="200" width="200" height="30" fill="#FF9933"/>
-  <rect x="950" y="230" width="200" height="30" fill="#fff"/>
-  <circle cx="1050" cy="245" r="15" fill="#000080"/>
-  <rect x="950" y="260" width="200" height="30" fill="#138808"/>
+  <!-- Neck -->
+  <rect x="710" y="480" width="20" height="28" fill="#C9976B" rx="6"/>
 
-  <!-- Revenue chart on wall -->
-  <rect x="600" y="120" width="500" height="280" fill="#fff" rx="10" stroke="#BDBDBD" stroke-width="2"/>
-  <text x="850" y="160" font-family="Arial" font-size="24" fill="#1976D2" text-anchor="middle" font-weight="bold">CBG Revenue Analytics</text>
-  <text x="850" y="190" font-family="Arial" font-size="16" fill="#388E3C" text-anchor="middle">राजस्व विश्लेषण</text>
+  <!-- Head -->
+  <circle cx="720" cy="465" r="40" fill="#C9976B"/>
+  <circle cx="720" cy="460" r="37" fill="#D4A574"/>
 
-  <!-- Graph line -->
-  <polyline points="650,320 720,280 790,300 860,240 930,260 1000,210 1070,230"
-            stroke="#4CAF50" stroke-width="4" fill="none"/>
+  <!-- Hair -->
+  <path d="M 685,445 Q 680,430 690,425 Q 705,418 720,420 Q 735,418 750,425 Q 760,430 755,445" fill="#000"/>
+
+  <!-- Facial features -->
+  <circle cx="708" cy="458" r="4" fill="#000"/>
+  <circle cx="709" cy="459" r="1.5" fill="#FFF" opacity="0.7"/>
+  <circle cx="732" cy="458" r="4" fill="#000"/>
+  <circle cx="733" cy="459" r="1.5" fill="#FFF" opacity="0.7"/>
+
+  <path d="M 700,450 Q 708,448 714,450" stroke="#654321" stroke-width="2" fill="none"/>
+  <path d="M 726,450 Q 732,448 740,450" stroke="#654321" stroke-width="2" fill="none"/>
+
+  <path d="M 720,463 L 718,471 L 722,471 Z" fill="#B8956B"/>
+  <path d="M 710,480 Q 720,485 730,480" stroke="#8B4513" stroke-width="2" fill="none"/>
+
+  <!-- Indian Business Team Member 2 - Woman -->
+  <!-- Body -->
+  <ellipse cx="880" cy="540" rx="45" ry="65" fill="#E91E63"/>
+  <rect x="835" y="515" width="90" height="75" fill="#E91E63" rx="12"/>
+  <path d="M 880,515 L 880,590" stroke="#C2185B" stroke-width="2"/>
+
+  <!-- Arms -->
+  <rect x="808" y="535" width="42" height="18" fill="#C9976B" rx="9" transform="rotate(-10 829 544)"/>
+  <circle cx="805" cy="555" r="13" fill="#C9976B"/>
+
+  <rect x="910" y="535" width="42" height="18" fill="#C9976B" rx="9" transform="rotate(10 931 544)"/>
+  <circle cx="950" cy="555" r="13" fill="#C9976B"/>
+
+  <!-- Neck -->
+  <rect x="870" y="495" width="20" height="25" fill="#C9976B" rx="5"/>
+
+  <!-- Head -->
+  <circle cx="880" cy="480" r="35" fill="#C9976B"/>
+  <circle cx="880" cy="475" r="32" fill="#D4A574"/>
+
+  <!-- Hair -->
+  <ellipse cx="880" cy="455" rx="38" ry="30" fill="#000"/>
+  <path d="M 845,465 Q 840,455 845,450 Q 860,445 880,447 Q 900,445 915,450 Q 920,455 915,465" fill="#000"/>
+
+  <!-- Facial features -->
+  <circle cx="870" cy="473" r="3.5" fill="#000"/>
+  <circle cx="871" cy="474" r="1.2" fill="#FFF" opacity="0.7"/>
+  <circle cx="890" cy="473" r="3.5" fill="#000"/>
+  <circle cx="891" cy="474" r="1.2" fill="#FFF" opacity="0.7"/>
+
+  <path d="M 863,466 Q 870,464 876,466" stroke="#654321" stroke-width="2" fill="none"/>
+  <path d="M 884,466 Q 890,464 897,466" stroke="#654321" stroke-width="2" fill="none"/>
+
+  <path d="M 880,478 L 878,484 L 882,484 Z" fill="#B8956B"/>
+  <path d="M 872,492 Q 880,496 888,492" stroke="#C62828" stroke-width="2" fill="none"/>
+
+  <!-- Indian Business Team Member 3 -->
+  <!-- Body -->
+  <ellipse cx="450" cy="550" rx="42" ry="60" fill="#00796B"/>
+  <rect x="408" y="525" width="84" height="70" fill="#00796B" rx="10"/>
+
+  <!-- Arms -->
+  <rect x="385" y="545" width="38" height="16" fill="#C9976B" rx="8" transform="rotate(-12 404 553)"/>
+  <circle cx="380" cy="565" r="12" fill="#C9976B"/>
+
+  <rect x="485" y="545" width="38" height="16" fill="#C9976B" rx="8" transform="rotate(12 504 553)"/>
+  <circle cx="520" cy="565" r="12" fill="#C9976B"/>
+
+  <!-- Neck -->
+  <rect x="440" y="505" width="20" height="24" fill="#C9976B" rx="5"/>
+
+  <!-- Head -->
+  <circle cx="450" cy="490" r="32" fill="#C9976B"/>
+  <circle cx="450" cy="485" r="29" fill="#D4A574"/>
+
+  <!-- Hair -->
+  <ellipse cx="450" cy="470" rx="34" ry="25" fill="#000"/>
+
+  <!-- Face -->
+  <circle cx="442" cy="483" r="3" fill="#000"/>
+  <circle cx="458" cy="483" r="3" fill="#000"/>
+  <path d="M 450,488 L 448,494 L 452,494 Z" fill="#B8956B"/>
+  <path d="M 443,496 Q 450,500 457,496" stroke="#8B4513" stroke-width="2" fill="none"/>
+
+  <!-- Revenue Chart on wall -->
+  <rect x="600" y="100" width="550" height="320" fill="#FFF" rx="12" stroke="#E0E0E0" stroke-width="3"/>
+
+  <!-- Chart header -->
+  <rect x="600" y="100" width="550" height="55" fill="#1976D2" rx="12"/>
+  <rect x="600" y="145" width="550" height="10" fill="#1976D2"/>
+  <text x="875" y="135" font-family="Arial" font-size="26" fill="#FFF" text-anchor="middle" font-weight="bold">CBG Revenue Analytics</text>
+  <text x="875" y="175" font-family="Arial" font-size="18" fill="#388E3C" text-anchor="middle" font-weight="bold">राजस्व विश्लेषण - 2024</text>
+
+  <!-- Line graph -->
+  <polyline points="640,340 700,310 760,325 820,275 880,290 940,250 1000,265 1060,235"
+            stroke="#4CAF50" stroke-width="5" fill="none"/>
 
   <!-- Data points -->
-  <circle cx="650" cy="320" r="6" fill="#FF5722"/>
-  <circle cx="720" cy="280" r="6" fill="#FF5722"/>
-  <circle cx="790" cy="300" r="6" fill="#FF5722"/>
-  <circle cx="860" cy="240" r="6" fill="#FF5722"/>
-  <circle cx="930" cy="260" r="6" fill="#FF5722"/>
-  <circle cx="1000" cy="210" r="6" fill="#FF5722"/>
-  <circle cx="1070" cy="230" r="6" fill="#FF5722"/>
+  <circle cx="640" cy="340" r="8" fill="#FF5722"/>
+  <circle cx="700" cy="310" r="8" fill="#FF5722"/>
+  <circle cx="760" cy="325" r="8" fill="#FF5722"/>
+  <circle cx="820" cy="275" r="8" fill="#FF5722"/>
+  <circle cx="880" cy="290" r="8" fill="#FF5722"/>
+  <circle cx="940" cy="250" r="8" fill="#FF5722"/>
+  <circle cx="1000" cy="265" r="8" fill="#FF5722"/>
+  <circle cx="1060" cy="235" r="8" fill="#FF5722"/>
 
-  <!-- Growth indicator -->
-  <circle cx="1100" cy="500" r="60" fill="#4CAF50" opacity="0.9"/>
-  <text x="1100" y="495" font-family="Arial" font-size="32" fill="#fff" text-anchor="middle" font-weight="bold">↗</text>
-  <text x="1100" y="525" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">+45%</text>
+  <!-- Axis labels -->
+  <text x="640" y="390" font-family="Arial" font-size="11" fill="#757575" text-anchor="middle">Jan</text>
+  <text x="760" y="390" font-family="Arial" font-size="11" fill="#757575" text-anchor="middle">Mar</text>
+  <text x="880" y="390" font-family="Arial" font-size="11" fill="#757575" text-anchor="middle">May</text>
+  <text x="1000" y="390" font-family="Arial" font-size="11" fill="#757575" text-anchor="middle">Jul</text>
 
-  <!-- Title -->
-  <rect x="50" y="650" width="500" height="80" fill="rgba(255,255,255,0.95)" rx="10"/>
-  <text x="300" y="690" font-family="Arial" font-size="24" fill="#FF6F00" text-anchor="middle" font-weight="bold">Sales & Distribution Platform</text>
-  <text x="300" y="720" font-family="Arial" font-size="18" fill="#1976D2" text-anchor="middle">CBG बाजार और राजस्व प्रबंधन</text>
+  <!-- Growth Badge -->
+  <circle cx="1080" cy="520" r="65" fill="#4CAF50" opacity="0.95"/>
+  <text x="1080" y="510" font-family="Arial" font-size="36" fill="#FFF" text-anchor="middle" font-weight="bold">↗</text>
+  <text x="1080" y="540" font-family="Arial" font-size="18" fill="#FFF" text-anchor="middle" font-weight="bold">+45%</text>
+  <text x="1080" y="560" font-family="Arial" font-size="12" fill="#E8F5E9" text-anchor="middle">Growth</text>
+
+  <!-- Indian flag decoration -->
+  <rect x="1000" y="180" width="140" height="24" fill="#FF9933"/>
+  <rect x="1000" y="204" width="140" height="24" fill="#FFF"/>
+  <circle cx="1070" cy="216" r="12" fill="#000080"/>
+  <rect x="1000" y="228" width="140" height="24" fill="#138808"/>
+
+  <!-- Title Panel -->
+  <rect x="30" y="650" width="580" height="120" fill="rgba(255,255,255,0.98)" rx="12" stroke="#FF9800" stroke-width="3"/>
+
+  <!-- Flag -->
+  <rect x="45" y="665" width="12" height="28" fill="#FF9933"/>
+  <rect x="45" y="693" width="12" height="28" fill="#FFF"/>
+  <circle cx="51" cy="707" r="5" fill="#000080"/>
+  <rect x="45" y="721" width="12" height="28" fill="#138808"/>
+
+  <text x="340" y="710" font-family="Arial" font-size="28" fill="#FF6F00" text-anchor="middle" font-weight="bold">Sales & Distribution Platform</text>
+  <text x="340" y="745" font-family="Arial" font-size="20" fill="#1976D2" text-anchor="middle" font-weight="bold">CBG बाजार और राजस्व प्रबंधन</text>
 </svg>
