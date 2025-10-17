@@ -1,0 +1,68 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#E8F5E9"/>
+
+  <!-- Control room wall -->
+  <rect width="1200" height="800" fill="#CFD8DC"/>
+
+  <!-- Large monitor screens -->
+  <rect x="100" y="150" width="450" height="300" fill="#263238" rx="10"/>
+  <rect x="110" y="160" width="430" height="260" fill="#1a237e"/>
+
+  <rect x="650" y="150" width="450" height="300" fill="#263238" rx="10"/>
+  <rect x="660" y="160" width="430" height="260" fill="#1a237e"/>
+
+  <!-- Dashboard elements on left screen -->
+  <text x="325" y="200" font-family="Arial" font-size="20" fill="#fff" text-anchor="middle" font-weight="bold">Cluster Dashboard - क्लस्टर डैशबोर्ड</text>
+
+  <!-- Gauge meters -->
+  <circle cx="220" cy="280" r="50" fill="#37474F"/>
+  <path d="M 220,280 m -40,0 a 40,40 0 1,1 80,0" stroke="#4CAF50" stroke-width="8" fill="none"/>
+  <text x="220" y="340" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">Gas Output</text>
+
+  <circle cx="430" cy="280" r="50" fill="#37474F"/>
+  <path d="M 430,280 m -40,0 a 40,40 0 1,1 80,0" stroke="#FF9800" stroke-width="8" fill="none"/>
+  <text x="430" y="340" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">Efficiency</text>
+
+  <!-- Chart on right screen -->
+  <text x="875" y="200" font-family="Arial" font-size="20" fill="#fff" text-anchor="middle" font-weight="bold">Production Analytics</text>
+  <rect x="700" y="240" width="30" height="120" fill="#4CAF50"/>
+  <rect x="750" y="260" width="30" height="100" fill="#8BC34A"/>
+  <rect x="800" y="230" width="30" height="130" fill="#4CAF50"/>
+  <rect x="850" y="250" width="30" height="110" fill="#8BC34A"/>
+  <rect x="900" y="220" width="30" height="140" fill="#4CAF50"/>
+  <rect x="950" y="240" width="30" height="120" fill="#8BC34A"/>
+  <rect x="1000" y="210" width="30" height="150" fill="#4CAF50"/>
+
+  <!-- Desk with equipment -->
+  <rect x="200" y="500" width="800" height="250" fill="#8D6E63"/>
+  <rect x="200" y="500" width="800" height="20" fill="#6D4C41"/>
+
+  <!-- Keyboard -->
+  <rect x="400" y="550" width="180" height="80" fill="#455A64" rx="5"/>
+  <rect x="410" y="560" width="160" height="60" fill="#37474F"/>
+
+  <!-- Mouse -->
+  <ellipse cx="650" cy="590" rx="25" ry="35" fill="#37474F"/>
+
+  <!-- Indian manager -->
+  <circle cx="900" cy="600" r="50" fill="#D4A574"/>
+  <rect x="870" y="630" width="60" height="120" fill="#1976D2"/>
+  <circle cx="890" cy="595" r="3" fill="#000"/>
+  <circle cx="910" cy="595" r="3" fill="#000"/>
+  <path d="M 890,610 Q 900,615 910,610" stroke="#000" stroke-width="2" fill="none"/>
+
+  <!-- Arm pointing -->
+  <rect x="820" y="640" width="60" height="15" fill="#D4A574"/>
+  <circle cx="820" cy="647" r="10" fill="#D4A574"/>
+
+  <!-- Coffee cup -->
+  <rect x="750" y="540" width="40" height="50" fill="#fff" rx="5"/>
+  <ellipse cx="770" cy="540" rx="22" ry="8" fill="#6F4E37"/>
+  <rect x="790" y="555" width="20" height="30" fill="#fff" rx="10"/>
+
+  <!-- Title banner -->
+  <rect x="50" y="40" width="500" height="80" fill="rgba(255,255,255,0.9)" rx="10"/>
+  <text x="300" y="75" font-family="Arial" font-size="24" fill="#1976D2" text-anchor="middle" font-weight="bold">Cluster Manager Portal</text>
+  <text x="300" y="105" font-family="Arial" font-size="18" fill="#388E3C" text-anchor="middle">आपूर्ति श्रृंखला निगरानी</text>
+</svg>

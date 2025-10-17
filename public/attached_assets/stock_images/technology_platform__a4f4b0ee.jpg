@@ -1,0 +1,98 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark tech background -->
+  <rect width="1200" height="800" fill="#0D1117"/>
+
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#1F2937" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+
+  <!-- Large central monitor -->
+  <rect x="200" y="150" width="800" height="500" fill="#1F2937" rx="15"/>
+  <rect x="215" y="165" width="770" height="450" fill="#111827"/>
+
+  <!-- Dashboard header -->
+  <rect x="215" y="165" width="770" height="60" fill="#1E40AF"/>
+  <text x="600" y="205" font-family="Arial" font-size="28" fill="#fff" text-anchor="middle" font-weight="bold">Saubhagya - Central Dashboard</text>
+
+  <!-- Indian tricolor indicator -->
+  <rect x="230" y="175" width="8" height="13" fill="#FF9933"/>
+  <rect x="230" y="188" width="8" height="13" fill="#fff"/>
+  <rect x="230" y="201" width="8" height="13" fill="#138808"/>
+
+  <!-- Stats cards -->
+  <rect x="250" y="250" width="200" height="120" fill="#1F2937" rx="10" stroke="#3B82F6" stroke-width="2"/>
+  <text x="350" y="285" font-family="Arial" font-size="16" fill="#9CA3AF" text-anchor="middle">Total Farmers</text>
+  <text x="350" y="285" font-family="Arial" font-size="16" fill="#9CA3AF" text-anchor="middle">Total Farmers</text>
+  <text x="350" y="310" font-family="Arial" font-size="16" fill="#D1D5DB" text-anchor="middle">किसान पंजीकृत</text>
+  <text x="350" y="350" font-family="Arial" font-size="40" fill="#4CAF50" text-anchor="middle" font-weight="bold">12,547</text>
+
+  <rect x="500" y="250" width="200" height="120" fill="#1F2937" rx="10" stroke="#10B981" stroke-width="2"/>
+  <text x="600" y="285" font-family="Arial" font-size="16" fill="#9CA3AF" text-anchor="middle">CBG Production</text>
+  <text x="600" y="310" font-family="Arial" font-size="16" fill="#D1D5DB" text-anchor="middle">CBG उत्पादन</text>
+  <text x="600" y="350" font-family="Arial" font-size="40" fill="#FFA726" text-anchor="middle" font-weight="bold">8.5T</text>
+
+  <rect x="750" y="250" width="200" height="120" fill="#1F2937" rx="10" stroke="#F59E0B" stroke-width="2"/>
+  <text x="850" y="285" font-family="Arial" font-size="16" fill="#9CA3AF" text-anchor="middle">Revenue</text>
+  <text x="850" y="310" font-family="Arial" font-size="16" fill="#D1D5DB" text-anchor="middle">राजस्व</text>
+  <text x="850" y="350" font-family="Arial" font-size="40" fill="#42A5F5" text-anchor="middle" font-weight="bold">₹4.2Cr</text>
+
+  <!-- Real-time graph -->
+  <text x="280" y="420" font-family="Arial" font-size="18" fill="#E5E7EB" font-weight="bold">Live Operations Monitor</text>
+  <polyline points="280,480 350,450 420,470 490,430 560,445 630,410 700,425 770,395 840,410 910,380"
+            stroke="#4CAF50" stroke-width="3" fill="none"/>
+  <polyline points="280,520 350,510 420,490 490,505 560,485 630,500 700,475 770,490 840,470 910,485"
+            stroke="#2196F3" stroke-width="3" fill="none"/>
+
+  <!-- Activity indicators -->
+  <circle cx="280" cy="560" r="8" fill="#4CAF50"/>
+  <text x="300" y="565" font-family="Arial" font-size="14" fill="#9CA3AF">Collection Active</text>
+
+  <circle cx="480" cy="560" r="8" fill="#2196F3"/>
+  <text x="500" y="565" font-family="Arial" font-size="14" fill="#9CA3AF">Processing</text>
+
+  <circle cx="680" cy="560" r="8" fill="#FFA726"/>
+  <text x="700" y="565" font-family="Arial" font-size="14" fill="#9CA3AF">Distribution</text>
+
+  <!-- Map of India outline -->
+  <g transform="translate(1020, 180)">
+    <path d="M 60,20 L 70,15 L 80,18 L 85,25 L 90,35 L 92,50 L 90,65 L 85,80 L 82,95 L 78,110 L 73,120 L 65,125 L 55,128 L 45,128 L 35,125 L 28,118 L 22,108 L 18,95 L 15,80 L 13,65 L 12,50 L 14,35 L 20,25 L 30,18 L 45,15 L 60,20 Z"
+          fill="#1F2937" stroke="#4CAF50" stroke-width="2"/>
+    <!-- Active nodes -->
+    <circle cx="50" cy="60" r="4" fill="#4CAF50"/>
+    <circle cx="65" cy="75" r="4" fill="#FFA726"/>
+    <circle cx="45" cy="90" r="4" fill="#2196F3"/>
+    <circle cx="70" cy="50" r="4" fill="#4CAF50"/>
+    <text x="60" y="150" font-family="Arial" font-size="12" fill="#9CA3AF" text-anchor="middle">Pan India</text>
+  </g>
+
+  <!-- Bottom status bar -->
+  <rect x="215" y="615" width="770" height="35" fill="#374151"/>
+  <circle cx="240" cy="632" r="6" fill="#4CAF50"/>
+  <text x="255" y="637" font-family="Arial" font-size="14" fill="#E5E7EB">System Operational</text>
+
+  <text x="500" y="637" font-family="Arial" font-size="14" fill="#9CA3AF">Last Updated: Just now</text>
+
+  <text x="800" y="637" font-family="Arial" font-size="14" fill="#9CA3AF">Users Online: 247</text>
+
+  <!-- Side notifications -->
+  <rect x="1020" y="400" width="160" height="200" fill="#1F2937" rx="8" stroke="#3B82F6" stroke-width="1"/>
+  <text x="1100" y="425" font-family="Arial" font-size="14" fill="#E5E7EB" text-anchor="middle" font-weight="bold">Alerts</text>
+
+  <rect x="1030" y="440" width="140" height="40" fill="#065F46" rx="5"/>
+  <text x="1100" y="462" font-family="Arial" font-size="11" fill="#D1FAE5" text-anchor="middle">New collection: 250kg</text>
+
+  <rect x="1030" y="490" width="140" height="40" fill="#1E40AF" rx="5"/>
+  <text x="1100" y="512" font-family="Arial" font-size="11" fill="#DBEAFE" text-anchor="middle">Payment processed</text>
+
+  <rect x="1030" y="540" width="140" height="40" fill="#92400E" rx="5"/>
+  <text x="1100" y="562" font-family="Arial" font-size="11" fill="#FEF3C7" text-anchor="middle">Quality check done</text>
+
+  <!-- Title banner -->
+  <rect x="50" y="50" width="600" height="80" fill="rgba(31,41,55,0.95)" rx="10" stroke="#3B82F6" stroke-width="2"/>
+  <text x="350" y="85" font-family="Arial" font-size="26" fill="#60A5FA" text-anchor="middle" font-weight="bold">Central Oversight Dashboard</text>
+  <text x="350" y="115" font-family="Arial" font-size="18" fill="#34D399" text-anchor="middle">केंद्रीय निरीक्षण डैशबोर्ड</text>
+</svg>

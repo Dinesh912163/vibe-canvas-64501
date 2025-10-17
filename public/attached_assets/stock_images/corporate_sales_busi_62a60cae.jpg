@@ -1,0 +1,98 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Office background -->
+  <rect width="1200" height="800" fill="#FFF8E1"/>
+
+  <!-- Office wall -->
+  <rect x="0" y="0" width="1200" height="600" fill="#ECEFF1"/>
+
+  <!-- Windows showing city -->
+  <rect x="50" y="80" width="200" height="300" fill="#81D4FA" rx="5"/>
+  <rect x="53" y="83" width="194" height="294" fill="#B3E5FC"/>
+  <rect x="150" y="80" width="3" height="300" fill="#546E7A"/>
+  <rect x="50" y="228" width="200" height="3" fill="#546E7A"/>
+
+  <rect x="300" y="80" width="200" height="300" fill="#81D4FA" rx="5"/>
+  <rect x="303" y="83" width="194" height="294" fill="#B3E5FC"/>
+  <rect x="400" y="80" width="3" height="300" fill="#546E7A"/>
+  <rect x="300" y="228" width="200" height="3" fill="#546E7A"/>
+
+  <!-- Conference table -->
+  <ellipse cx="600" cy="600" rx="400" ry="150" fill="#6D4C41"/>
+  <ellipse cx="600" cy="580" rx="400" ry="150" fill="#8D6E63"/>
+
+  <!-- Laptop on table -->
+  <rect x="500" y="520" width="200" height="120" fill="#263238" rx="5"/>
+  <rect x="510" y="530" width="180" height="100" fill="#1a237e"/>
+
+  <!-- Sales chart on laptop -->
+  <text x="600" y="560" font-family="Arial" font-size="16" fill="#4CAF50" text-anchor="middle" font-weight="bold">CBG Sales Dashboard</text>
+  <rect x="530" y="575" width="20" height="40" fill="#4CAF50"/>
+  <rect x="560" y="560" width="20" height="55" fill="#8BC34A"/>
+  <rect x="590" y="545" width="20" height="70" fill="#4CAF50"/>
+  <rect x="620" y="530" width="20" height="85" fill="#8BC34A"/>
+  <rect x="650" y="520" width="20" height="95" fill="#4CAF50"/>
+
+  <!-- Documents on table -->
+  <rect x="350" y="540" width="100" height="80" fill="#fff" rx="3"/>
+  <rect x="355" y="545" width="90" height="3" fill="#FF9800"/>
+  <rect x="355" y="555" width="85" height="2" fill="#000"/>
+  <rect x="355" y="562" width="80" height="2" fill="#000"/>
+  <rect x="355" y="569" width="75" height="2" fill="#000"/>
+
+  <!-- Indian business people -->
+  <!-- Person 1 - Man in formal attire -->
+  <circle cx="750" cy="500" r="45" fill="#D4A574"/>
+  <rect x="720" y="530" width="60" height="90" fill="#1976D2"/>
+  <rect x="710" y="540" width="30" height="70" fill="#1976D2"/>
+  <circle cx="740" cy="495" r="3" fill="#000"/>
+  <circle cx="760" cy="495" r="3" fill="#000"/>
+  <!-- Tie -->
+  <polygon points="750,545 745,565 755,565" fill="#C62828"/>
+
+  <!-- Person 2 - Woman in professional attire -->
+  <circle cx="900" cy="510" r="40" fill="#D4A574"/>
+  <rect x="875" y="535" width="50" height="85" fill="#E91E63"/>
+  <path d="M 900,485 Q 890,475 900,470 Q 910,475 900,485" fill="#000"/>
+  <circle cx="890" cy="505" r="3" fill="#000"/>
+  <circle cx="910" cy="505" r="3" fill="#000"/>
+
+  <!-- Person 3 - Another team member -->
+  <circle cx="450" cy="520" r="35" fill="#D4A574"/>
+  <rect x="430" y="545" width="40" height="75" fill="#00796B"/>
+  <circle cx="442" cy="516" r="3" fill="#000"/>
+  <circle cx="458" cy="516" r="3" fill="#000"/>
+
+  <!-- Indian flag colors accent -->
+  <rect x="950" y="200" width="200" height="30" fill="#FF9933"/>
+  <rect x="950" y="230" width="200" height="30" fill="#fff"/>
+  <circle cx="1050" cy="245" r="15" fill="#000080"/>
+  <rect x="950" y="260" width="200" height="30" fill="#138808"/>
+
+  <!-- Revenue chart on wall -->
+  <rect x="600" y="120" width="500" height="280" fill="#fff" rx="10" stroke="#BDBDBD" stroke-width="2"/>
+  <text x="850" y="160" font-family="Arial" font-size="24" fill="#1976D2" text-anchor="middle" font-weight="bold">CBG Revenue Analytics</text>
+  <text x="850" y="190" font-family="Arial" font-size="16" fill="#388E3C" text-anchor="middle">राजस्व विश्लेषण</text>
+
+  <!-- Graph line -->
+  <polyline points="650,320 720,280 790,300 860,240 930,260 1000,210 1070,230"
+            stroke="#4CAF50" stroke-width="4" fill="none"/>
+
+  <!-- Data points -->
+  <circle cx="650" cy="320" r="6" fill="#FF5722"/>
+  <circle cx="720" cy="280" r="6" fill="#FF5722"/>
+  <circle cx="790" cy="300" r="6" fill="#FF5722"/>
+  <circle cx="860" cy="240" r="6" fill="#FF5722"/>
+  <circle cx="930" cy="260" r="6" fill="#FF5722"/>
+  <circle cx="1000" cy="210" r="6" fill="#FF5722"/>
+  <circle cx="1070" cy="230" r="6" fill="#FF5722"/>
+
+  <!-- Growth indicator -->
+  <circle cx="1100" cy="500" r="60" fill="#4CAF50" opacity="0.9"/>
+  <text x="1100" y="495" font-family="Arial" font-size="32" fill="#fff" text-anchor="middle" font-weight="bold">↗</text>
+  <text x="1100" y="525" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">+45%</text>
+
+  <!-- Title -->
+  <rect x="50" y="650" width="500" height="80" fill="rgba(255,255,255,0.95)" rx="10"/>
+  <text x="300" y="690" font-family="Arial" font-size="24" fill="#FF6F00" text-anchor="middle" font-weight="bold">Sales & Distribution Platform</text>
+  <text x="300" y="720" font-family="Arial" font-size="18" fill="#1976D2" text-anchor="middle">CBG बाजार और राजस्व प्रबंधन</text>
+</svg>

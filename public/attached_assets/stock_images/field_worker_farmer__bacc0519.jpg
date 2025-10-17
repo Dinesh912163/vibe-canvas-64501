@@ -1,0 +1,72 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky gradient -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B7355;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0826D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#skyGrad)"/>
+
+  <!-- Ground -->
+  <ellipse cx="600" cy="700" rx="600" ry="100" fill="url(#groundGrad)"/>
+  <rect x="0" y="650" width="1200" height="150" fill="#8B7355"/>
+
+  <!-- Village houses in background -->
+  <rect x="80" y="400" width="120" height="100" fill="#D4A574"/>
+  <polygon points="80,400 140,350 200,400" fill="#CD853F"/>
+  <rect x="250" y="420" width="100" height="80" fill="#D4A574"/>
+  <polygon points="250,420 300,380 350,420" fill="#CD853F"/>
+
+  <!-- Trees -->
+  <circle cx="900" cy="380" r="60" fill="#228B22"/>
+  <rect x="890" y="400" width="20" height="80" fill="#8B4513"/>
+
+  <!-- Indian cow (Gir breed) -->
+  <ellipse cx="320" cy="580" rx="90" ry="60" fill="#F5DEB3"/>
+  <ellipse cx="280" cy="550" rx="40" ry="50" fill="#F5DEB3"/>
+  <rect x="310" y="600" width="12" height="50" fill="#DEB887"/>
+  <rect x="340" y="600" width="12" height="50" fill="#DEB887"/>
+  <circle cx="270" cy="540" r="4" fill="#000"/>
+  <path d="M 260,530 Q 255,520 260,515" stroke="#8B4513" stroke-width="3" fill="none"/>
+  <path d="M 250,530 Q 245,520 250,515" stroke="#8B4513" stroke-width="3" fill="none"/>
+
+  <!-- Field worker in traditional attire -->
+  <ellipse cx="600" cy="620" rx="35" ry="45" fill="#FF6B35"/>
+  <circle cx="600" cy="540" r="30" fill="#D4A574"/>
+  <rect x="585" y="650" width="15" height="70" fill="#8B4513"/>
+  <rect x="600" y="650" width="15" height="70" fill="#8B4513"/>
+  <rect x="570" y="570" width="60" height="50" fill="#4A90E2"/>
+  <circle cx="590" cy="535" r="3" fill="#000"/>
+  <circle cx="610" cy="535" r="3" fill="#000"/>
+  <path d="M 590,550 Q 600,555 610,550" stroke="#000" stroke-width="2" fill="none"/>
+
+  <!-- Turban -->
+  <ellipse cx="600" cy="520" rx="35" ry="15" fill="#FF8C00"/>
+  <rect x="565" y="515" width="70" height="15" fill="#FF8C00" rx="5"/>
+
+  <!-- Mobile phone with app -->
+  <rect x="520" y="600" width="50" height="80" fill="#2C3E50" rx="5"/>
+  <rect x="525" y="610" width="40" height="60" fill="#ECF0F1"/>
+  <circle cx="545" cy="675" r="4" fill="#34495E"/>
+  <text x="545" y="635" font-family="Arial" font-size="12" fill="#27AE60" text-anchor="middle" font-weight="bold">गौ सखी</text>
+  <rect x="530" y="640" width="30" height="3" fill="#27AE60" rx="1"/>
+  <rect x="530" y="645" width="25" height="3" fill="#95A5A6" rx="1"/>
+  <rect x="530" y="650" width="20" height="3" fill="#95A5A6" rx="1"/>
+
+  <!-- Data collection icon -->
+  <circle cx="750" cy="560" r="50" fill="#FF9933" opacity="0.9"/>
+  <path d="M 730,560 L 745,575 L 770,545" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+  <!-- Hindi text -->
+  <rect x="50" y="50" width="450" height="120" fill="rgba(255,255,255,0.85)" rx="10"/>
+  <text x="275" y="95" font-family="Arial" font-size="28" fill="#FF9933" text-anchor="middle" font-weight="bold">गौ सखी - Field Executive</text>
+  <text x="275" y="130" font-family="Arial" font-size="20" fill="#138808" text-anchor="middle">किसान पंजीकरण और गोबर संग्रह</text>
+  <text x="275" y="155" font-family="Arial" font-size="16" fill="#000080" text-anchor="middle">Farmer Registration & Dung Collection</text>
+</svg>
